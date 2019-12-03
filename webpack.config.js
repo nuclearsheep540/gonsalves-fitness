@@ -9,7 +9,7 @@ module.exports = {
     // path: path.resolve(__dirname, './dist'),
     path: resolve('dist'),
     filename: 'bundle.js',
-    publicPath: './dist'
+    publicPath: '/'
   },
   module: {
     rules: [
@@ -32,7 +32,7 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: './dist/index.html',
+      template: './index.html',
       filename: 'index.html',
       inject: 'body'
     })
