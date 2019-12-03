@@ -32,7 +32,7 @@ module.exports = {
   plugins: [
     new webpack.HotModuleReplacementPlugin(),
     new HtmlWebpackPlugin({
-      template: './index.html',
+      template: './dist/index.html',
       filename: 'index.html',
       inject: 'body'
     })
