@@ -50,10 +50,10 @@ export default class Landing extends React.Component {
             <p>Laboris minim magna non voluptate. Laborum cillum nisi elit dolore cillum dolor. Laboris consequat in aliquip cillum dolor sunt nostrud ex aliquip consectetur officia in cupidatat ex. Anim laborum laboris magna ea laboris. Amet laboris dolor exercitation pariatur enim sit in adipisicing commodo velit. Est dolore est tempor laborum excepteur eiusmod amet fugiat dolore consectetur reprehenderit fugiat ad quis. Ea nostrud nostrud Lorem fugiat aliquip et veniam est qui magna ad.</p>
           </section>
         </div>
-        <footer className='flex-wrap centered'>
-          <p>things</p>
-          <p>things</p>
-          <p>and more things</p>
+        <footer className='centered'>
+          <p className='middle-center central'>things</p>
+          <p className='middle-center central'>things</p>
+          <p className='middle-center central'>and morethings</p>
         </footer>
       </main>
     )
