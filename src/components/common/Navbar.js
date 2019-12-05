@@ -34,10 +34,10 @@ class Navbar extends React.Component {
     if (this.state.heroHeight === 0) return null  
     return (
       <nav className={scrollY > this.state.heroHeight ? 'fill-nav' : ''}>
-        <a href={this.props.match.history === '/' ? '#1' : '/#1'}> Test 1 </a>
-        <a href={this.props.match.history === '/' ? '#2' : '/#2'}> Test 2 </a>
-        <a href={this.props.match.history === '/' ? '#3' : '/#3'}> Test 3 </a>
-        <a href={this.props.match.history === '/' ? '#4' : '/#4'}> Test 4 </a>
+        <a href={this.props.match.history === '/' ? '#1' : '/#1'}> About </a>
+        <a href={this.props.match.history === '/' ? '#2' : '/#2'}> Services </a>
+        <a href={this.props.match.history === '/' ? '#3' : '/#3'}> Prices </a>
+        <a href={this.props.match.history === '/' ? '#4' : '/#4'}> Contact </a>
         <Link to='/booking'> Test Booking </Link>
       </nav>
     )
