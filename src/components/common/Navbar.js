@@ -27,9 +27,6 @@ class Navbar extends React.Component {
     })
   }
 
-
-
-
   render() {
     if (this.state.heroHeight === 0) return null  
     return (

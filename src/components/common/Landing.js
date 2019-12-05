@@ -7,7 +7,7 @@ export default class Landing extends React.Component {
     super()
 
     this.state = {
-      form: {
+      form: { //data from the front end, collected from the form
         firstname: '',
         lastname: '',
         email: '',
@@ -15,12 +15,12 @@ export default class Landing extends React.Component {
         subject: '',
         message: ''
       },
-      message: {
+      message: { //data required by the API to deliver an email
         to: 'matt.davey540@me.com',
         from: 'hello@jackalmedia.co.uk',
         subject: '',
         textBody: 'This message was sent using the SocketLabs Node.js library!',
-        htmlBody: '<html>This message was sent using the SocketLabs Node.js library!</html>',
+        htmlBody: '',
         messageType: 'basic'
       }
     }
@@ -34,16 +34,36 @@ export default class Landing extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
     console.log(this.sendData)
-    this.setState({ ...this.state.message.subject, ...this.state.form.subject })
-    axios.post('api/contact', this.sendData.message)
+
+    const obj = {
+      to: 'matt.davey540@me.com', //client's email address
+      from: 'hello@jackalmedia.co.uk', //dummy email address
+      subject: this.state.form.email,
+      textBody: this.state.form.message,
+      htmlBody: `
+      <html>
+      From: 
+      ${this.state.form.firstname}, ${this.state.form.lastname}<br />
+      Contact:<br />
+      ${this.state.form.number}<br />
+      Email:<br />
+      ${this.state.form.email}<br />
+      Message:<br />
+      ${this.state.form.message}<br />
+      </html>
+      `,
+      messageType: 'basic'
+    }
+
+    axios.post('api/contact', obj)
       .then(res => console.log(res))
       .catch(err => console.log(err))
   }
   handleChange({ target: { name, value } }) {
+    //from data from front end
     const form = { ...this.state.form, [name]: value }
     this.setState({ form })
   }
-
 
   render() {
     console.log(this.state)
