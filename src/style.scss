@@ -6,6 +6,7 @@ h1 {
   font-size: larger;
 }
 nav {
+  transition: cubic-bezier(0.075, 0.82, 0.165, 1) 1.2s;
   position: fixed;
   top: 0px;
   z-index: 9999;
@@ -19,7 +20,25 @@ nav {
 nav > a {
   height: 50%;
   margin: auto;
+  color: white;
+  text-decoration: none;
 }
+.fill-nav{
+  background-color: goldenrod;
+  a {
+    color: black !important;
+  }
+  a:last-of-type {
+    border-left: 2px solid black;
+   }
+}
+
+a:last-of-type {
+  text-align: center;
+  min-width: 180px;
+  border-left: 2px solid white;
+ }
+
 section {
   min-height: 40vh;
   min-width: 100vw;

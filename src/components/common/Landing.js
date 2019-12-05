@@ -17,12 +17,12 @@ export default class Landing extends React.Component {
     return (
       <main>
 
-        <section className='hero'>
+        <section className='hero' id='1'>
           <h1 className='middle-center central'>GONSALVES FITNESS</h1>
         </section>
 
         <div className='flex-wrap middle-center'>
-          <section className='flex-container s16' id='1'>
+          <section className='flex-container s16'>
             <p>Laboris minim magna non voluptate. Laborum cillum nisi elit dolore cillum dolor. Laboris consequat in aliquip cillum dolor sunt nostrud ex aliquip consectetur officia in cupidatat ex. Anim laborum laboris magna ea laboris. Amet laboris dolor exercitation pariatur enim sit in adipisicing commodo velit. Est dolore est tempor laborum excepteur eiusmod amet fugiat dolore consectetur reprehenderit fugiat ad quis. Ea nostrud nostrud Lorem fugiat aliquip et veniam est qui magna ad.</p>
           </section>
 
