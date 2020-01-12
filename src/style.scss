@@ -306,3 +306,17 @@ div.row {
   flex-wrap: nowrap;
   width: 100%;
 }
+
+// 
+// ------- ADMIN
+// 
+
+th {
+  width: 300px;
+}
+th:nth-child(1){
+  width: 50px;
+}
+td {
+  text-align: center;
+}
