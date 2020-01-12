@@ -35,48 +35,46 @@ class Login extends React.Component {
 
   render(){
     return (
-      <section className="section">
-        <div className="container">
-          <form className="login-form" onSubmit={this.handleSubmit}>
-            <h2 className="">Login</h2> 
+      <div className='col-left'>
+        <form className="login-form" onSubmit={this.handleSubmit}>
+          <h2 className="">Login</h2> 
+          <div className="">
             <div className="">
+
               <div className="">
-
+                <label className="">Name</label>
                 <div className="">
-                  <label className="">Name</label>
-                  <div className="">
-                    <input
-                      className=""
-                      name="name"
-                      type='text'
-                      placeholder="name"
-                      onChange={this.handleChange}
-                    />
-                  </div>
+                  <input
+                    className="input-area"
+                    name="name"
+                    type='text'
+                    placeholder="name"
+                    onChange={this.handleChange}
+                  />
                 </div>
-
-
-                <div className="">
-                  <label className="">Password</label>
-                  <div className="">
-                    <input
-                      className=""
-                      type="password"
-                      name="password"
-                      placeholder="Password"
-                      onChange={this.handleChange}>
-                    </input>
-                  </div>
-                </div>
-                <button type="submit" className="">Login</button>
-
               </div>
-              <br />
-            
+
+
+              <div className="">
+                <label className="">Password</label>
+                <div className="">
+                  <input
+                    className="input-area"
+                    type="password"
+                    name="password"
+                    placeholder="Password"
+                    onChange={this.handleChange}>
+                  </input>
+                </div>
+              </div>
+              <button type="submit" className="">Login</button>
+
             </div>
-          </form>
-        </div>
-      </section>
+            <br />
+            
+          </div>
+        </form>
+      </div>
     )
   }
 }

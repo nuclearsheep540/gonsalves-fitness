@@ -1,0 +1,84 @@
+import React from 'react'
+import StoryForm from './StoryForm'
+import axios from 'axios'
+import Auth from '../../lib/auth'
+
+export default class StoryEdit extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+      data: {
+
+      }
+    }
+    this.handleChange = this.handleChange.bind(this)
+    this.handleSubmit = this.handleSubmit.bind(this)
+  }
+
+  componentDidMount() {
+    const storyId = this.props.match.params.id
+    axios.get(`/api/story/${storyId}`) //axios get is string
+      .then(res => {
+        const resCopy = { ...res.data }
+        console.log('resCopy =', resCopy)
+        this.setState({ data: res.data })
+      })
+      .catch(err => console.log(err))
+  }
+
+  handleChange(e) {
+    const data = { ...this.state.data, [e.target.name]: e.target.value }
+    this.setState({ data })
+  }
+
+  handleSubmit(e) {
+    e.preventDefault()
+    const storyId = this.state.data._id
+    console.log(`axios: /api/story/${storyId}`, this.state.data)
+    axios.put(`/api/story/${storyId}`, this.state.data, {
+      headers: { Authorization: `Bearer ${Auth.getToken()}` }
+    })
+      .then(res => console.log(res))
+      .then(this.props.history.push('/dashboard'))
+      .catch(err => console.log(err))
+  }
+  back() {
+    window.history.back()
+  }
+
+  render() {
+    if (!this.state.data) return null
+    return (
+      <div>
+
+        <h1>Editing {this.state.data.client}&apos;s Story</h1>
+        <small> id:{this.props.match.params.id} </small>
+        <h5 className='button' onClick={this.back}>Cancel</h5>
+
+        <div className='two-up'>
+
+          <div className='col-left'>
+            <StoryForm
+              data={this.state.data}
+              handleChange={this.handleChange}
+              handleSubmit={this.handleSubmit}
+            />
+          </div>
+
+          <div className='col-right'>
+            <small>Profile</small>
+            <img src={this.state.data.image} className='admin-story-edit'></img>
+
+            <small>Before</small>
+            <img src={this.state.data.before} className='admin-story-edit'></img>
+
+            <small>After</small>
+            <img src={this.state.data.after} className='admin-story-edit'></img>
+          </div>
+
+        </div>
+
+      </div>
+    )
+  }
+}

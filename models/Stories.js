@@ -1,12 +1,17 @@
 const mongoose = require('mongoose')
 
-const RequestSchema = new mongoose.Schema({
+const StorySchema = new mongoose.Schema({
   client: { type: String, required: true },
-  image: { type: [String] }
+  image: { type: String },
+  before: { type: String },
+  after: { type: String },
+  description: { type: String },
+  review: { type: String },
+  created: { type: String }
 }, {
   timestamps: true
 })
 
-RequestSchema.plugin(require('mongoose-unique-validator'))
+StorySchema.plugin(require('mongoose-unique-validator'))
 
-module.exports = mongoose.model('Story', RequestSchema)
+module.exports = mongoose.model('Story', StorySchema)

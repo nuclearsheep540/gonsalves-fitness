@@ -1,7 +1,7 @@
 const router = require('express').Router()
 const contactForm = require('../controllers/contactForm')
 const users = require('../controllers/auth')
-const story = require ('../controllers/stories')
+const story = require('../controllers/stories')
 const secureRoute = require('../lib/secureRoute')
 
 router.route('/contact')
@@ -12,5 +12,10 @@ router.route('/login') // just handling user login controller
 
 router.route('/story')
   .get(story.index)
+
+router.route('/story/:id')
+  .get(story.show)
+  .put(secureRoute, story.edit)
+  .delete(secureRoute, story.removeRoute)
 
 module.exports = router

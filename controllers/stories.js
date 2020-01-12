@@ -1,17 +1,14 @@
 const Story = require('../models/Stories')
 
-// INDEX ROUTE - /requests
-
+// INDEX ROUTE - /story
 function index(req, res) {
   Story
     .find()
     .then(elem => res.status(200).json(elem))
     .catch(() => res.status(404).json({ message: 'Not found' }))
-
 }
 
-// CREATE ROUTE - /requests
-
+// CREATE ROUTE - /story
 function create(req, res, next) {
   req.body.user = req.currentUser
   Story.create(req.body)
@@ -20,7 +17,6 @@ function create(req, res, next) {
 }
 
 // SHOW ROUTE - /requests/:id
-
 function show(req, res) {
   Story
     .findById(req.params.id)
@@ -32,14 +28,12 @@ function show(req, res) {
 
 }
 
-// EDIT ROUTE - /requests/:id
-
+// EDIT ROUTE - /story/:id
 function edit(req, res) {
   Story
     .findById(req.params.id)
     .then(request => {
       if (!request) return res.status(404).json({ message: 'Not found' })
-      if (!request.user.equals(req.currentUser._id)) return res.status(401).json({ message: 'Unauthorized' })
       return request.set(req.body)
     })
     .then(request => request.save())
@@ -47,10 +41,7 @@ function edit(req, res) {
     .catch(err => console.log(err))
 }
 
-
-
-// DELETE ROUTE - /requests/:id
-
+// DELETE ROUTE - /story/:id
 function removeRoute(req,res) {
   Story 
     .findById(req.params.id)
@@ -61,9 +52,6 @@ function removeRoute(req,res) {
     .then(() => res.sendStatus(204))
     .catch(err => res.staus(400).json(err))
 }
-
-
-
 
 module.exports = {
   index,
