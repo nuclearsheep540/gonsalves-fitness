@@ -1,7 +1,6 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
-import Auth from './lib/auth'
 
 import Landing from './components/common/Landing'
 import Navbar from './components/common/Navbar'

@@ -1,6 +1,6 @@
 import React from 'react'
 
-const StoryForm = ({ handleChange, handleSubmit, data }) => {
+const StoryForm = ({ fileupload, handleChange, handleSubmit, data }) => {
   return (
     <div className=''>
       <section className=''>
@@ -22,22 +22,22 @@ const StoryForm = ({ handleChange, handleSubmit, data }) => {
 
             <div className="half-width">
               <label name="exampleMessage">Profile</label>
-              <div className='img-upload'>
-                <button>Upload</button>
-                <input
-                  className="input-area"
-                  placeholder="image upload"
-                  name="image"
-                  value={data.image}
-                  onChange={handleChange}>
-                </input>
-              </div>
+              <button id='upload' onClick={fileupload}>Upload</button>
+              <input
+                id='upload'
+                className="input-area"
+                placeholder="image upload"
+                name="image"
+                value={data.image}
+                onChange={handleChange}>
+              </input>
             </div>
 
             <div className="half-width">
               <label name="exampleMessage">Before</label>
-              <button>Upload</button>
+              <button id='upload' onClick={fileupload}>Upload</button>
               <input
+                id='upload'
                 className="input-area"
                 placeholder="image upload"
                 name="before"
@@ -48,8 +48,9 @@ const StoryForm = ({ handleChange, handleSubmit, data }) => {
 
             <div className="half-width">
               <label name="exampleMessage">After</label>
-              <button>Upload</button>
+              <button id='upload' onClick={fileupload}>Upload</button>
               <input
+                id='upload'
                 className="input-area"
                 placeholder="image upload"
                 name="after"
@@ -74,7 +75,7 @@ const StoryForm = ({ handleChange, handleSubmit, data }) => {
               <label name="exampleMessage">Testimonial</label>
               <textarea
                 className="input-area"
-                placeholder="Description"
+                placeholder="Testimonial"
                 name="review"
                 value={data.review}
                 onChange={handleChange}>

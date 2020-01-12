@@ -45,6 +45,10 @@ export default class StoryEdit extends React.Component {
   back() {
     window.history.back()
   }
+  fileUpload(e){
+    e.preventDefault()
+    window.alert('Sorry, file upload is not available at the moment')
+  }
 
   render() {
     if (!this.state.data) return null
@@ -62,6 +66,7 @@ export default class StoryEdit extends React.Component {
               data={this.state.data}
               handleChange={this.handleChange}
               handleSubmit={this.handleSubmit}
+              fileupload={this.fileUpload}
             />
           </div>
 

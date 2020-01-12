@@ -324,14 +324,14 @@ div.image-upload{
 div.two-up{
   display: flex;
   max-width: 95vw;
-  justify-content: space-between;
+  justify-content: space-evenly;
   margin: auto;
 }
 div.col-left{
   margin-left: 4%;
   display: flex;
   max-width: 40vw;
-  border: 1px dashed red;
+  // border: 1px dashed red;
   flex-wrap: nowrap;
   margin-bottom: 50px;
 }
@@ -340,7 +340,7 @@ div.col-right{
   display: flex;
   flex-direction: column;
   max-width: 40vw;
-  border: 1px dashed blue;
+  // border: 1px dashed blue;
   margin-bottom: 50px;
 }
 
@@ -384,7 +384,16 @@ img.admin-story-edit{
   border-radius: 2px;
   margin: 2px;
 }
-
+button#upload {
+  display:inline-block;
+  min-width: 50px;
+  width: 80px;
+  padding:5px 10px;
+}
+input#upload {
+  display: inline-block;
+  max-width: 300px;
+}
 label {
   display: block;
   width: 90px;
