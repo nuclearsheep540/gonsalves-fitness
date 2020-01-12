@@ -24,8 +24,10 @@ module.exports = {
     watchContentBase: true,
     historyApiFallback: true,
     proxy: {
-      '/api': 'http://localhost:8000',
-      secure: 'false'
+      '/api': {
+        target: 'http://localhost:8000',
+        secure: 'false'
+      }
     }
   },
   plugins: [

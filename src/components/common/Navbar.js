@@ -13,8 +13,11 @@ class Navbar extends React.Component {
   }
 
   componentDidMount(){
-    this.setState({ heroHeight: document.getElementById('s1').offsetHeight })
-    window.addEventListener('scroll', this.handleScroll)
+    const nav = document.getElementById('#nav')
+    if (nav) {
+      this.setState({ heroHeight: document.getElementById('s1').offsetHeight })
+      window.addEventListener('scroll', this.handleScroll)
+    }
   }
 
   componentWillUnmount() {
