@@ -3,27 +3,29 @@ import StoryForm from './StoryForm'
 import axios from 'axios'
 import Auth from '../../lib/auth'
 
-export default class StoryEdit extends React.Component {
+const time = new Date
+
+export default class StoryCreate extends React.Component {
   constructor() {
     super()
     this.state = {
       data: {
-
+        client: '',
+        image: '',
+        before: '',
+        after: '',
+        description: '',
+        review: '',
+        created: time.toDateString()
       }
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    
   }
 
   componentDidMount() {
-    const storyId = this.props.match.params.id
-    axios.get(`/api/story/${storyId}`) //axios get is string
-      .then(res => {
-        const resCopy = { ...res.data }
-        console.log('resCopy =', resCopy)
-        this.setState({ data: res.data })
-      })
-      .catch(err => console.log(err))
+
   }
 
   handleChange(e) {
@@ -33,9 +35,8 @@ export default class StoryEdit extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    const storyId = this.state.data._id
-    console.log(`axios: /api/story/${storyId}`, this.state.data)
-    axios.put(`/api/story/${storyId}`, this.state.data, {
+    console.log('axios:', this.state.data)
+    axios.post('/api/story', this.state.data, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(res => console.log(res))
@@ -56,9 +57,9 @@ export default class StoryEdit extends React.Component {
     return (
       <div className='pad20'>
 
-        <h1>Editing {this.state.data.client}&apos;s Story</h1>
-        <small> id:{this.props.match.params.id} </small>
-        <h5 className='button' onClick={this.back}>CANCEL</h5>
+        <h1>{this.state.data.client}&apos;s Story</h1>
+        <small> id:{this.props.match.params.id || 'created upon submit'} </small>
+        <h5 className='button' onClick={this.back}>Cancel</h5>
 
         <div className='two-up'>
 

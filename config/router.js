@@ -12,6 +12,7 @@ router.route('/login') // just handling user login controller
 
 router.route('/story')
   .get(story.index)
+  .post(story.create)
 
 router.route('/story/:id')
   .get(story.show)

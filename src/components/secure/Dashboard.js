@@ -24,13 +24,21 @@ export default class Dashboard extends React.Component {
     this.props.history.push('/')
   }
 
+  handleDelete(e, id){
+    e.preventDefault()
+    window.confirm(`Are you sure you wish to delete ${e.target.name}'s story?`) ?
+      Axios.delete(`/api/story/${id}`, { headers: { Authorization: `Bearer ${Auth.getToken()}` } })
+        .then(window.location.reload())
+      : console.log(false)
+  }
+
   render() {
     if (!Auth.isAuthenticated()) return (<h1>You must be logged in to view this page</h1>)
     if (!this.state.stories) return null
 
     return (
 
-      <div className='flex-container'>
+      <div className='flex-container pad20'>
         <h1>Content Manager</h1>
         <h2>{`Welcome back, ${Auth.getName()}`}</h2>
 
@@ -39,9 +47,9 @@ export default class Dashboard extends React.Component {
         </button>
 
 
-        <div id='stories'>
+        <div>
           <h3>Success Stories</h3>
-          <button>Create New</button>
+          <Link to='/story'>Create New</Link>
 
           <table className="table">
             <thead>
@@ -62,7 +70,7 @@ export default class Dashboard extends React.Component {
                   <td><img src={story.image} className='profile-icon'></img></td>
                   <td>{story.client}</td>
                   <td>{story.created}</td>
-                  <td><Link to={`/story/${story._id}`}>View/Edit</Link></td>
+                  <td><Link to={`/story/${story._id}`}>Edit</Link><a name={story.client} onClick={()=> this.handleDelete(event, story._id)}>Delete</a></td>
                   <td>{story._id}</td>
                 </tr>
               )

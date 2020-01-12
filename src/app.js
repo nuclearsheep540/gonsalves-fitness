@@ -9,6 +9,8 @@ import Topnav from './components/common/Topnav'
 import Login from './components/secure/Login'
 import Dash from './components/secure/Dashboard'
 import StoryEdit from './components/stories/StoryEdit'
+import StoryCreate from './components/stories/StoryCreate'
+import StoryIndex from './components/stories/StoryIndex'
 
 import './style.scss'
 import 'normalize.css'
@@ -24,7 +26,10 @@ const App = () => (
       <Route path='/booking' component={Book} />
       <Route exact path='/admin' component={Login} />
       <Route exact path='/dashboard' component={Dash} />
+      <Route path='/dash' component={Dash} />
       <Route path='/story/:id/' component={StoryEdit} />
+      <Route path='/story' component={StoryCreate} />
+      <Route path='/success' component={StoryIndex} />
     </Switch>
   </BrowserRouter>
 )
