@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, withRouter } from 'react-router-dom'
+import { withRouter } from 'react-router-dom'
 
 class Navbar extends React.Component {
   constructor() {
@@ -13,7 +13,7 @@ class Navbar extends React.Component {
   }
 
   componentDidMount(){
-    this.setState({ heroHeight: document.getElementById('1').offsetHeight })
+    this.setState({ heroHeight: document.getElementById('s1').offsetHeight })
     window.addEventListener('scroll', this.handleScroll)
   }
 
@@ -30,12 +30,12 @@ class Navbar extends React.Component {
   render() {
     if (this.state.heroHeight === 0) return null  
     return (
-      <nav className={scrollY > this.state.heroHeight ? 'fill-nav' : ''}>
-        <a href={this.props.match.history === '/' ? '#1' : '/#1'}> About </a>
-        <a href={this.props.match.history === '/' ? '#2' : '/#2'}> Services </a>
-        <a href={this.props.match.history === '/' ? '#3' : '/#3'}> Prices </a>
-        <a href={this.props.match.history === '/' ? '#4' : '/#4'}> Contact </a>
-        <Link to='/booking'> Test Booking </Link>
+      <nav className={scrollY > this.state.heroHeight ? 'fill-nav animated fadeIn' : 'animated fadeOutUp no-nav'}>
+        <a href={this.props.match.history === '/' ? '#s1' : '/#s1'}> About </a>
+        <a href={this.props.match.history === '/' ? '#s2' : '/#s2'}> Services </a>
+        <a href={this.props.match.history === '/' ? '#s3' : '/#s3'}> Prices </a>
+        <a href={this.props.match.history === '/' ? '#s4' : '/#s4'}> Contact </a>
+        {/* <Link to='/booking'> Test Booking </Link> */}
       </nav>
     )
   }

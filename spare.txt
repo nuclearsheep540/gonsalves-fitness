@@ -1,0 +1,45 @@
+<ul>1 Person
+                  <li>5x £225 (£45 a session)</li>
+                  <li>10x £425 (£42.50 a session)</li>
+                  <li>20x £800 (£40 a session)</li>
+                  <li>30x £1125 (£37.50 a session)</li>
+                </ul>
+
+                <ul>2 Persons
+                  <li>5x £175pp (£35 a session)</li>
+                  <li>10x £325pp (£32.50 a session)</li>
+                  <li>20x £600pp (£30 a session)</li>
+                  <li>30x £825pp (£27.50 a session)</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3>Monthly Packages</h3>
+                <ul>
+                  <li>1x 1 Hour Session per Week £140 (£35 a session)</li>
+                  <li>2x 1 Hour Session per Week £260 (£32.50 a session)</li>
+                  <li>3x 1 Hour Session per Week £360 (£30 a session)</li>
+                  <li>4x 1 Hour Session per Week £440 (£27.50 a session)</li>
+                  <li>5x 1 Hour Session per Week £500 (£25 a session)</li>
+                </ul>
+
+                <ul>
+                  <li>1x 1 Hour Session per Week £120 (£30 a session)</li>
+                  <li>2x 1 Hour Session per Week £220 (£27.50 a session)</li>
+                  <li>3x 1 Hour Session per Week £300 (£25 a session)</li>
+                  <li>4x 1 Hour Session per Week £360 (£22.50 a session)</li>
+                  <li>5x 1 Hour Session per Week £400 (£20 a session)</li>
+                </ul>
+              </div>
+
+              <div>
+                <h3>Every Packages Includes:</h3>
+                <ul>
+                  <li>Monthly Fitness Assessment</li>
+                  <li>Body Composition Analys</li>
+                  <li>Tailored Gym Programme</li>
+                  <li>Bespoke Nutrition Guide (Macros + Calories)</li>
+                  <li>SMART GOAL Setting</li>
+                  <li>Update Photos</li>
+                  <li>Contact with PT via Phone, Text, Email</li>
+                </ul>

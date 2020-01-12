@@ -59,7 +59,7 @@ const ContactForm = ({ handleSubmit, handleChange, form }) => {
           </input>
         </div>
 
-        <div className='form-area'>
+        {/* <div className='form-area'>
           <label name="email" type='text'>Subject</label>
           <input
             className='form-area'
@@ -70,7 +70,7 @@ const ContactForm = ({ handleSubmit, handleChange, form }) => {
             onChange={handleChange}
           >
           </input>
-        </div>
+        </div> */}
 
         <div className='form-area'>
           <label name="message" type='text'>Message</label>

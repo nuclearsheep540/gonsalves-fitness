@@ -1,6 +1,7 @@
 import React from 'react'
 import ContactForm from './ContactForm'
 import axios from 'axios'
+import { Link } from 'react-router-dom'
 
 export default class Landing extends React.Component {
   constructor() {
@@ -37,19 +38,17 @@ export default class Landing extends React.Component {
 
     const obj = {
       to: 'matt.davey540@me.com', //client's email address
-      from: 'hello@jackalmedia.co.uk', //dummy email address
-      subject: this.state.form.email,
+      from: this.state.form.email, //reply-to customer address
+      subject: `${this.state.form.firstname} has contacted you at Gonsalves-Fitness.com`,
       textBody: this.state.form.message,
       htmlBody: `
       <html>
       From: 
       ${this.state.form.firstname}, ${this.state.form.lastname}<br />
-      Contact:<br />
-      ${this.state.form.number}<br />
-      Email:<br />
-      ${this.state.form.email}<br />
-      Message:<br />
-      ${this.state.form.message}<br />
+      Contact: ${this.state.form.number}<br />
+      Email: ${this.state.form.email}<br />
+      <br />
+      ${this.state.form.message.replace('\n\n', '<br /> <br />').replace('\n', '<br />')}<br />
       </html>
       `,
       messageType: 'basic'
@@ -68,108 +67,122 @@ export default class Landing extends React.Component {
   render() {
     console.log(this.state)
     return (
-      <main>
-
-        <section className='hero' id='1'>
-          <h1 className='middle-center central'>GONSALVES FITNESS</h1>
-        </section>
-
-        <div className='flex-wrap middle-center'>
-          <section className='flex-container s16'>
-            <h2>About</h2>
-          </section>
-
-          <section className='flex-container'>
-            <img className='sect' src='https://i.imgur.com/8452IOt.png' />
-          </section>
-
-          <section className='flex-container s16' id='2'>
-
-            <div>
-
-              <h3>Personal Training</h3>
-
-              <h3>Massage & Soft Tissue Therapy</h3>
+      <>
+        <main>
+          <Link to='/booking'>
+            <div className='sticker'>
+              Book Now
             </div>
+          </Link>
 
-          </section>
-
-          <section className='flex-container'>
-            <img className='sect' src='https://i.imgur.com/8452IOt.png' />
-          </section>
-
-          <section className='flex-container s16' id='3'>
-
-            <div>
-              <h3>Block Sessions</h3>
-
-              <ul>1 Person
-                <li>5x £225 (£45 a session)</li>
-                <li>10x £425 (£42.50 a session)</li>
-                <li>20x £800 (£40 a session)</li>
-                <li>30x £1125 (£37.50 a session)</li>
-              </ul>
-
-              <ul>2 Persons
-                <li>5x £175pp (£35 a session)</li>
-                <li>10x £325pp (£32.50 a session)</li>
-                <li>20x £600pp (£30 a session)</li>
-                <li>30x £825pp (£27.50 a session)</li>
-              </ul>
+          <section className='hero'>
+            <div className='lefty'>
+              <h2>
+                THIS IS <br></br>
+                INFORMATIVE <br></br>
+                DATA <br></br>
+                <br></br>
+                ABOUT ME <br></br>
+                AND MY <br></br>
+                SERVICES <br></br>
+              </h2>
             </div>
-
-            <div>
-              <h3>Monthly Packages</h3>
-              <ul>
-                <li>1x 1 Hour Session per Week £140 (£35 a session)</li>
-                <li>2x 1 Hour Session per Week £260 (£32.50 a session)</li>
-                <li>3x 1 Hour Session per Week £360 (£30 a session)</li>
-                <li>4x 1 Hour Session per Week £440 (£27.50 a session)</li>
-                <li>5x 1 Hour Session per Week £500 (£25 a session)</li>
-              </ul>
-
-              <ul>
-                <li>1x 1 Hour Session per Week £120 (£30 a session)</li>
-                <li>2x 1 Hour Session per Week £220 (£27.50 a session)</li>
-                <li>3x 1 Hour Session per Week £300 (£25 a session)</li>
-                <li>4x 1 Hour Session per Week £360 (£22.50 a session)</li>
-                <li>5x 1 Hour Session per Week £400 (£20 a session)</li>
-              </ul>
-            </div>
-
-            <div>
-              <h3>Every Packages Includes:</h3>
-              <ul>
-                <li>Monthly Fitness Assessment</li>
-                <li>Body Composition Analys</li>
-                <li>Tailored Gym Programme</li>
-                <li>Bespoke Nutrition Guide (Macros + Calories)</li>
-                <li>SMART GOAL Setting</li>
-                <li>Update Photos</li>
-                <li>Contact with PT via Phone, Text, Email</li>
-              </ul>
-            </div>
-
           </section>
 
-          <section className='flex-container'>
-            <img className='sect' src='https://i.imgur.com/8452IOt.png' />
-          </section>
+          <div className='flex-wrap middle-center'>
+            <section className='flex-container s16' id='s2'>
+              <div>
+                <h3>Personal Training</h3>
+                <h3>Massage & Soft Tissue Therapy</h3>
 
-          <section className='flex-container s16' id='4'>
-            <ContactForm
-              handleSubmit={this.handleSubmit}
-              handleChange={this.handleChange}
-              form={this.state.form}
-            />
-          </section>
-        </div>
-        <footer className='centered'>
-          <p className='middle-center central'>things</p>
-          <p className='middle-center central'>things</p>
-          <p className='middle-center central'>and morethings</p>
-        </footer>
-      </main>
+                <div className='gridbox'>
+                  <li className='gridcell'>
+                    <img className='grid-icon' src='https://cdn4.iconfinder.com/data/icons/oakcons-2/16/Image-512.png'></img>
+                    <h3>Service 1</h3>
+                    <p>Blah blah blah, blah, blah-blah-blah. Blah blah blah, blah, blah-blah-blah.</p>
+                  </li>
+                  <li className='gridcell'>
+                    <img className='grid-icon' src='https://cdn4.iconfinder.com/data/icons/oakcons-2/16/Image-512.png'></img>
+                    <h3>Service 2</h3>
+                    <p>Blah blah blah, blah, blah-blah-blah. Blah blah blah, blah, blah-blah-blah.</p>
+                  </li>
+                  <li className='gridcell'>
+                    <img className='grid-icon' src='https://cdn4.iconfinder.com/data/icons/oakcons-2/16/Image-512.png'></img>
+                    <h3>Service 3</h3>
+                    <p>Blah blah blah, blah, blah-blah-blah.Blah blah blah, blah, blah-blah-blah.</p>
+                  </li>
+                  <li className='gridcell'>
+                    <img className='grid-icon' src='https://cdn4.iconfinder.com/data/icons/oakcons-2/16/Image-512.png'></img>
+                    <h3>Service 4</h3>
+                    <p>Blah blah blah, blah, blah-blah-blah. Blah blah blah, blah, blah-blah-blah.</p>
+                  </li>
+                </div>
+              </div>
+            </section>
+          </div>
+
+          {/* <section id='b'></section> */}
+          <div className='' id='s1'>
+            <section className='flex-container s16'>
+              <div className='right'>
+                <h3>About</h3>
+                <p>
+                I am Rhyse and I set up Gonsalves Fitness to provide health and fitness services to those looking to better themselves, achieve their goals and reach their potential.</p>
+                
+                <p>I have helped many achieve these things in a variety of ways; from losing weight, preparing for their wedding day, recovery from injuries and improvement in daily quality of life.</p>
+                
+                <p>I have also worked with semi-professional and professional athletes to aid and contribute to their abilities in competing for success in their sport.
+                </p>
+                <button>Learn More</button>
+              </div>
+            </section>
+          </div>
+
+
+
+          <div className='flex-wrap middle-center'>
+
+            <section className='flex-container s16' id='s3'>
+
+              <h3>Results</h3>
+              <div className=''>
+
+                <div>
+                 "
+                 Quote, testimonal from client
+                 "
+                </div>
+                
+                <div className=''>
+                  Image of before and after
+                </div>
+
+                {/* build login page for rhyse, user authentication */}
+                {/* clickthrough to success stories, build small-scale CMS for ryhse to self-publish */}
+                
+              </div>
+
+            </section>
+
+            <section id='c'></section>
+
+            <section className='flex-container s16' id='s4'>
+
+              <center><img src='../assets/logo_bw.png' className='formlogo'></img></center>
+              <ContactForm
+                handleSubmit={this.handleSubmit}
+                handleChange={this.handleChange}
+                form={this.state.form}
+              />
+            </section>
+          </div>
+          <footer>
+            <p>things</p>
+            <p>things</p>
+            <p>and morethings</p>
+          </footer>
+        </main>
+      </>
     )
   }
 
