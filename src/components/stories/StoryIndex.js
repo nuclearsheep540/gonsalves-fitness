@@ -13,7 +13,7 @@ export default class StoryIndex extends React.Component {
   //function
   componentDidMount() {
     Axios.get('/api/story')
-      .then(res => this.setState({ data: res.data }))
+      .then(res => this.setState({ data: res.data.filter(elem => elem.featured === true) }))
   }
 
 
