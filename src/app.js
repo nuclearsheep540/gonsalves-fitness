@@ -12,6 +12,8 @@ import StoryEdit from './components/stories/StoryEdit'
 import StoryCreate from './components/stories/StoryCreate'
 import StoryIndex from './components/stories/StoryIndex'
 
+import ImageUpload from '../image-upload'
+
 import './style.scss'
 import 'normalize.css'
 
@@ -30,6 +32,9 @@ const App = () => (
       <Route path='/story/:id/' component={StoryEdit} />
       <Route path='/story' component={StoryCreate} />
       <Route path='/success' component={StoryIndex} />
+
+      <Route path='/uploadbase' component={ImageUpload} />
+      
     </Switch>
   </BrowserRouter>
 )

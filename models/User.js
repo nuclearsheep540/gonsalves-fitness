@@ -4,7 +4,7 @@ const bcrypt = require('bcrypt') // our library used to hash our users passwords
 const userSchema = new mongoose.Schema({ // Bulding a schema just like our animals or any other model
   name: { type: String, required: true, unique: true }, // defining fields in the same way
   email: { type: String, required: true, unique: true },
-  password: { type: String, required: true } // be careful not to make passwords unique!
+  password: { type: String, required: true } 
 }, {
   timestamps: true // provides a createdAt, and updatedAt field that work out of the box for free!
 })

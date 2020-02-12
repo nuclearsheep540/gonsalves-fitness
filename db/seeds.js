@@ -31,14 +31,17 @@ mongoose.connect(
             after: 'https://cdn.clipart.email/fdb89e0ed802f4bc60d00e8ee9f0feb9_the-track-athlete-who-beat-cancer-and-dreams-of-an-animation-_500-500.jpeg',
             description: 'test description',
             review: 'Rhyse was really helpful, I enjoy training with him',
+            featured: false,
             created: time.toDateString()
           },
           {
             client: 'Mary',
             image: 'https://image.flaticon.com/icons/svg/201/201634.svg',
-            description: '',
             before: '',
             after: '',
+            description: '',
+            review: 'I feel a lot more body confident now',
+            featured: true,
             created: time.toDateString()
           }
         ])

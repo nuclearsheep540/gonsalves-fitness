@@ -19,16 +19,20 @@ export default class StoryEdit extends React.Component {
     const storyId = this.props.match.params.id
     axios.get(`/api/story/${storyId}`) //axios get is string
       .then(res => {
-        const resCopy = { ...res.data }
-        console.log('resCopy =', resCopy)
         this.setState({ data: res.data })
+        console.log('axios mount',res.data)
       })
       .catch(err => console.log(err))
   }
 
   handleChange(e) {
-    const data = { ...this.state.data, [e.target.name]: e.target.value }
+    const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value
+    const data = { 
+      ...this.state.data,
+      [e.target.name]: value
+    }
     this.setState({ data })
+    console.log('update',data)
   }
 
   handleSubmit(e) {
@@ -38,7 +42,7 @@ export default class StoryEdit extends React.Component {
     axios.put(`/api/story/${storyId}`, this.state.data, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
-      .then(res => console.log(res))
+      .then(res => console.log('axios put',res))
       .then(this.props.history.push('/dashboard'))
       .then(window.location.reload())
       .catch(err => console.log(err))

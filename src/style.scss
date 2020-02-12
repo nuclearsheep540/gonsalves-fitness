@@ -173,6 +173,7 @@ a {
 //--------------------
 
 .hero {
+  justify-content: flex-start;
   display: flex;
   min-height: 93vh;
   max-height: 93vh;
@@ -180,7 +181,7 @@ a {
   // border: 1px solid red;
   background-color: #202020;
   color: gold;
-  align-items: center;
+  align-items: flex-start;
   overflow: hidden;
 }
 

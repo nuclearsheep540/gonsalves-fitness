@@ -1,4 +1,5 @@
 import React from 'react'
+import ImageUpload from '../../../image-upload'
 
 const StoryForm = ({ fileupload, handleChange, handleSubmit, data }) => {
   return (
@@ -20,11 +21,16 @@ const StoryForm = ({ fileupload, handleChange, handleSubmit, data }) => {
               </input>
             </div>
 
+           
+
             <div className="half-width">
               <label name="exampleMessage">Profile</label>
-              <button id='upload' onClick={fileupload}>Upload</button>
+              
+              <ImageUpload 
+              
+              />
               <input
-                id='upload'
+                id='profile-img'
                 className="input-area"
                 placeholder="image upload"
                 name="image"
@@ -35,9 +41,9 @@ const StoryForm = ({ fileupload, handleChange, handleSubmit, data }) => {
 
             <div className="half-width">
               <label name="exampleMessage">Before</label>
-              <button id='upload' onClick={fileupload}>Upload</button>
+              <button id='before-btn' onClick={fileupload}>Upload</button>
               <input
-                id='upload'
+                id='before-img'
                 className="input-area"
                 placeholder="image upload"
                 name="before"
@@ -48,9 +54,9 @@ const StoryForm = ({ fileupload, handleChange, handleSubmit, data }) => {
 
             <div className="half-width">
               <label name="exampleMessage">After</label>
-              <button id='upload' onClick={fileupload}>Upload</button>
+              <button id='after-btn' onClick={fileupload}>Upload</button>
               <input
-                id='upload'
+                id='after-img'
                 className="input-area"
                 placeholder="image upload"
                 name="after"
@@ -80,6 +86,18 @@ const StoryForm = ({ fileupload, handleChange, handleSubmit, data }) => {
                 value={data.review}
                 onChange={handleChange}>
               </textarea>
+            </div>
+
+            <div className="half-width">
+              <label name="checkbox">Featured</label>
+              <input
+                value={data.featured}
+                type='checkbox'
+                className="input-area"
+                name="featured"
+                checked={data.featured}
+                onChange={handleChange}>
+              </input>
             </div>
             
             <button type="submit" className=''>Submit</button>

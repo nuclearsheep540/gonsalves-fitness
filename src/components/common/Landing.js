@@ -78,13 +78,10 @@ export default class Landing extends React.Component {
           <section className='hero'>
             <div className='lefty'>
               <h2 className='hero'>
-                THIS IS <br></br>
-                INFORMATIVE <br></br>
-                DATA <br></br>
-                <br></br>
-                ABOUT ME <br></br>
-                AND MY <br></br>
-                SERVICES <br></br>
+              BE<br></br>
+              YOUR<br></br>
+              BEST<br></br>
+              YOU<br></br>
               </h2>
             </div>
           </section>

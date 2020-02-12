@@ -7,7 +7,8 @@ const StorySchema = new mongoose.Schema({
   after: { type: String },
   description: { type: String },
   review: { type: String },
-  created: { type: String }
+  created: { type: String },
+  featured: { type: Boolean }
 }, {
   timestamps: true
 })

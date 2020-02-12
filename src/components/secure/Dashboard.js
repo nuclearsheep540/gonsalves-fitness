@@ -56,7 +56,8 @@ export default class Dashboard extends React.Component {
               <tr>
                 <th id='num'>#</th>
                 <th>Profile</th>
-                <th >Client</th>
+                <th>Feature</th>
+                <th>Client</th>
                 <th>Created At</th>
                 <th>Control</th>
                 <th>database_id</th>
@@ -68,6 +69,7 @@ export default class Dashboard extends React.Component {
                 <tr key={i + 1}>
                   <td>{i + 1}</td>
                   <td><img src={story.image} className='profile-icon'></img></td>
+                  <td><input type='checkbox' checked={story.featured === true ? true : false} disabled /> </td>
                   <td>{story.client}</td>
                   <td>{story.created}</td>
                   <td><Link to={`/story/${story._id}`}>Edit</Link><a name={story.client} onClick={()=> this.handleDelete(event, story._id)}>Delete</a></td>

@@ -9,6 +9,7 @@ export default class StoryCreate extends React.Component {
   constructor() {
     super()
     this.state = {
+      picture: null,
       data: {
         client: '',
         image: '',
@@ -16,6 +17,7 @@ export default class StoryCreate extends React.Component {
         after: '',
         description: '',
         review: '',
+        featured: false,
         created: time.toDateString()
       }
     }
@@ -25,11 +27,24 @@ export default class StoryCreate extends React.Component {
   }
 
   componentDidMount() {
+    document.getElementById('profile-img').value && this.state.data.image ? this.setStateImage : null
+  }
 
+  setStateImage(){
+    const image = document.getElementById('profile-img').value
+    const data = { 
+      ...this.state.data, 
+      image: image 
+    }
+    this.setState({
+      data,
+      picture: false
+    })
   }
 
   handleChange(e) {
-    const data = { ...this.state.data, [e.target.name]: e.target.value }
+    const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value
+    const data = { ...this.state.data, [e.target.name]: value }
     this.setState({ data })
   }
 
