@@ -1,7 +1,7 @@
 import React from 'react'
 import ImageUpload from '../../../image-upload'
 
-const StoryForm = ({ fileupload, handleChange, handleSubmit, data }) => {
+const StoryForm = ({ handleImage, handleChange, handleSubmit, data }) => {
   return (
     <div className=''>
       <section className=''>
@@ -25,10 +25,12 @@ const StoryForm = ({ fileupload, handleChange, handleSubmit, data }) => {
 
             <div className="half-width">
               <label name="exampleMessage">Profile</label>
-              
+              {console.log(data)}
+             
               <ImageUpload 
-              
-              />
+                handleImage={handleImage}
+                data={data} />
+
               <input
                 id='profile-img'
                 className="input-area"
@@ -41,7 +43,7 @@ const StoryForm = ({ fileupload, handleChange, handleSubmit, data }) => {
 
             <div className="half-width">
               <label name="exampleMessage">Before</label>
-              <button id='before-btn' onClick={fileupload}>Upload</button>
+              <button id='before-btn'>Upload</button>
               <input
                 id='before-img'
                 className="input-area"
@@ -54,7 +56,7 @@ const StoryForm = ({ fileupload, handleChange, handleSubmit, data }) => {
 
             <div className="half-width">
               <label name="exampleMessage">After</label>
-              <button id='after-btn' onClick={fileupload}>Upload</button>
+              <button id='after-btn'>Upload</button>
               <input
                 id='after-img'
                 className="input-area"

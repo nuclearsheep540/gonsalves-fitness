@@ -17,7 +17,7 @@ export default class Landing extends React.Component {
         message: ''
       },
       message: { //data required by the API to deliver an email
-        to: 'matt.davey540@me.com',
+        to: 'gonsalvesfitness@gmail.com',
         from: 'hello@jackalmedia.co.uk',
         subject: '',
         textBody: 'This message was sent using the SocketLabs Node.js library!',
@@ -34,10 +34,8 @@ export default class Landing extends React.Component {
   //functions
   handleSubmit(e) {
     e.preventDefault()
-    console.log(this.sendData)
-
     const obj = {
-      to: 'matt.davey540@me.com', //client's email address
+      to: 'gonsalvesfitness@gmail.com', //client's email address
       from: this.state.form.email, //reply-to customer address
       subject: `${this.state.form.firstname} has contacted you at Gonsalves-Fitness.com`,
       textBody: this.state.form.message,
@@ -53,11 +51,11 @@ export default class Landing extends React.Component {
       `,
       messageType: 'basic'
     }
-
     axios.post('api/contact', obj)
       .then(res => console.log(res))
       .catch(err => console.log(err))
   }
+
   handleChange({ target: { name, value } }) {
     //from data from front end
     const form = { ...this.state.form, [name]: value }
@@ -130,7 +128,7 @@ export default class Landing extends React.Component {
                 
                 <p>I have also worked with semi-professional and professional athletes to aid and contribute to their abilities in competing for success in their sport.
                 </p>
-                <button>Learn More</button>
+                <button><Link to='/about'>Learn More</Link></button>
               </div>
             </section>
           </div>

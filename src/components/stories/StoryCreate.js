@@ -23,7 +23,18 @@ export default class StoryCreate extends React.Component {
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleImageUpdate = this.handleImageUpdate.bind(this)
     
+  }
+
+  handleImageUpdate(url) {
+    console.log('handleimgupdate', url)
+    this.setState({ 
+      data: {
+        ...this.state.data,
+        image: url
+      }
+    })
   }
 
   componentDidMount() {
@@ -46,6 +57,7 @@ export default class StoryCreate extends React.Component {
     const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value
     const data = { ...this.state.data, [e.target.name]: value }
     this.setState({ data })
+    console.log(data)
   }
 
   handleSubmit(e) {
@@ -62,10 +74,7 @@ export default class StoryCreate extends React.Component {
   back() {
     window.history.back()
   }
-  fileUpload(e){
-    e.preventDefault()
-    window.alert('Sorry, file upload is not available at the moment')
-  }
+
 
   render() {
     if (!this.state.data) return null
@@ -83,7 +92,7 @@ export default class StoryCreate extends React.Component {
               data={this.state.data}
               handleChange={this.handleChange}
               handleSubmit={this.handleSubmit}
-              fileupload={this.fileUpload}
+              handleImage={this.handleImageUpdate}
             />
           </div>
 

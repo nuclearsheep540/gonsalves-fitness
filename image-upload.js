@@ -5,6 +5,7 @@
 // http://localhost:8000/uploadbase
 import React, { Component } from 'react'
 import { storage } from './firebase-config'
+
 class ImageUpload extends Component {
   constructor(props) {
     super(props)
@@ -31,7 +32,7 @@ class ImageUpload extends Component {
             imageUpLoading: false
           })
           document.getElementById('profile-img').value = this.state.firebaseImageURL
-          console.log(this.state.firebaseImageURL)
+          this.props.handleImage(this.state.firebaseImageURL) 
 
         })
       })
@@ -39,7 +40,8 @@ class ImageUpload extends Component {
   render() {
     return (
       <>
-        <label>Image Upload</label>
+      {console.log('image', this.props)}
+        
         <input name='image' type="file" className="process__upload-btn" onChange={(e) => this.uploadImage(e)} />
         {this.state.imageUpLoading &&
           <p>Your image is uploading...this might take a second</p>

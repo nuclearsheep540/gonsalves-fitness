@@ -5,7 +5,8 @@ const injectionApiKey = 'n6G7MrTw5f2X3Ajp9QLi'
 
 const client = new SocketLabsClient(serverId, injectionApiKey)
 
-function send(req, res){
+// eslint-disable-next-line no-unused-vars
+function send(req, _res){
   client.send(req.body).then(
     (res) => {
       //Handle successful API call
