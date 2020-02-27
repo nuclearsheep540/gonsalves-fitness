@@ -5,7 +5,7 @@ const About = () => {
   return (
     <section id='about'>
       <div className='right'>
-        <h3>About</h3>
+        <h2>About</h2>
         <p>
           I am Rhyse and I set up Gonsalves Fitness to provide health and
           fitness services to those looking to better themselves, achieve their

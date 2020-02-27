@@ -3,7 +3,6 @@ import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
 import Landing from './components/landing/Landing'
-import Navbar from './components/common/Navbar'
 import Book from './components/booking/Book'
 import Topnav from './components/common/Topnav'
 import Login from './components/secure/Login'
@@ -15,6 +14,7 @@ import Footer from './components/common/Footer'
 
 import ImageUpload from '../image-upload'
 
+
 import './styles/main.scss'
 import 'normalize.css'
 
@@ -22,7 +22,6 @@ import 'normalize.css'
 const App = () => (
   <BrowserRouter>
     <Topnav />
-    <Navbar />
     
     <Switch>
       <Route exact path='/' component={Landing} />

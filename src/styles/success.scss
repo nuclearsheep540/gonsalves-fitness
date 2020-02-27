@@ -1,0 +1,20 @@
+//       SUCCESS
+// -------------
+
+img.story-profile {
+  max-width: 200px;
+  max-height: 200px;
+}
+.story-card {
+  min-width: 100vw;
+  min-height: 60vh;
+  color: white;
+}
+.gradient {
+  min-width: 100vw;
+  min-height: 60vh;
+  position: absolute;
+  z-index: 2;
+  // background: linear-gradient(0deg, rgba(32,32,32,0) 50%, rgba(32,32,32,1) 100%);
+  background: linear-gradient(0deg, rgba(0,0,0,0) 50%, rgba(32,32,32,0.8) 100%);
+}

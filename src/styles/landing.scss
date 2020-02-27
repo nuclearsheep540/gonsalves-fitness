@@ -1,24 +1,18 @@
+//  GLOBAL
+section {
+  display: flex;
+  flex-direction: column;
+  height: 60vh;
+  min-height: 300px;
+  text-align: center;
+  justify-content: center;
+  align-items: center;
+
+}
+
 //      IMAGE DIVIDERS 
 //--------------------
 
-#a, #b, #c {
-  margin: 0px;
-  min-height: 700px;
-  background-repeat: no-repeat;
-  background-size: cover;
-}
-
-#a {
-  background-image: url('/assets/AdobeStock_110683871_Preview.jpeg');
-}
-
-#b {
-  background-image: url('/assets/AdobeStock_165304674_Preview.jpeg');
-}
-
-#c {
-  background-image: url('/assets/AdobeStock_174210783_Preview.jpeg');
-}
 
 #about{
   background-color: black;
@@ -81,11 +75,8 @@ div.sticker:hover{
 }
 
 .right {
-  display: flex;
-  flex-direction:column;
-  align-items: center;
-  height: 100vh;
-  max-width: 30%;
+  height: fit-content;
+  max-width: 40%;
   position: absolute;
   right: 4%;
 }
@@ -105,26 +96,19 @@ h2.hero {
 // SERVICES
 .gridbox {
   display: flex;
-  flex-direction: row;
-  max-width: 70vw;
-  min-width: 680px;
+  max-width: fit-content;
   flex-wrap: wrap;
-  justify-content: center;
-  // border: 1px dashed red;
 }
 
 .gridcell {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center;
-  max-width: 120px;
-  min-width: 120px;
-  min-height: 120px;
-  margin: 20px;
-  // border: 1px dashed red;
-  list-style: none;
   text-align: center;
+  width: 120px;
+  min-height: 120px;
+  margin: 0 20px;
+  list-style: none;
 }
 
 .grid-icon {

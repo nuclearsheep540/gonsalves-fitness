@@ -3,8 +3,7 @@ import React from 'react'
 const Services = () => {
   return (
     <section className='' id='services'>
-      <h3>Personal Training</h3>
-      <h3>Massage & Soft Tissue Therapy</h3>
+      <h2>Personal Training</h2>
 
       <div className='gridbox'>
         <li className='gridcell'>

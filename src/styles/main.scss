@@ -1,35 +1,22 @@
 @import './admin.scss';
 @import './landing.scss';
 @import './contact_form.scss';
-
-
-$bright: #ffd912;
-
-section {
-  border: 2px dashed blue;
-  height: 60vh;
-  min-height: 300px;
-}
+@import './navbar.scss';
+@import './success.scss';
 
 * {
   font-family: Arial, Helvetica, sans-serif;
   letter-spacing: 0.01em ;
 }
+
 body {
   background-color: whitesmoke;
-}
-p, h3 {
-  text-align: center;
-  min-width: 50%;
 }
 
 html {
   scroll-behavior: smooth;
 }
 
-h1 {
-  font-size: larger;
-}
 button {
   min-width: 200px;
   height: 40px;
@@ -44,111 +31,7 @@ footer {
   width: 100vw;
   margin-top: 80px;
   overflow: hidden;
-}
-
-//             NAV BAR
-//--------------------
-nav.top-nav {
-  position: relative;
-  z-index: 99;
-  display: flex;
-  justify-content: space-evenly;
-  min-height: 7vh;
-  min-width: 100vw;
-  background-color: #ffd912;
-}
-nav.top-nav > a {
   text-align: center;
-  height: 100%;
-  width: 200px;
-  margin: auto;
-  color: black;
-  text-decoration: none;
-}
-img.top-logo {
-  max-height: 70px;
-  max-width: 200px;
-}
-
-nav.fill-nav {
-  top:0px;
-  transition: linear 0.4s;
-  position: fixed;
-  z-index: 9999;
-  display: flex;
-  justify-content: space-around;
-  border-bottom: 1px solid #202020;
-  min-height: 40px;
-  min-width: 100vw;
-  margin: auto;
-  background-color: #ffd912;
-}
-nav.fill-nav > a {
-  height: 50%;
-  margin: auto;
-  color: black;
-  text-decoration: none;
-  a {
-    color: black !important;
-  }
-}
-nav.no-nav {
-  top:-100px;
-  transition: linear 0.4s;
-  position: fixed;
-  z-index: 9999;
-  display: flex;
-  justify-content: space-around;
-  border: 1px solid red;
-  min-height: 40px;
-  min-width: 100vw;
-  margin: auto;
-  background-color: #E0AF05;
-}
-a {
-  text-decoration: none;
-  color: black;
-}
-
-
-//             SPACERS
-//--------------------
-.s16 {
-  padding: 16px;
-  padding-top: 64px;
-  padding-bottom: 64px;
-  margin: 16px;
-  margin: auto;
-}
-
-//                TEXT
-//--------------------
-.central {
-  text-align: center;
-  width: 100%;
-  height: 100%;
-  // margin: 50px 0px, 0px 0px;
-}
-
-//       SUCCESS
-// -------------
-
-img.story-profile {
-  max-width: 200px;
-  max-height: 200px;
-}
-.story-card {
-  min-width: 100vw;
-  min-height: 60vh;
-  color: white;
-}
-.gradient {
-  min-width: 100vw;
-  min-height: 60vh;
-  position: absolute;
-  z-index: 2;
-  // background: linear-gradient(0deg, rgba(32,32,32,0) 50%, rgba(32,32,32,1) 100%);
-  background: linear-gradient(0deg, rgba(0,0,0,0) 50%, rgba(32,32,32,0.8) 100%);
 }
 
 .on-top {
