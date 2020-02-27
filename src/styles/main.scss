@@ -1,5 +1,10 @@
+@import './admin.scss';
+@import './landing.scss';
+@import './contact_form.scss';
+
 
 $bright: #ffd912;
+
 * {
   font-family: Arial, Helvetica, sans-serif;
   letter-spacing: 0.01em ;
@@ -60,14 +65,7 @@ section {
   min-width: 100vw;
   // border: 1px dashed blue;
 }
-#s1{
-  background-image: url('/assets/AdobeStock_81397101_Preview.jpg') !important;
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-width: 100vw;
-  min-height: 60vh;
-  color: white;
-}
+
 
 
 footer {
@@ -168,6 +166,14 @@ a {
   background-image: url('/assets/AdobeStock_174210783_Preview.jpeg');
 }
 
+#s1{
+  background-image: url('/assets/AdobeStock_81397101_Preview.jpg') !important;
+  background-repeat: no-repeat;
+  background-size: cover;
+  min-width: 100vw;
+  min-height: 60vh;
+  color: white;
+}
 
 // WRAPPERS CONTAINERS
 //--------------------
@@ -270,46 +276,6 @@ div.sticker:hover{
   // margin: 50px 0px, 0px 0px;
 }
 
-//               FORMS
-//--------------------
-input, textarea {
-  border: 1px solid grey;
-}
-.form-area {
-  display: flex;
-  flex-wrap: wrap;
-  align-items: unset;
-  flex-direction: column;
-  justify-content: flex-start;
-  min-width: 600px;
-  // border: 1px solid rgba(0, 0, 0, 0.09);
-  margin: 10px;
-  min-height: 35px
-}
-
-.form-item {
-  margin: 4px;
-  max-width: 500px;
-  min-height: 35px;
-}
-.name-area {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: wrap;
-  min-height: 35px
-}
-.name-field {
-  margin: 10px;
-  min-width: 300px;
-  min-height: 35px
-}
-div.row {
-  display: flex;
-  flex-direction: row;
-  flex-wrap: nowrap;
-  width: 100%;
-}
-
 //       SUCCESS
 // -------------
 
@@ -335,123 +301,4 @@ img.story-profile {
   position: relative;
   z-index: 99;
   
-}
-// ################
-// ---------- ADMIN
-// ################
-
-//        GLOBAL
-// -------------
-.pad20 {
-  padding: 20px;
-}
-
-div > a, td > a {
-  display: inline-block;
-  background-color: white;
-  padding: 10px;
-  border: 2px solid ;
-  border-radius: 4px;
-  margin: 2px;
-}
-
-div.half-width{
-  max-width: 50vw;
-  margin: 0px;
-}
-div.image-upload{
-  display: flex;
-}
-
-div.two-up{
-  display: flex;
-  max-width: 95vw;
-  justify-content: space-evenly;
-  margin: auto;
-}
-div.col-left{
-  margin-left: 4%;
-  display: flex;
-  max-width: 40vw;
-  // border: 1px dashed red;
-  flex-wrap: nowrap;
-  margin-bottom: 50px;
-}
-div.col-right{
-  margin-right: 4%;
-  display: flex;
-  flex-direction: column;
-  max-width: 40vw;
-  // border: 1px dashed blue;
-  margin-bottom: 50px;
-}
-
-//        DASH
-// -----------
-
-table {
-  padding-top: 20px;
-}
-
-thead {
-  background-color: rgba(0,0,0,0.1);
-}
-
-th {
-  width: 300px;
-}
-th:nth-child(1){
-  width: 50px;
-}
-td {
-  text-align: center;
-}
-
-img.profile-icon {
-  max-width: 50px;
-  max-height: 50px;
-}
-
-//         EDIT FORM
-// -----------------
-
-img.admin-story-edit{
-  max-width: 300px;
-  max-height: 300px;
-  border: 2px solid $bright;
-  border-radius: 2px;
-  margin: 2px;
-}
-button#upload {
-  display:inline-block;
-  min-width: 50px;
-  width: 80px;
-  padding:5px 10px;
-}
-input#upload {
-  display: inline-block;
-  max-width: 300px;
-}
-label {
-  display: block;
-  width: 90px;
-}
-textarea {
-  resize: none;
-  width: 300px;
-  height: 180px;
-  overflow: scroll;
-}
-.input-area {
-  width: 380px;
-  margin: 10px;
-  padding: 10px;
-  border: 0.5px white solid;
-  border-radius: 4px;
-  // box-shadow: 0 0 10px 0 rgba(0, 0, 0, 0.2);
-  }
-
-.u-full-width {
-  width: 100%;
-  box-sizing: border-box;
 }

@@ -14,7 +14,7 @@ import StoryIndex from './components/stories/StoryIndex'
 
 import ImageUpload from '../image-upload'
 
-import './style.scss'
+import './styles/main.scss'
 import 'normalize.css'
 
 

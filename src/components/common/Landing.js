@@ -1,5 +1,5 @@
 import React from 'react'
-import ContactForm from './ContactForm'
+import ContactForm from '../landing/ContactForm'
 import axios from 'axios'
 import { Link } from 'react-router-dom'
 
@@ -8,7 +8,8 @@ export default class Landing extends React.Component {
     super()
 
     this.state = {
-      form: { //data from the front end, collected from the form
+      form: {
+        //data from the front end, collected from the form
         firstname: '',
         lastname: '',
         email: '',
@@ -16,7 +17,8 @@ export default class Landing extends React.Component {
         subject: '',
         message: ''
       },
-      message: { //data required by the API to deliver an email
+      message: {
+        //data required by the API to deliver an email
         to: 'gonsalvesfitness@gmail.com',
         from: 'hello@jackalmedia.co.uk',
         subject: '',
@@ -46,12 +48,15 @@ export default class Landing extends React.Component {
       Contact: ${this.state.form.number}<br />
       Email: ${this.state.form.email}<br />
       <br />
-      ${this.state.form.message.replace('\n\n', '<br /> <br />').replace('\n', '<br />')}<br />
+      ${this.state.form.message
+        .replace('\n\n', '<br /> <br />')
+        .replace('\n', '<br />')}<br />
       </html>
       `,
       messageType: 'basic'
     }
-    axios.post('api/contact', obj)
+    axios
+      .post('api/contact', obj)
       .then(res => console.log(res))
       .catch(err => console.log(err))
   }
@@ -68,18 +73,16 @@ export default class Landing extends React.Component {
       <>
         <main>
           <Link to='/booking'>
-            <div className='sticker'>
-              Book Now
-            </div>
+            <div className='sticker'>Book Now</div>
           </Link>
 
           <section className='hero'>
             <div className='lefty'>
               <h2 className='hero'>
-              BE<br></br>
-              YOUR<br></br>
-              BEST<br></br>
-              YOU<br></br>
+                BE<br></br>
+                YOUR<br></br>
+                BEST<br></br>
+                YOU<br></br>
               </h2>
             </div>
           </section>
@@ -92,24 +95,48 @@ export default class Landing extends React.Component {
 
                 <div className='gridbox'>
                   <li className='gridcell'>
-                    <img className='grid-icon' src='https://cdn4.iconfinder.com/data/icons/oakcons-2/16/Image-512.png'></img>
+                    <img
+                      className='grid-icon'
+                      src='https://cdn4.iconfinder.com/data/icons/oakcons-2/16/Image-512.png'
+                    ></img>
                     <h3>Service 1</h3>
-                    <p>Blah blah blah, blah, blah-blah-blah. Blah blah blah, blah, blah-blah-blah.</p>
+                    <p>
+                      Blah blah blah, blah, blah-blah-blah. Blah blah blah,
+                      blah, blah-blah-blah.
+                    </p>
                   </li>
                   <li className='gridcell'>
-                    <img className='grid-icon' src='https://cdn4.iconfinder.com/data/icons/oakcons-2/16/Image-512.png'></img>
+                    <img
+                      className='grid-icon'
+                      src='https://cdn4.iconfinder.com/data/icons/oakcons-2/16/Image-512.png'
+                    ></img>
                     <h3>Service 2</h3>
-                    <p>Blah blah blah, blah, blah-blah-blah. Blah blah blah, blah, blah-blah-blah.</p>
+                    <p>
+                      Blah blah blah, blah, blah-blah-blah. Blah blah blah,
+                      blah, blah-blah-blah.
+                    </p>
                   </li>
                   <li className='gridcell'>
-                    <img className='grid-icon' src='https://cdn4.iconfinder.com/data/icons/oakcons-2/16/Image-512.png'></img>
+                    <img
+                      className='grid-icon'
+                      src='https://cdn4.iconfinder.com/data/icons/oakcons-2/16/Image-512.png'
+                    ></img>
                     <h3>Service 3</h3>
-                    <p>Blah blah blah, blah, blah-blah-blah.Blah blah blah, blah, blah-blah-blah.</p>
+                    <p>
+                      Blah blah blah, blah, blah-blah-blah.Blah blah blah, blah,
+                      blah-blah-blah.
+                    </p>
                   </li>
                   <li className='gridcell'>
-                    <img className='grid-icon' src='https://cdn4.iconfinder.com/data/icons/oakcons-2/16/Image-512.png'></img>
+                    <img
+                      className='grid-icon'
+                      src='https://cdn4.iconfinder.com/data/icons/oakcons-2/16/Image-512.png'
+                    ></img>
                     <h3>Service 4</h3>
-                    <p>Blah blah blah, blah, blah-blah-blah. Blah blah blah, blah, blah-blah-blah.</p>
+                    <p>
+                      Blah blah blah, blah, blah-blah-blah. Blah blah blah,
+                      blah, blah-blah-blah.
+                    </p>
                   </li>
                 </div>
               </div>
@@ -122,55 +149,51 @@ export default class Landing extends React.Component {
               <div className='right'>
                 <h3>About</h3>
                 <p>
-                I am Rhyse and I set up Gonsalves Fitness to provide health and fitness services to those looking to better themselves, achieve their goals and reach their potential.</p>
-                
-                <p>I have helped many achieve these things in a variety of ways; from losing weight, preparing for their wedding day, recovery from injuries and improvement in daily quality of life.</p>
-                
-                <p>I have also worked with semi-professional and professional athletes to aid and contribute to their abilities in competing for success in their sport.
+                  I am Rhyse and I set up Gonsalves Fitness to provide health
+                  and fitness services to those looking to better themselves,
+                  achieve their goals and reach their potential.
                 </p>
-                <button><Link to='/about'>Learn More</Link></button>
+
+                <p>
+                  I have helped many achieve these things in a variety of ways;
+                  from losing weight, preparing for their wedding day, recovery
+                  from injuries and improvement in daily quality of life.
+                </p>
+
+                <p>
+                  I have also worked with semi-professional and professional
+                  athletes to aid and contribute to their abilities in competing
+                  for success in their sport.
+                </p>
+                <button>
+                  <Link to='/about'>Learn More</Link>
+                </button>
               </div>
             </section>
           </div>
 
-
-
           <div className='flex-wrap middle-center'>
-
             <section className='flex-container s16' id='s3'>
-
               <h3>Results</h3>
               <div className=''>
+                <div>" Quote, testimonal from client "</div>
 
-                <div>
-                 "
-                 Quote, testimonal from client
-                 "
-                </div>
-                
-                <div className=''>
-                  Image of before and after
-                </div>
+                <div className=''>Image of before and after</div>
 
                 {/* build login page for rhyse, user authentication */}
                 {/* clickthrough to success stories, build small-scale CMS for ryhse to self-publish */}
-                
               </div>
-
-            </section>
-
-            <section id='c'></section>
-
-            <section className='flex-container s16' id='s4'>
-
-              <center><img src='../assets/logo_bw.png' className='formlogo'></img></center>
-              <ContactForm
-                handleSubmit={this.handleSubmit}
-                handleChange={this.handleChange}
-                form={this.state.form}
-              />
             </section>
           </div>
+          <center>
+            <img src='../assets/logo_bw.png' className='formlogo'></img>
+          </center>
+          <ContactForm
+            handleSubmit={this.handleSubmit}
+            handleChange={this.handleChange}
+            form={this.state.form}
+          />
+
           <footer>
             <p>things</p>
             <p>things</p>
@@ -180,5 +203,4 @@ export default class Landing extends React.Component {
       </>
     )
   }
-
 }
