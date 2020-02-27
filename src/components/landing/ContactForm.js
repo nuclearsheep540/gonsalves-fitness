@@ -2,9 +2,8 @@ import React from 'react'
 
 const ContactForm = ({ handleSubmit, handleChange, form }) => {
   return (
-    
-    <div className='contact-form'>
-      <form onSubmit={handleSubmit}>
+    <section>
+      <form onSubmit={handleSubmit} className='contact-form'>
         <div>
           <label name='name' type='text'>
             Name
@@ -76,7 +75,7 @@ const ContactForm = ({ handleSubmit, handleChange, form }) => {
           <button type='submit'>Submit</button>
         </div>
       </form>
-    </div>
+    </section>
   )
 }
 

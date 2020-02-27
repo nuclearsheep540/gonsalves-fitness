@@ -1,0 +1,133 @@
+//      IMAGE DIVIDERS 
+//--------------------
+
+#a, #b, #c {
+  margin: 0px;
+  min-height: 700px;
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+#a {
+  background-image: url('/assets/AdobeStock_110683871_Preview.jpeg');
+}
+
+#b {
+  background-image: url('/assets/AdobeStock_165304674_Preview.jpeg');
+}
+
+#c {
+  background-image: url('/assets/AdobeStock_174210783_Preview.jpeg');
+}
+
+#about{
+  background-color: black;
+  background-image: url('/assets/rhyse.jpg') !important;
+  background-repeat: no-repeat;
+  background-size: contain;
+  min-width: 100vw;
+  min-height: 60vh;
+  color: white;
+}
+
+//             STICKER
+//--------------------
+div.sticker {
+  z-index: 9999;
+  position: fixed;
+  bottom: 0px;
+  right: 4%;
+  background-color: #ffd912;
+  color: black;
+  font-weight: 800;
+  font-size: larger;
+  text-align: center;
+  padding-top: 10px;
+  max-width: 140px;
+  min-width: 140px;
+  max-height: 30px;
+  min-height: 30px;
+  border-top-right-radius: 3px;
+  border-top-left-radius: 3px;
+  transition: 0.3s ease-out;
+}
+div.sticker:hover{
+  min-height: 54px;
+  max-height: 54px;
+}
+
+// WRAPPERS CONTAINERS
+//--------------------
+
+.hero {
+  justify-content: flex-start;
+  display: flex;
+  min-height: 93vh;
+  max-height: 93vh;
+  min-width: 100vw;
+  // border: 1px solid red;
+  background-color: #202020;
+  color: gold;
+  align-items: flex-start;
+  overflow: hidden;
+}
+
+.lefty {
+  display: flex;
+  padding-left: 4%;
+  display: flex;
+  min-width: 46%;
+  flex-wrap: wrap;
+}
+
+.right {
+  display: flex;
+  flex-direction:column;
+  align-items: center;
+  height: 100vh;
+  max-width: 30%;
+  position: absolute;
+  right: 4%;
+}
+
+h2.hero {
+  font-size: 79px;
+  color: white;
+}
+
+.flex-container {  
+  display: flex;
+  flex-direction: column;
+  height: inherit;
+  min-width: 620px;
+}
+
+// SERVICES
+.gridbox {
+  display: flex;
+  flex-direction: row;
+  max-width: 70vw;
+  min-width: 680px;
+  flex-wrap: wrap;
+  justify-content: center;
+  // border: 1px dashed red;
+}
+
+.gridcell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  max-width: 120px;
+  min-width: 120px;
+  min-height: 120px;
+  margin: 20px;
+  // border: 1px dashed red;
+  list-style: none;
+  text-align: center;
+}
+
+.grid-icon {
+  margin-top: 4px;
+  max-width: 70px;
+}

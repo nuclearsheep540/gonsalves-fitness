@@ -2,7 +2,7 @@ import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
 
-import Landing from './components/common/Landing'
+import Landing from './components/landing/Landing'
 import Navbar from './components/common/Navbar'
 import Book from './components/booking/Book'
 import Topnav from './components/common/Topnav'
@@ -11,6 +11,7 @@ import Dash from './components/secure/Dashboard'
 import StoryEdit from './components/stories/StoryEdit'
 import StoryCreate from './components/stories/StoryCreate'
 import StoryIndex from './components/stories/StoryIndex'
+import Footer from './components/common/Footer'
 
 import ImageUpload from '../image-upload'
 
@@ -36,6 +37,7 @@ const App = () => (
       <Route path='/uploadbase' component={ImageUpload} />
       
     </Switch>
+    <Footer />
   </BrowserRouter>
 )
 
