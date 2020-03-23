@@ -2,7 +2,7 @@ import React from 'react'
 
 const Feature = () => {
   return (
-    <section className='flex-container' id='feature'>
+    <section id='feature'>
       <h2>Results</h2>
       <div className='feature'>
         <div>&quot;Quote, testimonal from client&quot;</div>

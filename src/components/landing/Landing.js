@@ -6,6 +6,7 @@ import ContactForm from './ContactForm'
 import About from './About'
 import Services from './Services'
 import Feature from './Feature'
+import HeroCover from './HeroCover'
 
 export default class Landing extends React.Component {
   constructor() {
@@ -78,27 +79,16 @@ export default class Landing extends React.Component {
             <div className='sticker'>Book Now</div>
           </Link>
 
-          <div className='hero'>
-            <div className='lefty'>
-              <h2 className='hero'>
-                BE<br></br>
-                YOUR<br></br>
-                BEST<br></br>
-                YOU<br></br>
-              </h2>
-            </div>
-          </div>
+          <HeroCover />
 
           <Services />
 
           <About />
 
           <Feature />
-          
-          <center>
-            <img src='../assets/logo_bw.png' className='formlogo'></img>
-          </center>
-          
+
+          <section id='break' />
+            
           <ContactForm
             handleSubmit={this.handleSubmit}
             handleChange={this.handleChange}

@@ -2,7 +2,10 @@ import React from 'react'
 
 const ContactForm = ({ handleSubmit, handleChange, form }) => {
   return (
-    <section>
+    <section id='contactform'>
+      <center>
+        <img src='../assets/logo_bw.png' className='formlogo'></img>
+      </center>
       <form onSubmit={handleSubmit} className='contact-form'>
         <div>
           <label name='name' type='text'>

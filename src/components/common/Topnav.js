@@ -35,10 +35,10 @@ class TopNav extends React.Component {
     return (
       <nav className='top-nav' id='navbar'>
         <Link to='/'>Home</Link>
-        <Link to='/about'>About</Link>
-        <img src='../assets/logo_bw.png' className='central top-logo'></img>
+        <Link to='/about'>Training</Link>
+        {/* <img src='../assets/logo_bw.png' className='central top-logo'></img> */}
         <Link to='/booking'> Booking </Link>
-        <Link to='/success'>Success Stories</Link>
+        <Link to='/success'>Clients</Link>
       </nav>
     )
   }

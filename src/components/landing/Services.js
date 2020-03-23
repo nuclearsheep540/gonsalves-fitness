@@ -2,7 +2,7 @@ import React from 'react'
 
 const Services = () => {
   return (
-    <section className='' id='services'>
+    <section id='services'>
       <h2>Personal Training</h2>
 
       <div className='gridbox'>
@@ -10,44 +10,40 @@ const Services = () => {
           <img
             className='grid-icon'
             src='https://cdn4.iconfinder.com/data/icons/oakcons-2/16/Image-512.png'
-          ></img>
-          <h3>Service 1</h3>
+          />
+          <h3>Injury Rehabilitation</h3>
           <p>
-            Blah blah blah, blah, blah-blah-blah. Blah blah blah, blah,
-            blah-blah-blah.
+          Through massage, strength training, flexibility and muscle activation I can provide you with the best possible platform to fully recover and prevent future injury.
           </p>
         </li>
         <li className='gridcell'>
           <img
             className='grid-icon'
             src='https://cdn4.iconfinder.com/data/icons/oakcons-2/16/Image-512.png'
-          ></img>
-          <h3>Service 2</h3>
+          />
+          <h3>Sports Performance & Development</h3>
           <p>
-            Blah blah blah, blah, blah-blah-blah. Blah blah blah, blah,
-            blah-blah-blah.
+          Focusing on sports-specific and functional training to encourage development and reach your potential to compete.
           </p>
         </li>
         <li className='gridcell'>
           <img
             className='grid-icon'
             src='https://cdn4.iconfinder.com/data/icons/oakcons-2/16/Image-512.png'
-          ></img>
-          <h3>Service 3</h3>
+          />
+          <h3>Weight Loss</h3>
           <p>
-            Blah blah blah, blah, blah-blah-blah.Blah blah blah, blah,
-            blah-blah-blah.
+          Achieving your weight loss goals through strength training, a variety of cardio training and nutritional guidance. Allowing you to build an understanding of training and develop better eating habits.
           </p>
         </li>
         <li className='gridcell'>
           <img
             className='grid-icon'
             src='https://cdn4.iconfinder.com/data/icons/oakcons-2/16/Image-512.png'
-          ></img>
-          <h3>Service 4</h3>
+          />
+          <h3>Highly Valued Trainer-Client Relationship</h3>
           <p>
-            Blah blah blah, blah, blah-blah-blah. Blah blah blah, blah,
-            blah-blah-blah.
+          The relationship between myself and my clients is something I hold in very high regard. I believe an open dialogue and belief in each other is the key to reaching any goal.
           </p>
         </li>
       </div>

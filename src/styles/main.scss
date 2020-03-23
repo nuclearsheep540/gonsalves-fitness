@@ -25,11 +25,12 @@ button {
 }
 
 footer {
+  position: relative;
+  z-index: 1;
   background-color: black;
   color: white;
   height: 200px;
   width: 100vw;
-  margin-top: 80px;
   overflow: hidden;
   text-align: center;
 }
