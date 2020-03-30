@@ -62,38 +62,103 @@ div.login {
 //        DASH
 // -----------
 
-
-div.admin-nav {
-  margin: 0em;
+#clock {
   position: absolute;
-  height: 100vh;
-  width: 50px;
-  border: 1px solid black;
-  background-color: white;
-  ul {
-    padding: 16px;
-    list-style: none;
-    li {
-      text-align: center;
-      margin-bottom: 10px;
-    }
-  }
+  top: 0;
+  right: 0;
+  padding: 20px;
+  text-align: right;
+  font-family: 'Exo', sans-serif;
+  font-weight: 100;
+  font-size: 93.2px;
+}
+#admin-title {
+  font-family: 'Exo', sans-serif;
+  font-size: 40px;
+  padding: 0;
+  margin: 0;
+}
+#admin-greeting {
+  font-family: 'Exo', sans-serif;
+  font-size: 20px;
 }
 
-div.admin-dash {
-  position: absolute;
-  z-index: 0;
-  top: 0;
-  left: 100px;
-  height: 100vh;
+.admin-top {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 240px;
+  // border: 1px solid red;
+}
+
+.left {
+  // border: 1px solid greenyellow;
+}
+
+div#admin-wrap {
   width: 100vw;
+  height: 100vh;
+  display: flex;
+  flex-direction: row;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: fixed;
+  overflow: hidden;
+  color: white;
+  font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+footer#admin-footer {
+  font-weight: lighter;
+  font-size: 12px;
+  text-align: right;
+  position: fixed;
+  bottom: 0;
+  right: 20px;
+  height: 30px;
+  color: white;
+  background-color: rgba(0,0,0,0);
+}
+div.admin-nav {
+  display: flex;
+  justify-content: center;
+  height: 100vh;
+  width: 74px;
+  border-right: 1px solid rgba(255, 255, 255, 0.2);
+  background-color: rgba(255, 255, 255, 0.1);
+  ul {
+    display: flex;
+    flex-direction: column;
+    padding: 0;
+    list-style: none;
+    li {
+      margin-bottom: 20px;
+      width: 64px;
+      height: 64px;
+      img {
+        width: 100%;
+        border-radius: 3px;
+        cursor: pointer;
+      }
+      img#logout {
+        transform: translateX(4px);
+      }
+    }
+    
+  }
+  
 }
 
-table {
-  padding-top: 20px;
+div.admin-dash {
+  // display: flex;
+  // flex-direction: row;
+  background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(255,255,255,0) 60%);
+  height: 100vh;
+  padding: 20px;
+  width: 100vw;
+}
+
+.table {
+  visibility: hidden;
 }
 
 thead {
@@ -118,7 +183,11 @@ img.profile-icon {
 //         EDIT FORM
 // -----------------
 
-img.admin-story-edit{
+a#admin-new-client {
+  margin-bottom: 20px;
+}
+
+img.admin-story-edit {
   max-width: 300px;
   max-height: 300px;
   border: 2px solid $bright;
