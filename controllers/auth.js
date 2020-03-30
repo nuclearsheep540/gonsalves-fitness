@@ -1,6 +1,7 @@
 const User = require('../models/User')
 const jwt = require('jsonwebtoken')
 const { secret } = require('../config/environment')
+// const axios = require('axios')
 
 // REGISTER ROUTE - /register
 function register(req, res) {
@@ -22,7 +23,7 @@ function login(req, res) {
     })
     .catch(() => {
       res.status(401).json({ message: 'catch error' })
-      console.log('username = ',req.body.username ,'pass= =', req.body.password)
+      console.log('username = ',req.body.username ,'pass=', req.body.password)
     })
 }
 

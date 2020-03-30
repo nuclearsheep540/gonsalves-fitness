@@ -23,58 +23,65 @@ class Login extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    axios.post('/api/login', this.state.data)
+    axios
+      .post('/api/login', this.state.data)
       .then(res => {
         Auth.setToken(res.data.token)
         Auth.setName(res.data.name)
-        this.props.history.push('/dashboard')
+        this.props.history.push('/admin/dashboard')
       })
       .catch(err => console.log(err))
     console.log('submitted')
   }
 
-  render(){
+  render() {
     return (
-      <div className='col-left'>
-        <form className="login-form" onSubmit={this.handleSubmit}>
-          <h2 className="">Login</h2> 
-          <div className="">
-            <div className="">
-
-              <div className="">
-                <label className="">Name</label>
-                <div className="">
-                  <input
-                    className="input-area"
-                    name="name"
-                    type='text'
-                    placeholder="name"
-                    onChange={this.handleChange}
-                  />
-                </div>
-              </div>
-
-
-              <div className="">
-                <label className="">Password</label>
-                <div className="">
-                  <input
-                    className="input-area"
-                    type="password"
-                    name="password"
-                    placeholder="Password"
-                    onChange={this.handleChange}>
-                  </input>
-                </div>
-              </div>
-              <button type="submit" className="">Login</button>
-
-            </div>
-            <br />
-            
-          </div>
-        </form>
+      <>
+      <div>
+        <center><h1>Content Manager</h1></center>
+        
       </div>
+      <div className='login'>
+        <div className='col-left'>
+          <form className='login-form' onSubmit={this.handleSubmit}>
+            <h2 className=''>Login</h2>
+            <div className=''>
+              <div className=''>
+                <div className=''>
+                  <label className=''>Name</label>
+                  <div className=''>
+                    <input
+                      className='input-area'
+                      name='name'
+                      type='text'
+                      placeholder='name'
+                      onChange={this.handleChange}
+                    />
+                  </div>
+                </div>
+
+                <div className=''>
+                  <label className=''>Password</label>
+                  <div className=''>
+                    <input
+                      className='input-area'
+                      type='password'
+                      name='password'
+                      placeholder='Password'
+                      onChange={this.handleChange}
+                    ></input>
+                  </div>
+                </div>
+                <button type='submit' className=''>
+                  Login
+                </button>
+              </div>
+              <br />
+            </div>
+          </form>
+        </div>
+      </div>
+      </>
     )
   }
 }

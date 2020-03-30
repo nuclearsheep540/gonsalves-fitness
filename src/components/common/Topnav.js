@@ -12,10 +12,12 @@ class TopNav extends React.Component {
     this.handleScroll = this.handleScroll.bind(this)
   }
 
-  componentDidMount(){
+  componentDidMount() {
     const nav = document.getElementById('#navbar')
     if (nav) {
-      this.setState({ heroHeight: document.getElementById('#navbar').offsetHeight() })
+      this.setState({
+        heroHeight: document.getElementById('#navbar').offsetHeight()
+      })
       window.addEventListener('scroll', this.handleScroll)
     }
   }
@@ -32,6 +34,7 @@ class TopNav extends React.Component {
   }
 
   render() {
+    if (window.location.href.includes('admin')) return null
     return (
       <nav className='top-nav' id='navbar'>
         <Link to='/'>Home</Link>

@@ -63,7 +63,10 @@ div.sticker:hover{
 
 // WRAPPERS CONTAINERS
 //--------------------
-
+.hero-wrapper {
+  max-width: 100vw;
+  overflow: hidden;
+}
 .hero {
   display: flex;
   flex-direction: column;

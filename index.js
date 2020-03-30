@@ -5,10 +5,10 @@ const mongoose = require('mongoose')
 const bodyParser = require('body-parser')
 const logger = require('./lib/logger')
 const router = require('./config/router')
+require('dotenv').config()
 // const errorHandler = require('./lib/errorHandler')
+
 mongoose.set('useFindAndModify', false)
-
-
 
 mongoose.connect(dbURI,
   { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },

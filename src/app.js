@@ -26,6 +26,7 @@ import 'animate.css'
 
 
 const App = () => (
+
   <BrowserRouter>
     <Topnav />
     <Navbar />
@@ -34,7 +35,7 @@ const App = () => (
       <Route exact path='/' component={Landing} />
       <Route path='/booking' component={Book} />
       <Route exact path='/admin' component={Login} />
-      <Route exact path='/dashboard' component={Dash} />
+      <Route exact path='/admin/dashboard' component={Dash} />
       <Route path='/dash' component={Dash} />
       <Route path='/story/:id/' component={StoryEdit} />
       <Route path='/story' component={StoryCreate} />
