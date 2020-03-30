@@ -223,7 +223,7 @@ export default class Dashboard extends React.Component {
         </div>
 
         <footer id='admin-footer'>
-          {this.state.bg.alt_description} by {this.state.bg.user.name}
+          {this.state.bg.alt_description} by <a href={this.state.bg.links.html}>{this.state.bg.user.name}</a>
         </footer>
       </div>
     )

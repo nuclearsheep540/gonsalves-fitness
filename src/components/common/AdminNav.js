@@ -11,19 +11,25 @@ export default class AdminNav extends React.Component {
     }
     this.storyTable = this.storyTable.bind(this)
   }
-  storyTable() {
+
+  showStory() {
     const stories = document.querySelector('.table')
-    this.state.table ? ( 
-      stories.classList.remove('fadeOut'),
-      stories.style.visibility = 'visible',
-      stories.classList.add('fadeIn')
-    ) : ( 
-      stories.classList.remove('fadeIn'),
-      stories.classList.add('fadeOut'),
-      setTimeout(() => {
-        stories.style.visibility = 'hidden'
-      }, 900)
-    )
+    stories.classList.remove('fadeOut'),
+    stories.style.visibility = 'visible',
+    stories.classList.add('fadeIn')
+  }
+
+  hideStory() {
+    const stories = document.querySelector('.table')
+    stories.classList.remove('fadeIn'),
+    stories.classList.add('fadeOut'),
+    setTimeout(() => {
+      stories.style.visibility = 'hidden'
+    }, 900)
+  }
+  
+  storyTable() {
+    this.state.table ? this.showStory() : this.hideStory()
     this.setState({ table: !this.state.table })
   }
 

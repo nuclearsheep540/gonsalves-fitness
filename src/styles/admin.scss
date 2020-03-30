@@ -108,6 +108,10 @@ div#admin-wrap {
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
 footer#admin-footer {
+  a {
+    color: white;
+    text-decoration: underline;
+  }
   font-weight: lighter;
   font-size: 12px;
   text-align: right;
