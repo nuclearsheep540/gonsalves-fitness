@@ -169,42 +169,45 @@ section#feature {
 }
 
 .feature-card {
-  width: 60vw;
-  max-height: 100px;
   // border: 1px solid red;
+  width: 60vw;
+  height: fit-content;
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
   justify-content: center;
   padding: 0px;
+  margin: auto;
 }
 .left-q {
-  left: 20vw;
-  position: absolute;
+  // border: 1px solid pink;
+  block-size: 50px;
   margin: 0;
-  text-align: left;
   color: silver;
-  font-size: 64px;
-  padding-bottom: 50px;
+  font-size: 100px;
+  align-self: flex-start;
+
 }
 .right-q {
-  right: 20vw;
-  position: absolute;
+  // border: 1px solid pink;
+  block-size: 50px;
   margin: 0;
-  text-align: right;
   color: silver;
-  font-size: 64px;
-  padding-top: 100px;
+  font-size: 100px;
+  align-self: flex-end;
 }
 .feature-wrap {
-  padding: 80px;
-  margin: auto;
-  height: fit-content;
   // border: 1px solid blue;
+  text-align: left;
+  padding: 80px;
+  height: fit-content;
 }
 .feature-review {
-  color: grey;
+  color: hsl(0, 0%, 30%);
 }
 .feature-client {
-  color: grey;
+  color: hsl(0, 0%, 30%);
   text-align: right;
+}
+.check {
+  max-width: 30px;
 }

@@ -4,6 +4,7 @@
 section#contactform {
   // position: relative;
   display: flex;
+  flex-wrap: nowrap;
   flex-direction: column;
   justify-content: space-between;
 

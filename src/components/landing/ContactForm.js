@@ -9,9 +9,6 @@ const ContactForm = ({ handleSubmit, handleChange, form }) => {
 
       <form onSubmit={handleSubmit} className='contact-form'>
         <div>
-          <label name='name' type='text'>
-            Name
-          </label>
           <span>
             <input
               className='form-area'
@@ -33,12 +30,9 @@ const ContactForm = ({ handleSubmit, handleChange, form }) => {
         </div>
 
         <div>
-          <label name='email' type='text'>
-            Email
-          </label>
           <input
             className='form-area'
-            placeholder=''
+            placeholder='example@email.com'
             type='email'
             name='email'
             value={form.email}
@@ -47,12 +41,9 @@ const ContactForm = ({ handleSubmit, handleChange, form }) => {
         </div>
 
         <div>
-          <label name='number' type='text'>
-            Mobile
-          </label>
           <input
             className='form-area'
-            placeholder=''
+            placeholder='01234567890'
             type='number'
             name='number'
             value={form.number}
@@ -62,9 +53,6 @@ const ContactForm = ({ handleSubmit, handleChange, form }) => {
         </div>
 
         <div>
-          <label name='message' type='text'>
-            Message
-          </label>
           <textarea
             className=''
             placeholder='Your message'
@@ -75,6 +63,11 @@ const ContactForm = ({ handleSubmit, handleChange, form }) => {
           ></textarea>
         </div>
 
+        <div>
+          <input type='checkbox' className='check'>
+          </input>
+          <small>By submitting this form you agree to us to using and storing the above information to our privacy policy.</small>
+        </div>
         <div className='form-area'>
           <button type='submit'>Submit</button>
         </div>

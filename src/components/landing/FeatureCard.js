@@ -16,18 +16,18 @@ export default class FeatureCard extends React.Component {
     Axios.get('/api/story').then(res =>
       this.setState({ data: res.data.filter(elem => elem.featured === true) })
     )
-    // setInterval(() => {
-    //   setTimeout(()=>{
-    //     //car updates
-    //     this.autoCarousel()
-    //     //car in
-    //     this.carIn()
-    //   },500)
-    //   //wait
-    //   //car out
-    //   this.carOut()
-    //   // repeat --
-    // },3000)
+    setInterval(() => {
+      setTimeout(()=>{
+        //car updates
+        this.autoCarousel()
+        //car in
+        this.carIn()
+      },500)
+      //wait
+      //car out
+      this.carOut()
+      // repeat --
+    },5000)
   }
 
   carIn(){
@@ -63,13 +63,6 @@ export default class FeatureCard extends React.Component {
     
     return (
       <div>
-        {/* {this.state.data.map((story, i) => (
-          <div className='feature-wrap' key={i}>
-            <p >{story.review}</p>
-            <p className='feature-client'>- {story.client}</p>
-          </div>
-        ))} */}
-
         <div className='feature-wrap animated fast'>
           {review ? review.map((line, i) => (
             <p key={i} className='feature-review'>{line}</p>
