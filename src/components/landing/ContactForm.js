@@ -2,12 +2,8 @@ import React from 'react'
 
 const ContactForm = ({ handleSubmit, handleChange, form }) => {
   return (
-    <section id='contactform'>
-
-      <img src='../assets/logo_bw.png' className='formlogo'></img>
-
-
-      <form onSubmit={handleSubmit} className='contact-form'>
+    <div className='contact-form'>
+      <form onSubmit={handleSubmit} className=''>
         <div>
           <span>
             <input
@@ -63,16 +59,16 @@ const ContactForm = ({ handleSubmit, handleChange, form }) => {
           ></textarea>
         </div>
 
-        <div>
+        <div className='policy'>
           <input type='checkbox' className='check'>
           </input>
-          <small>By submitting this form you agree to us to using and storing the above information to our privacy policy.</small>
+          <small>By submitting this form you agree to us to using and storing your information according to our privacy policy.</small>
         </div>
         <div className='form-area'>
           <button type='submit'>Submit</button>
         </div>
       </form>
-    </section>
+    </div>
   )
 }
 

@@ -2,25 +2,25 @@
 //--------------------
 $bright: #ffd912;
 
-nav.top-nav {
-  position: absolute;
-  top: 0;
-  z-index: 99;
-  display: flex;
-  justify-content: space-evenly;
-  min-height: 7vh;
-  min-width: 100vw;
-  // background-color: #ffd912;
-  background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(255,255,255,0) 80%);
-  a {
-    text-align: center;
-    height: 100%;
-    width: 25%;
-    margin: auto;
-    color: white;
-    text-decoration: none;
-  }
-}
+// nav.top-nav {
+//   position: absolute;
+//   top: 0;
+//   z-index: 99;
+//   display: flex;
+//   justify-content: space-evenly;
+//   min-height: 7vh;
+//   min-width: 100vw;
+//   // background-color: #ffd912;
+//   background: linear-gradient(180deg, rgba(0,0,0,0.6) 0%, rgba(255,255,255,0) 80%);
+//   a {
+//     text-align: center;
+//     height: 100%;
+//     width: 25%;
+//     margin: auto;
+//     color: white;
+//     text-decoration: none;
+//   }
+// }
 
 img.top-logo {
   max-height: 70px;

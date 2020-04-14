@@ -1,0 +1,28 @@
+.gridbox {
+  display: flex;
+  margin: auto;
+  justify-content: center;
+  width: 50%;
+  height: fit-content;
+  max-width: 800px;
+  flex-wrap: wrap;
+}
+
+.gridcell {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  width: 275px;
+  min-height: 320px;
+  margin: 0 auto;
+  list-style: none;
+}
+
+.grid-icon {
+  margin-top: 4px;
+  max-width: 70px;
+}
+.service-heading {
+  height: 30px;
+}

@@ -28,8 +28,8 @@ import 'animate.css'
 
 const App = () => (
   <BrowserRouter>
-    <Topnav />
-    <Navbar />
+    {/* <Topnav />
+    <Navbar /> */}
 
     <Switch>
       <Route exact path='/' component={Landing} />

@@ -1,15 +1,3 @@
-//  GLOBAL
-section {
-  padding: 60px 0;
-  display: flex;
-  flex-direction: column;
-  height: fit-content;
-  min-height: 300px;
-  flex-wrap: wrap;
-  text-align: center;
-  justify-content: center;
-  align-items: center;
-}
 
 //      IMAGE DIVIDERS 
 //--------------------
@@ -25,20 +13,10 @@ section {
   color: white;
 }
 
-#break {
-  margin-top: 30vh;
-  background-image: url('/../assets/AdobeStock_110683871_Preview.jpeg');
-  background-repeat: no-repeat;
-  background-size: cover;
-  min-width: 100vw;
-  min-height: 80vh;
-  z-index: 0;  
-}
-
 //             STICKER
 //--------------------
 div.sticker {
-  z-index: 9999;
+  z-index: 9;
   position: fixed;
   bottom: 0px;
   right: 4%;
@@ -61,45 +39,7 @@ div.sticker:hover{
   max-height: 54px;
 }
 
-// WRAPPERS CONTAINERS
-//--------------------
-.hero-wrapper {
-  max-width: 100vw;
-  overflow: hidden;
-}
-.hero {
-  display: flex;
-  flex-direction: column;
-  position: relative;
-  top: 0px;
-  width: 106vw;
-  height: 105vh;
-  z-index: 2;
-  transition: ease-in-out;
-  transition-duration: 2s;
-  z-index: 1;
-}
-
-.hero-overlay {
-  position: absolute;
-  display: flex;
-  background-color: rgba(0, 0, 0, 0.0);
-  width: 106vw;
-  min-height: 105vh;
-  z-index: 2;
-  transition: ease-in-out;
-  transition-duration: 1s;
-}
-
-.hero-logo {
-  transform: translateX(-3.336vw) translateY(-2.8vh);
-  width: 70%;
-  height: 70%;
-  margin: auto;
-  filter: invert(1);
-  // border: 1px solid red;
-}
-
+// on success stories page
 .lefty {
   display: flex;
   padding-left: 4%;
@@ -118,96 +58,4 @@ div.sticker:hover{
 h2.hero {
   font-size: 79px;
   color: white;
-}
-
-.flex-container {  
-  display: flex;
-  flex-direction: column;
-  height: inherit;
-  min-width: 620px;
-}
-
-// SERVICES
-.gridbox {
-  display: flex;
-  margin: auto;
-  justify-content: center;
-  width: 50%;
-  height: fit-content;
-  max-width: 800px;
-  flex-wrap: wrap;
-}
-
-.gridcell {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  text-align: center;
-  width: 275px;
-  min-height: 320px;
-  margin: 0 auto;
-  list-style: none;
-}
-
-.grid-icon {
-  margin-top: 4px;
-  max-width: 70px;
-}
-.service-heading {
-  height: 30px;
-}
-
-//FEATURED TESTIMONIALS
-section#feature {
-  width: 100vw;
-  height: 60vh;
-  position: absolute;
-  z-index:1;
-  background-color: whitesmoke;
-  box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.6);
-  margin-bottom: 5px;
-}
-
-.feature-card {
-  // border: 1px solid red;
-  width: 60vw;
-  height: fit-content;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  padding: 0px;
-  margin: auto;
-}
-.left-q {
-  // border: 1px solid pink;
-  block-size: 50px;
-  margin: 0;
-  color: silver;
-  font-size: 100px;
-  align-self: flex-start;
-
-}
-.right-q {
-  // border: 1px solid pink;
-  block-size: 50px;
-  margin: 0;
-  color: silver;
-  font-size: 100px;
-  align-self: flex-end;
-}
-.feature-wrap {
-  // border: 1px solid blue;
-  text-align: left;
-  padding: 80px;
-  height: fit-content;
-}
-.feature-review {
-  color: hsl(0, 0%, 30%);
-}
-.feature-client {
-  color: hsl(0, 0%, 30%);
-  text-align: right;
-}
-.check {
-  max-width: 30px;
 }

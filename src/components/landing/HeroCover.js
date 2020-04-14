@@ -19,30 +19,25 @@ export default class HeroCover extends React.Component {
     }
     this.setState({ videoOptions })
 
-    setTimeout(() => {  
-      // overlay 40% alpha on video
-      document.querySelector('.hero-overlay').style.backgroundColor = 'rgba(0, 0, 0, 0.3)'
+    setTimeout(() => {
+      // overlay 40% alphwa on video
+      document.querySelector('.hero-overlay').style.backgroundColor =
+        'rgba(0, 0, 0, 0.3)'
       this.setState({ transition: true })
     }, 4000)
-    
   }
 
   render() {
     return (
-      <div className='hero-wrapper'>
-        <div className='hero'>
-          <div className='hero-overlay'>
-            {this.state.transition ? (
-              <img
-                src='../assets/logo_bw.png'
-                className='hero-logo animated fadeIn'
-              />
-            ) : (
-              <img />
-            )}
-          </div>
-          <VideoCover id='hero-vid' videoOptions={this.state.videoOptions} />
+      <div className='hero'>
+        <div className='hero-overlay'>
+          {this.state.transition && <img 
+            src='../assets/logo_bw.png'
+            className='hero-logo animated fadeIn'
+          />
+          }
         </div>
+        <VideoCover id='hero-vid' videoOptions={this.state.videoOptions} />
       </div>
     )
   }

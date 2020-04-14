@@ -17,11 +17,19 @@ export default class Footer extends React.Component {
   render() {
     if (this.props.location.includes('admin')) return null
     return (
-      <footer>
-        <p>External Booking Company</p>
-        <p>Merchandise</p>
-        <Link to='/admin'><p>Admin Panel</p></Link>
-      </footer>
+      <div className='container-fluid'>
+        <div className='row hero-video'>
+          <div className='col-sm-12'>
+            <footer>
+              <p>External Booking Company</p>
+              <p>Merchandise</p>
+              <Link to='/admin'>
+                <p>Admin Panel</p>
+              </Link>
+            </footer>
+          </div>
+        </div>
+      </div>
     )
   }
 }

@@ -75,25 +75,38 @@ export default class Landing extends React.Component {
     return (
       <>
         <main>
+          <div className='container-fluid'>
+            <div className='row hero-video'>
+              <div className='row'>
+                <HeroCover />
+              </div>
+            </div>
+            <div className='row services'>
+              <div className='row'>
+                <Services />
+              </div>
+            </div>
+            <div className='row feature'>
+              <div className='row'>
+                <About />
+              </div>
+              <div className='row'>
+                <Feature />
+              </div>
+            </div>
+            <div className='row contact'>
+              <div className='row'>
+                <ContactForm
+                  handleSubmit={this.handleSubmit}
+                  handleChange={this.handleChange}
+                  form={this.state.form}
+                />
+              </div>
+            </div>
+          </div>
           <Link to='/booking'>
             <div className='sticker'>Book Now</div>
           </Link>
-
-          <HeroCover />
-
-          <Services />
-
-          <About />
-
-          <Feature />
-
-          <section id='break' />
-            
-          <ContactForm
-            handleSubmit={this.handleSubmit}
-            handleChange={this.handleChange}
-            form={this.state.form}
-          />
         </main>
       </>
     )
