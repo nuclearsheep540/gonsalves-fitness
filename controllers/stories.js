@@ -34,6 +34,7 @@ function edit(req, res) {
     })
     .then(request => request.save())
     .then(request => res.status(202).json(request))
+    .then(request => console.log(request))
     .catch(err => console.log(err))
 }
 

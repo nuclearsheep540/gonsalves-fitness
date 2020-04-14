@@ -6,7 +6,7 @@ export default class FeatureCard extends React.Component {
     super()
     this.state = {
       data: [],
-      carIndex: 0
+      carIndex: 1
     }
     this.autoCarousel = this.autoCarousel.bind(this)
   }
@@ -16,18 +16,18 @@ export default class FeatureCard extends React.Component {
     Axios.get('/api/story').then(res =>
       this.setState({ data: res.data.filter(elem => elem.featured === true) })
     )
-    setInterval(() => {
-      setTimeout(()=>{
-        //car updates
-        this.autoCarousel()
-        //car in
-        this.carIn()
-      },500)
-      //wait
-      //car out
-      this.carOut()
-      // repeat --
-    },5000)
+    // setInterval(() => {
+    //   setTimeout(()=>{
+    //     //car updates
+    //     this.autoCarousel()
+    //     //car in
+    //     this.carIn()
+    //   },500)
+    //   //wait
+    //   //car out
+    //   this.carOut()
+    //   // repeat --
+    // },3000)
   }
 
   carIn(){
@@ -55,22 +55,26 @@ export default class FeatureCard extends React.Component {
   //func
   render() {
     if (!this.state.data) return null
-    console.log('front-end', this.state.data)
+    console.log('review:\n', review)
     console.log('max =', this.state.data.length)
     console.log('index =', this.state.carIndex)
+    
+    const review = this.state.data.map(elem => elem.review.match(/[^\r\n]+/g))[this.state.carIndex]
+    
     return (
       <div>
         {/* {this.state.data.map((story, i) => (
           <div className='feature-wrap' key={i}>
-            <p className='feature-review'>{story.review}</p>
+            <p >{story.review}</p>
             <p className='feature-client'>- {story.client}</p>
           </div>
         ))} */}
 
         <div className='feature-wrap animated fast'>
-          <p className='feature-review'>
-            {this.state.data.map(elem => elem.review)[this.state.carIndex]}
-          </p>
+          {review ? review.map((line, i) => (
+            <p key={i} className='feature-review'>{line}</p>
+          )) : ''}
+          
           <p className='feature-client'>
             - {this.state.data.map(elem => elem.client)[this.state.carIndex]}
           </p>
