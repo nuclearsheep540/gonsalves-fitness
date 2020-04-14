@@ -16,25 +16,41 @@ export default class FeatureCard extends React.Component {
     Axios.get('/api/story').then(res =>
       this.setState({ data: res.data.filter(elem => elem.featured === true) })
     )
-    this.autoCarousel()
+    setInterval(() => {
+      setTimeout(()=>{
+        //car updates
+        this.autoCarousel()
+        //car in
+        this.carIn()
+      },500)
+      //wait
+      //car out
+      this.carOut()
+      // repeat --
+    },5000)
+  }
+
+  carIn(){
+    document.getElementsByClassName('feature-wrap')[0].classList.remove('fadeOut')
+    document.getElementsByClassName('feature-wrap')[0].classList.add('fadeIn')
+  }
+  carOut(){
+    document.getElementsByClassName('feature-wrap')[0].classList.remove('fadeIn')
+    document.getElementsByClassName('feature-wrap')[0].classList.add('fadeOut')
   }
 
   autoCarousel() {
     console.log('card select check', card)
     const card = document.getElementsByClassName('feature-wrap')
-    setInterval(() => {
-      if (this.state.carIndex !== this.state.data.length - 1) {
-        console.log('going up')
-        const carIndex = this.state.carIndex + 1
-        this.setState({ carIndex })
-      } else {
-        console.log('resetting')
-        this.setState({ carIndex: 0 })
-      }
-    },3000)
+    if (this.state.carIndex !== this.state.data.length - 1) {
+      console.log('going up')
+      const carIndex = this.state.carIndex + 1
+      this.setState({ carIndex })
+    } else {
+      console.log('resetting')
+      this.setState({ carIndex: 0 })
+    }
   }
-
-
 
   //func
   render() {
@@ -51,7 +67,7 @@ export default class FeatureCard extends React.Component {
           </div>
         ))} */}
 
-        <div className='feature-wrap animated'>
+        <div className='feature-wrap animated fast'>
           <p className='feature-review'>
             {this.state.data.map(elem => elem.review)[this.state.carIndex]}
           </p>

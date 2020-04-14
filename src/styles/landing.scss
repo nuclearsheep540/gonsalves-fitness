@@ -169,25 +169,34 @@ section#feature {
 }
 
 .feature-card {
-  width: 50vw;
+  width: 60vw;
   max-height: 100px;
   // border: 1px solid red;
   display: flex;
   flex-direction: column;
   justify-content: center;
-  padding: 10px;
+  padding: 0px;
 }
 .left-q {
+  left: 20vw;
+  position: absolute;
+  margin: 0;
   text-align: left;
   color: silver;
-  font-size: 44px;
+  font-size: 64px;
+  padding-bottom: 50px;
 }
 .right-q {
+  right: 20vw;
+  position: absolute;
+  margin: 0;
   text-align: right;
   color: silver;
-  font-size: 44px;
+  font-size: 64px;
+  padding-top: 100px;
 }
 .feature-wrap {
+  padding: 80px;
   margin: auto;
   height: fit-content;
   // border: 1px solid blue;
