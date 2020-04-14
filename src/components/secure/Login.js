@@ -35,6 +35,7 @@ class Login extends React.Component {
   }
 
   render() {
+    console.log('admin', window.location.href)
     return (
       <>
       <div>
@@ -48,26 +49,26 @@ class Login extends React.Component {
             <div className=''>
               <div className=''>
                 <div className=''>
-                  <label className=''>Name</label>
+                  
                   <div className=''>
                     <input
                       className='input-area'
                       name='name'
                       type='text'
-                      placeholder='name'
+                      placeholder='username'
                       onChange={this.handleChange}
                     />
                   </div>
                 </div>
 
                 <div className=''>
-                  <label className=''>Password</label>
+                  
                   <div className=''>
                     <input
                       className='input-area'
                       type='password'
                       name='password'
-                      placeholder='Password'
+                      placeholder='password'
                       onChange={this.handleChange}
                     ></input>
                   </div>

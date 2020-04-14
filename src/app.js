@@ -25,12 +25,12 @@ import 'animate.css'
 // routes need to path from /admin 
 
 
-const App = () => (
 
+const App = () => (
   <BrowserRouter>
     <Topnav />
     <Navbar />
-    
+
     <Switch>
       <Route exact path='/' component={Landing} />
       <Route path='/booking' component={Book} />
@@ -43,9 +43,12 @@ const App = () => (
       <Route path='/about' component={AboutMe} />
 
       <Route path='/uploadbase' component={ImageUpload} />
-      
     </Switch>
-    <Footer />
+    {window.location.href.includes('admin') ? (
+      ''
+    ) : (
+      <Footer location={window.location.href} />
+    )}
   </BrowserRouter>
 )
 

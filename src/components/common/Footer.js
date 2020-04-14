@@ -1,22 +1,27 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
-const Footer = () => {
-  console.log(
-    window.location
-  )
+export default class Footer extends React.Component {
+  constructor() {
+    super()
+    this.state = {
+  
+    }
+    //binds
+  }
+  //funct
+  componentDidMount(){
+    //
+  }
 
-  if (!window.location.href.includes('admin')) {
+  render() {
+    if (this.props.location.includes('admin')) return null
     return (
       <footer>
-        <p>things</p>
-        <p>things</p>
-        <p>and morethings</p>
+        <p>External Booking Company</p>
+        <p>Merchandise</p>
+        <Link to='/admin'><p>Admin Panel</p></Link>
       </footer>
-    )
-  } else {
-    return (
-      ''
     )
   }
 }
-export default Footer

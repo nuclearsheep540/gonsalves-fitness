@@ -116,6 +116,7 @@ export default class Dashboard extends React.Component {
   }
   componentWillUnmount() {
     clearInterval(this.timerID)
+    window.location.reload()
   }
 
   tick() {
@@ -133,10 +134,10 @@ export default class Dashboard extends React.Component {
     e.preventDefault()
     window.confirm(`Are you sure you wish to delete ${e.target.name}'s story?`)
       ? axios
-          .delete(`/api/story/${id}`, {
-            headers: { Authorization: `Bearer ${Auth.getToken()}` }
-          })
-          .then(window.location.reload())
+        .delete(`/api/story/${id}`, {
+          headers: { Authorization: `Bearer ${Auth.getToken()}` }
+        })
+        .then(window.location.reload())
       : console.log(false)
   }
 
@@ -151,7 +152,7 @@ export default class Dashboard extends React.Component {
     return (
       <div
         id='admin-wrap'
-        style={{ backgroundImage: `url(${this.state.bg.urls.regular})` }}
+        style={{ backgroundImage: `url(${this.state.bg.urls.full})` }}
       >
         <AdminNav />
 

@@ -67,7 +67,7 @@ export default class StoryCreate extends React.Component {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(res => console.log(res))
-      .then(this.props.history.push('/dashboard'))
+      .then(this.props.history.push('/admin/dashboard'))
       .then(window.location.reload())
       .catch(err => console.log(err))
   }

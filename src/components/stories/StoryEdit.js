@@ -43,7 +43,7 @@ export default class StoryEdit extends React.Component {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(res => console.log('axios put',res))
-      .then(this.props.history.push('/dashboard'))
+      .then(this.props.history.push('/admin/dashboard'))
       .then(window.location.reload())
       .catch(err => console.log(err))
   }

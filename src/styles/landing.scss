@@ -1,9 +1,9 @@
 //  GLOBAL
 section {
-  padding: 30px 0;
+  padding: 60px 0;
   display: flex;
   flex-direction: column;
-  height: 80vh;
+  height: fit-content;
   min-height: 300px;
   flex-wrap: wrap;
   text-align: center;
@@ -31,7 +31,7 @@ section {
   background-repeat: no-repeat;
   background-size: cover;
   min-width: 100vw;
-  min-height: 60vh;
+  min-height: 80vh;
   z-index: 0;  
 }
 
@@ -93,8 +93,8 @@ div.sticker:hover{
 
 .hero-logo {
   transform: translateX(-3.336vw) translateY(-2.8vh);
-  width: fit-content;
-  height: fit-content;
+  width: 70%;
+  height: 70%;
   margin: auto;
   filter: invert(1);
   // border: 1px solid red;
@@ -133,6 +133,8 @@ h2.hero {
   margin: auto;
   justify-content: center;
   width: 50%;
+  height: fit-content;
+  max-width: 800px;
   flex-wrap: wrap;
 }
 
@@ -141,9 +143,9 @@ h2.hero {
   flex-direction: column;
   align-items: center;
   text-align: center;
-  width: 40%;
+  width: 275px;
   min-height: 320px;
-  margin: 0 20px;
+  margin: 0 auto;
   list-style: none;
 }
 
@@ -151,14 +153,49 @@ h2.hero {
   margin-top: 4px;
   max-width: 70px;
 }
+.service-heading {
+  height: 30px;
+}
 
-//Featured clients
+//FEATURED TESTIMONIALS
 section#feature {
   width: 100vw;
+  height: 60vh;
   position: absolute;
   z-index:1;
-  background-color: white;
+  background-color: whitesmoke;
   box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.6);
   margin-bottom: 5px;
 }
 
+.feature-card {
+  width: 50vw;
+  max-height: 100px;
+  // border: 1px solid red;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  padding: 10px;
+}
+.left-q {
+  text-align: left;
+  color: silver;
+  font-size: 44px;
+}
+.right-q {
+  text-align: right;
+  color: silver;
+  font-size: 44px;
+}
+.feature-wrap {
+  margin: auto;
+  height: fit-content;
+  // border: 1px solid blue;
+}
+.feature-review {
+  color: grey;
+}
+.feature-client {
+  color: grey;
+  text-align: right;
+}
