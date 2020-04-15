@@ -13,6 +13,7 @@ import StoryCreate from './components/stories/StoryCreate'
 import StoryIndex from './components/stories/StoryIndex'
 import AboutMe from './components/aboutPage/AboutMe'
 import Footer from './components/common/Footer'
+import Privacy from './components/common/Privacy'
 
 import ImageUpload from '../image-upload'
 
@@ -28,8 +29,8 @@ import 'animate.css'
 
 const App = () => (
   <BrowserRouter>
-    {/* <Topnav />
-    <Navbar /> */}
+    {/* <Topnav /> */}
+    {/* <Navbar /> */}
 
     <Switch>
       <Route exact path='/' component={Landing} />
@@ -41,6 +42,7 @@ const App = () => (
       <Route path='/story' component={StoryCreate} />
       <Route path='/success' component={StoryIndex} />
       <Route path='/about' component={AboutMe} />
+      <Route path ='/privacy' component={Privacy} />
 
       <Route path='/uploadbase' component={ImageUpload} />
     </Switch>

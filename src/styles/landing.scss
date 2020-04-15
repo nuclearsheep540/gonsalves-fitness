@@ -4,11 +4,12 @@
 
 
 #about {
+  border: 1px solid red;
   background-color: black;
   background-image: url('/assets/rhyse.jpg') !important;
   background-repeat: no-repeat;
   background-size: contain;
-  min-width: 100vw;
+  width: 100vw;
   height: 60vh;
   color: white;
 }

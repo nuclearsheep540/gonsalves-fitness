@@ -1,10 +1,27 @@
-.video {
-  height: 100vh;
-}
-.overlay {
-  top: 0;
-  position: absolute;
-  img {
-    filter: invert(2);
+.hero-video {
+
+  .hero {
+    max-width: inherit;
+
+
+  }
+  .video {
+    height: 100vh;
+
+  }
+  .overlay {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    position: absolute;
+    z-index: 9;
+    margin: 0 auto;
+    img {
+      filter: invert(2);
+    }
   }
 }
+

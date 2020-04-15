@@ -74,28 +74,27 @@ export default class Landing extends React.Component {
     console.log(this.state)
     return (
       <>
-        <main>
           <div className='container-fluid'>
             <div className='row hero-video'>
-              <div className='row'>
+              <div className='col'>
                 <HeroCover />
               </div>
             </div>
             <div className='row services'>
-              <div className='row'>
+              <div className='col'>
                 <Services />
               </div>
             </div>
             <div className='row feature'>
-              <div className='row'>
+              <div className='col'>
                 <About />
               </div>
-              <div className='row'>
+              <div className='col'>
                 <Feature />
               </div>
             </div>
             <div className='row contact'>
-              <div className='row'>
+              <div className='col'>
                 <ContactForm
                   handleSubmit={this.handleSubmit}
                   handleChange={this.handleChange}
@@ -104,10 +103,9 @@ export default class Landing extends React.Component {
               </div>
             </div>
           </div>
-          <Link to='/booking'>
-            <div className='sticker'>Book Now</div>
-          </Link>
-        </main>
+          
+            <div className='sticker'><Link to='/booking'>Book Now</Link></div>
+          
       </>
     )
   }

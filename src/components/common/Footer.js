@@ -4,32 +4,29 @@ import { Link } from 'react-router-dom'
 export default class Footer extends React.Component {
   constructor() {
     super()
-    this.state = {
-  
-    }
+    this.state = {}
     //binds
   }
   //funct
-  componentDidMount(){
+  componentDidMount() {
     //
   }
 
   render() {
     if (this.props.location.includes('admin')) return null
     return (
-      <div className='container-fluid'>
-        <div className='row hero-video'>
-          <div className='col-sm-12'>
-            <footer>
-              <p>External Booking Company</p>
-              <p>Merchandise</p>
-              <Link to='/admin'>
-                <p>Admin Panel</p>
-              </Link>
-            </footer>
-          </div>
+      <footer>
+        <div className='container-fluid'>
+          <p>External Booking</p>
+          <p>Merchandise</p>
+          <Link to='/privacy'>
+            <p>Privacy Policy</p>
+          </Link>
+          <Link to='/admin'>
+            <p>Admin Panel</p>
+          </Link>
         </div>
-      </div>
+      </footer>
     )
   }
 }

@@ -1,12 +1,14 @@
 #feature {
+  border: 1px solid red;
   display: flex;
   flex-direction: column;
   justify-content: center;
   background-color: whitesmoke;
   min-height: 500px;
+  width: 100vw;
 }
 .feature-card {
-  // border: 1px solid red;
+  border: 1px solid blue;
   width: 60vw;
   height: fit-content;
   display: flex;
@@ -17,7 +19,7 @@
 }
 
 .left-q {
-  // border: 1px solid pink;
+  border: 1px solid pink;
   block-size: 50px;
   margin: 0;
   color: silver;
@@ -26,7 +28,7 @@
 
 }
 .right-q {
-  // border: 1px solid pink;
+  border: 1px solid pink;
   block-size: 50px;
   margin: 0;
   color: silver;
@@ -34,7 +36,7 @@
   align-self: flex-end;
 }
 .feature-wrap {
-  // border: 1px solid blue;
+  border: 1px solid blue;
   text-align: left;
   padding: 80px;
   height: fit-content;

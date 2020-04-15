@@ -31,13 +31,12 @@ export default class HeroCover extends React.Component {
     return (
       <div className='hero'>
         <div className='video'>
+          <div className='overlay'>
+            {this.state.transition && (
+              <img src='../assets/logo_bw.png' className='animated fadeIn' />
+            )}
+          </div>
           <VideoCover id='hero-vid' videoOptions={this.state.videoOptions} />
-        </div>
-
-        <div className='overlay'>
-          {this.state.transition && (
-            <img src='../assets/logo_bw.png' className='animated fadeIn' />
-          )}
         </div>
       </div>
     )
