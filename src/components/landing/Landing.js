@@ -19,55 +19,65 @@ export default class Landing extends React.Component {
         lastname: '',
         email: '',
         number: '',
-        subject: '',
         message: ''
       },
-      message: {
-        //data required by the API to deliver an email
-        to: 'gonsalvesfitness@gmail.com',
-        from: 'hello@jackalmedia.co.uk',
-        subject: '',
-        textBody: 'This message was sent using the SocketLabs Node.js library!',
-        htmlBody: '',
-        messageType: 'basic'
-      }
+      privacy: false,
+      formstatus: 'open'
     }
 
     //binds
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handlePrivacy = this.handlePrivacy.bind(this)
   }
 
   //functions
   handleSubmit(e) {
+    // form has 3 states
+    // open = ready for input
+    // pending = data is processing
+    // status = status response from backend
+    this.setState({ formstatus: 'pending' })
     e.preventDefault()
     const obj = {
+      privacy: this.state.privacy,
       to: 'gonsalvesfitness@gmail.com', //client's email address
       from: this.state.form.email, //reply-to customer address
       subject: `${this.state.form.firstname} has contacted you at Gonsalves-Fitness.com`,
       textBody: this.state.form.message,
       htmlBody: `
       <html>
-      From: 
-      ${this.state.form.firstname}, ${this.state.form.lastname}<br />
-      Contact: ${this.state.form.number}<br />
-      Email: ${this.state.form.email}<br />
-      <br />
-      ${this.state.form.message.replace('\n\n', '<br /> <br />')}<br />
-      </html>
-      `,
+      <div>
+      <p>From: ${this.state.form.firstname}, ${this.state.form.lastname}</p>
+      <p>Contact: ${this.state.form.number}</p>
+      <p>Email: ${this.state.form.email}</p>
+      <p>${this.state.form.message.replace('\n\n', '<br /> <br />')}</p>
+      </div>
+      </html>`,
       messageType: 'basic'
     }
-    axios
-      .post('api/contact', obj)
-      .then(res => console.log(res))
-      .catch(err => console.log(err))
+    setTimeout(()=>{
+      axios
+        .post('api/contact', obj)
+        .then(res => {
+          console.log(res.status)
+          this.setState({ formstatus: 'status' + res.status })
+        })
+        .catch(err => {
+          console.log(err)
+          this.setState({ formstatus: 'error' })
+        })
+    },500)
   }
 
   handleChange({ target: { name, value } }) {
     //from data from front end
     const form = { ...this.state.form, [name]: value }
     this.setState({ form })
+  }
+  handlePrivacy(){
+    const privacy = event.target.checked
+    this.setState({ privacy })
   }
 
   render() {
@@ -99,12 +109,15 @@ export default class Landing extends React.Component {
                   handleSubmit={this.handleSubmit}
                   handleChange={this.handleChange}
                   form={this.state.form}
+                  status={this.state.formstatus}
+                  handleprivacy={this.handlePrivacy}
+                  privacy={this.state.privacy}
                 />
               </div>
             </div>
           </div>
           
-            <div className='sticker'><Link to='/booking'>Book Now</Link></div>
+        <div className='sticker'><Link to='/booking'>Book Now</Link></div>
           
       </>
     )

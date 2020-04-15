@@ -16,18 +16,18 @@ export default class FeatureCard extends React.Component {
     Axios.get('/api/story').then(res =>
       this.setState({ data: res.data.filter(elem => elem.featured === true) })
     )
-    setInterval(() => {
-      setTimeout(()=>{
-        //car updates
-        this.autoCarousel()
-        //car in
-        this.carIn()
-      },500)
-      //wait
-      //car out
-      this.carOut()
-      // repeat --
-    },5000)
+    // setInterval(() => {
+    //   setTimeout(()=>{
+    //     //car updates
+    //     this.autoCarousel()
+    //     //car in
+    //     this.carIn()
+    //   },500)
+    //   //wait
+    //   //car out
+    //   this.carOut()
+    //   // repeat --
+    // },5000)
   }
 
   carIn(){
@@ -40,8 +40,6 @@ export default class FeatureCard extends React.Component {
   }
 
   autoCarousel() {
-    console.log('card select check', card)
-    const card = document.getElementsByClassName('feature-wrap')
     if (this.state.carIndex !== this.state.data.length - 1) {
       console.log('going up')
       const carIndex = this.state.carIndex + 1
@@ -55,12 +53,10 @@ export default class FeatureCard extends React.Component {
   //func
   render() {
     if (!this.state.data) return null
-    console.log('review:\n', review)
-    console.log('max =', this.state.data.length)
-    console.log('index =', this.state.carIndex)
-    
     const review = this.state.data.map(elem => elem.review.match(/[^\r\n]+/g))[this.state.carIndex]
-    
+    review && console.log('review:\n', review)
+    console.log(`max ${this.state.data.length}
+pos ${this.state.carIndex}`)    
     return (
       <div>
         <div className='feature-wrap animated fast'>

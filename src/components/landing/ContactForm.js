@@ -1,9 +1,9 @@
 import React from 'react'
 
-const ContactForm = ({ handleSubmit, handleChange, form }) => {
+const ContactForm = ({ handleSubmit, handleChange, form, status, handleprivacy, privacy }) => {
   return (
     <div className='contact-form'>
-      <form onSubmit={handleSubmit} className=''>
+      <form onSubmit={handleSubmit} className={status}>
         <div>
           <span>
             <input
@@ -60,12 +60,18 @@ const ContactForm = ({ handleSubmit, handleChange, form }) => {
         </div>
 
         <div className='policy'>
-          <input type='checkbox' className='check'>
+          <input 
+            className='check'
+            type='checkbox'
+            name='privacy'
+            value={form.privacy}
+            onChange={handleprivacy}
+          >
           </input>
           <small>By submitting this form you agree to us to using and storing your information according to our privacy policy.</small>
         </div>
         <div className='form-area'>
-          <button type='submit'>Submit</button>
+          <button type='submit' className={privacy ? '' : 'disabled'}>Submit</button>
         </div>
       </form>
     </div>

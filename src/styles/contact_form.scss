@@ -7,13 +7,29 @@
   width: 400px;
   border: 1px solid red;
 
-  form {
+  form{
     margin: auto;
     display: flex;
     flex-direction: column;
     justify-content: space-around;
     width: 350px;
     height: 350px;
-    border: 1px solid blue;
   }
+  form.open {
+    border: 3px solid blue;
+  }
+  form.pending {
+    border: 3px solid orange;
+  }
+  form.status201 {
+    border: 3px solid greenyellow;
+  }
+  form.error {
+    border: 3px solid red;
+  }
+}
+.disabled {
+  pointer-events: none;
+  color: grey;
+  opacity: 50%;
 }

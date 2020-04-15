@@ -5,7 +5,9 @@ const story = require('../controllers/stories')
 const secureRoute = require('../lib/secureRoute')
 
 router.route('/contact')
-  .post(contactForm.send)
+  .post(contactForm.create) //accept contact, store
+   // post to api
+   // update stored msg with http status
 
 router.route('/login') // just handling user login controller
   .post(users.login) // we dont use a param.id to find the user, see the controller
