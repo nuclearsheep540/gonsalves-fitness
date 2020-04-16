@@ -1,3 +1,4 @@
+const logger = require('../lib/logger')
 const { SocketLabsClient } = require('@socketlabs/email')
 
 const serverId = 30696
@@ -9,11 +10,11 @@ const Message = require('../models/Message')
 
 function create(req, res, next) {
   Message.create(req.body)
-    .then(index => res.status(201).json(index))
-    .then(res => {
-      console.log(res.req.body)
-      return res
+    .then(index => {
+      res.status(201).json(index)
+      send(req)
     })
+    .then(res => res)
     .catch(next)
 }
 
@@ -23,11 +24,11 @@ function send(req, _res){
   client.send(req.body).then(
     (res) => {
       //Handle successful API call
-      console.log(res)
+      logger.info(res)
     },
     (err) => {
       //Handle error making API call
-      console.log(err)
+      logger.error(err)
     })
 }
 

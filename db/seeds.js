@@ -2,6 +2,7 @@ const mongoose = require('mongoose')
 const { dbURI } = require('../config/environment') 
 const User = require('../models/User')
 const Story = require('../models/Stories')
+const logger = require('../lib/logger')
 
 const time = new Date
 
@@ -9,7 +10,7 @@ mongoose.connect(
   dbURI, 
   { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },
   (err, db) => {
-    if (err) return console.log(err) 
+    if (err) return logger.error(err) 
     db.dropDatabase() 
       .then(() => { 
         return User.create([ 
@@ -22,7 +23,7 @@ mongoose.connect(
         ]) 
       })
       .then(user => { 
-        console.log(`${user.length} user created`)
+        logger.info(`${user.length} user created`)
         return Story.create([
           {
             client: 'Sarah',
@@ -46,8 +47,8 @@ mongoose.connect(
           }
         ])
       })
-      .then(story => console.log(`${story.length} stories created`)) 
-      .catch(err => console.log(err)) 
+      .then(story => logger.info(`${story.length} stories created`)) 
+      .catch(err => logger.error(err)) 
       .finally(() => mongoose.connection.close()) 
   }
 )

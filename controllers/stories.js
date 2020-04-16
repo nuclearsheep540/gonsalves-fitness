@@ -1,4 +1,5 @@
 const Story = require('../models/Stories')
+const logger = require('../lib/logger')
 
 // INDEX ROUTE - /story
 function index(req, res) {
@@ -34,8 +35,8 @@ function edit(req, res) {
     })
     .then(request => request.save())
     .then(request => res.status(202).json(request))
-    .then(request => console.log(request))
-    .catch(err => console.log(err))
+    .then(request => logger.debug(request))
+    .catch(err => logger.error(err))
 }
 
 // DELETE ROUTE - /story/:id
@@ -48,7 +49,7 @@ function removeRoute(req,res) {
     .then(() => res.sendStatus(204))
     .catch(err => {
       res.status(400).json(err)
-      console.log(err)
+      logger.error(err)
     })
 }
 

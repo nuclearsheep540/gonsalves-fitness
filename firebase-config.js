@@ -9,7 +9,7 @@ import 'firebase/firebase-storage'
 // const storageBucket = process.env.FIREBASE_STORAGE_BUCKET
 // const messagingSenderId = process.env.FIREBASE_MESSAGING_SENDER_ID
 // const appId = process.env.FIREBASE_APP_ID
-// console.log(apiKey, authDomain )
+// logger.info(apiKey, authDomain )
 // const firebaseConfig = {
 //   apiKey: apiKey,
 //   authDomain: authDomain,
