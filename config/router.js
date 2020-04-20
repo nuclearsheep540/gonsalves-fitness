@@ -16,6 +16,9 @@ router.route('/story')
   .get(secureRoute, story.index)
   .post(secureRoute, story.create)
 
+router.route('/published')
+  .get(story.published)
+
 router.route('/story/:id')
   .get(story.show)
   .put(secureRoute, story.edit)

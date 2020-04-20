@@ -2,12 +2,22 @@ const Story = require('../models/Stories')
 const logger = require('../lib/logger')
 
 // INDEX ROUTE - /story
+// thisi s called, Using a query builder
 function index(req, res) {
   Story.find({
     user: /host/
   }).where('user').equals(req.currentUser)
     .then(elem => res.status(200).json(elem))
     .catch(() => res.status(404).json({ message: 'Not found' }))
+}
+
+// index of published
+function published(req, res) {
+  Story.find({
+    featured: /host/
+  }).where('featured').equals(true)
+    .then(elem => res.status(200).json(elem))
+    .catch(()=> res.status(404).json({ message: ' 404 not found' }))
 }
 
 // CREATE ROUTE - /story
@@ -59,6 +69,7 @@ function removeRoute(req,res) {
 
 module.exports = {
   index,
+  published,
   create,
   show,
   edit,

@@ -12,13 +12,15 @@ export default class StoryIndex extends React.Component {
   }
   //function
   componentDidMount() {
-    Axios.get('/api/story')
-      .then(res => this.setState({ data: res.data.filter(elem => elem.featured === true) }))
+    Axios.get('/api/published')
+      .then(res => this.setState({ data: res.data }))
   }
 
 
   render() {
     if (!this.state.data) return null
+
+    console.log('success stories loading... ',this.state.data)
 
     return (
       <div className=''>
