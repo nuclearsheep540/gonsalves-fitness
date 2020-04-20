@@ -1,6 +1,7 @@
 import React from 'react'
 import ImageUpload from '../../../image-upload'
 
+// need to add publish option in form, publish for success page, featured for landing page
 const StoryForm = ({ handleImage, handleChange, handleSubmit, data }) => {
   return (
     <section className='middle-center'>
@@ -18,15 +19,16 @@ const StoryForm = ({ handleImage, handleChange, handleSubmit, data }) => {
           ></input>
         </div>
 
-        <div className='half-width'>
-          <label name='exampleMessage'>Profile</label>
-          {console.log(data)}
+        <ImageUpload handleImage={handleImage} data={data} />
 
-          <ImageUpload handleImage={handleImage} data={data} />
+
+        <div className='half-width'>
+          {/* <label name='exampleMessage'>Profile</label> */}
+          {console.log(data)}
 
           <input
             id='profile-img'
-            className='input-area'
+            className='stealth'
             placeholder='image upload'
             name='image'
             value={data.image}
@@ -35,11 +37,11 @@ const StoryForm = ({ handleImage, handleChange, handleSubmit, data }) => {
         </div>
 
         <div className='half-width'>
-          <label name='exampleMessage'>Before</label>
-          <button id='before-btn'>Upload</button>
+          {/* <label name='exampleMessage'>Before</label> */}
+        
           <input
             id='before-img'
-            className='input-area'
+            className='stealth'
             placeholder='image upload'
             name='before'
             value={data.before}
@@ -48,11 +50,11 @@ const StoryForm = ({ handleImage, handleChange, handleSubmit, data }) => {
         </div>
 
         <div className='half-width'>
-          <label name='exampleMessage'>After</label>
-          <button id='after-btn'>Upload</button>
+          {/* <label name='exampleMessage'>After</label> */}
+         
           <input
             id='after-img'
-            className='input-area'
+            className='stealth'
             placeholder='image upload'
             name='after'
             value={data.after}

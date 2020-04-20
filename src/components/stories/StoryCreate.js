@@ -27,12 +27,14 @@ export default class StoryCreate extends React.Component {
     
   }
 
-  handleImageUpdate(url) {
+  handleImageUpdate(source, url) {
+    console.log('handleImageUpdate',event.target)
     console.log('handleimgupdate', url)
+    console.log('handleImage target is ',source)
     this.setState({ 
       data: {
         ...this.state.data,
-        image: url
+        [source]: url 
       }
     })
   }
