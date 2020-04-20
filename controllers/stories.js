@@ -3,13 +3,17 @@ const logger = require('../lib/logger')
 
 // INDEX ROUTE - /story
 function index(req, res) {
-  Story.find()
+  Story.find({
+    user: /host/
+  }).where('user').equals(req.currentUser)
     .then(elem => res.status(200).json(elem))
     .catch(() => res.status(404).json({ message: 'Not found' }))
 }
 
 // CREATE ROUTE - /story
 function create(req, res, next) {
+  req.body.user = req.currentUser
+  console.log('this user is trying to create a new entry: ',req)
   Story.create(req.body)
     .then(index => res.status(201).json(index))
     .catch(next)

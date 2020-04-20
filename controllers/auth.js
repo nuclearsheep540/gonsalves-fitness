@@ -13,7 +13,7 @@ function register(req, res) {
 
 // LOGIN ROUTE - /login
 function login(req, res) {
-  User.findOne({ username: req.body.username })
+  User.findOne({ email: req.body.username })
     .then(user => {
       if (!user || !user.validatePassword(req.body.password)) {
         return res.status(401).json({ message: 'Bad input' })

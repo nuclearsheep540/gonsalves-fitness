@@ -73,6 +73,7 @@ div.login {
   font-size: 93.2px;
 }
 #admin-title {
+  z-index: 10;
   font-family: 'Exo', sans-serif;
   font-size: 40px;
   padding: 0;
@@ -83,16 +84,30 @@ div.login {
   font-size: 20px;
 }
 
+div.admin-dash {
+  position: absolute;
+  z-index: 10;
+  background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(255,255,255,0) 60%);
+  height: 100vh;
+  padding: 20px;
+  width: 100vw;
+}
+
 .admin-top {
   display: flex;
   flex-direction: row;
-  width: 100%;
+  width: 80%;
   height: 240px;
-  // border: 1px solid red;
+  margin: 0 auto;
+  padding-top: 22px;
 }
 
-.left {
-  // border: 1px solid greenyellow;
+div.admin-fade {
+  background-color: rgba(0, 0, 0, 0.2);
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  z-index: 0;
 }
 
 div#admin-wrap {
@@ -123,6 +138,8 @@ footer#admin-footer {
   background-color: rgba(0,0,0,0);
 }
 div.admin-nav {
+  padding-top: 32px;
+  z-index: 11;
   display: flex;
   justify-content: center;
   height: 100vh;
@@ -152,16 +169,11 @@ div.admin-nav {
   
 }
 
-div.admin-dash {
-  // display: flex;
-  // flex-direction: row;
-  background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(255,255,255,0) 60%);
-  height: 100vh;
-  padding: 20px;
-  width: 100vw;
-}
+
 
 .table {
+  margin: 0 auto;
+  width: 80%;
   visibility: hidden;
 }
 

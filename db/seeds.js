@@ -3,6 +3,7 @@ const { dbURI } = require('../config/environment')
 const User = require('../models/User')
 const Story = require('../models/Stories')
 const logger = require('../lib/logger')
+const Msg = require('../models/Message')
 
 const time = new Date
 
@@ -16,7 +17,13 @@ mongoose.connect(
         return User.create([ 
           {
             name: 'ryhse',
-            email: 'admin',
+            email: 'rhyse@demo',
+            password: 'admin',
+            passwordConfirmation: 'admin'
+          },
+          {
+            name: 'demo',
+            email: 'demo@demo',
             password: 'admin',
             passwordConfirmation: 'admin'
           }
@@ -33,7 +40,8 @@ mongoose.connect(
             description: 'test description',
             review: 'Rhyse was really helpful, I enjoy training with him',
             featured: false,
-            created: time.toDateString()
+            created: time.toDateString(),
+            user: user[0]
           },
           {
             client: 'Mary',
@@ -43,11 +51,25 @@ mongoose.connect(
             description: '',
             review: 'I feel a lot more body confident now',
             featured: true,
-            created: time.toDateString()
+            created: time.toDateString(),
+            user: user[0]
           }
         ])
       })
-      .then(story => logger.info(`${story.length} stories created`)) 
+      .then(msg => {
+        logger.info(`${msg.length} stories created`)
+        return Msg.create([
+          {
+            privacy: true,
+            to: 'demo@demo-account.com',
+            from: 'rachel@dolittle.com',
+            textBody: 'Hi, I was wondering what your prices were? Thanks!',
+            htmlBody: '\n      <html>\n      <div>\n      <p>From: Rachel, Dolittle</p>\n      <p>Contact: 12345678910</p>\n      <p>Email: rachel@dolittle.com</p>\n      <p>Hi, I was wondering what your prices were? Thanks!</p>\n      </div>\n      </html>',
+            messageType: 'basic'
+          }
+        ])
+      })
+      .then(msg => logger.info(`${msg.length} message(s) created`)) 
       .catch(err => logger.error(err)) 
       .finally(() => mongoose.connection.close()) 
   }

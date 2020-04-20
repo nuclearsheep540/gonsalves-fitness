@@ -6,10 +6,12 @@ export default class AdminNav extends React.Component {
   constructor(){
     super()
     this.state = {
-      table: true
+      table: true,
+      msg: false
 
     }
     this.storyTable = this.storyTable.bind(this)
+    this.msgTable = this.msgTable.bind(this)
   }
 
   showStory() {
@@ -20,7 +22,7 @@ export default class AdminNav extends React.Component {
   }
 
   hideStory() {
-    const stories = document.querySelector('.table')
+    const stories = document.querySelector('.clients')
     stories.classList.remove('fadeIn'),
     stories.classList.add('fadeOut'),
     setTimeout(() => {
@@ -33,6 +35,16 @@ export default class AdminNav extends React.Component {
     this.setState({ table: !this.state.table })
   }
 
+  msgTable() {
+    console.log('showing messages')
+    this.setState({ msg: !this.state.msg })
+  }
+  logout(){
+    event.preventDefault()
+    Auth.logout()
+    console.log('clearing tokens')
+  }
+
   render(){
     return (
       <div className='admin-nav'>
@@ -42,14 +54,14 @@ export default class AdminNav extends React.Component {
               <img src='../../assets/stories.png' />
             </li>
           </a>
-          <a>
+          <a onClick={this.msgTable}>
             <li>
-              <img src='../../assets/publish.png' />
+              <img src='../../assets/mail.png' />
             </li>
           </a>
 
           {Auth.isAuthenticated() && (
-            <Link to='/' onClick={this.logout}>
+            <Link to ='/admin' onClick={this.logout}>
               <li>
                 <img id='logout' src='../../assets/logout.png' />
               </li>

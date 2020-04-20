@@ -18,15 +18,13 @@ userSchema.set('toJSON', { // this is what prevents the pasword being sent when 
 })
 
 // setting a virtual field on the model, this only exists when a user is first created and is not saved to the database, the idea here is that we only need a 'passwordConfirmation' once, to check if it and the password are the same, so there is no reason for us to actually store this value for the long term. A virtual field on the model fufills that requirement, once creating a user you will see that the password confirmation feild does not exist
-userSchema
-  .virtual('passwordConfirmation')
+userSchema.virtual('passwordConfirmation')
   .set(function setPasswordConfirmation(passwordConfirmation) {
     this._passwordConfirmation = passwordConfirmation
   })
 
 
 // When we ask our model to create a new user (this happens in /controllers/auth in the register function, we make a call to User.create(....object)) mongoose runs through two steps, validate, where mongoose checks all the rquirements are met laid out in the schema above, and if it does, moves onto the save step, where it the new user is saved to the DB. We can write our own 'hooks' pre these events to perform more custom validations ourselves. Pre the validate phase we check the password and password confirmation match, if they do we allow it to move onto its own validations. Pre the save stage, we replace the users plain text password with a hashed version using the bcrypt library, then allow the save step.
-
 userSchema.pre('validate', function checkPassword(next) { // running before validation step
   if (this.isModified('password') && this._passwordConfirmation !== this.password) {
     this.invalidate('passwordConfirmation', 'does not match') // throws an error back to the controllers if the password passConf do not match

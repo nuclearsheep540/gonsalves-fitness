@@ -3,19 +3,19 @@ class Auth {
     localStorage.setItem('token', token)    
   }
   static setName(name) {
-    localStorage.setItem('name', name)
+    localStorage.setItem('user', name)
   }
 
   static getToken() {
     return localStorage.getItem('token')
   }
   static getName() {
-    return localStorage.getItem('name')
+    return localStorage.getItem('user')
   }
 
   static logout() {
     localStorage.removeItem('token')
-    localStorage.removeItem('name')
+    localStorage.removeItem('user')
   }
 
   static getPayLoad(){

@@ -8,7 +8,7 @@ class Login extends React.Component {
 
     this.state = {
       data: {
-        name: '',
+        username: '',
         password: ''
       }
     }
@@ -53,7 +53,7 @@ class Login extends React.Component {
                   <div className=''>
                     <input
                       className='input-area'
-                      name='name'
+                      name='username'
                       type='text'
                       placeholder='username'
                       onChange={this.handleChange}

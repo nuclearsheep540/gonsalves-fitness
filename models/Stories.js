@@ -8,7 +8,8 @@ const StorySchema = new mongoose.Schema({
   description: { type: String },
   review: { type: String },
   created: { type: String },
-  featured: { type: Boolean }
+  featured: { type: Boolean },
+  user: { type: mongoose.Schema.ObjectId, ref: 'User', required: true }
 }, {
   timestamps: true
 })

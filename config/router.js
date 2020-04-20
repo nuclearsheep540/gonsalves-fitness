@@ -13,8 +13,8 @@ router.route('/login') // just handling user login controller
   .post(users.login) // we dont use a param.id to find the user, see the controller
 
 router.route('/story')
-  .get(story.index)
-  .post(story.create)
+  .get(secureRoute, story.index)
+  .post(secureRoute, story.create)
 
 router.route('/story/:id')
   .get(story.show)

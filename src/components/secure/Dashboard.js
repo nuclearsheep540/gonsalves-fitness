@@ -12,84 +12,84 @@ export default class Dashboard extends React.Component {
       date: new Date(),
       stories: [],
       bg: {
-        'id': 'rzROdBDj1RE',
-        'created_at': '2019-02-04T08:08:15-05:00',
-        'updated_at': '2019-11-28T00:01:42-05:00',
-        'promoted_at': null,
-        'width': 4256,
-        'height': 2832,
-        'color': '#F5D0A6',
-        'description': null,
-        'alt_description': 'silhouette of a tree',
-        'urls': {
-          'raw': 'https://images.unsplash.com/photo-1549285682-f7e066f5211d?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMjEyNn0',
-          'full': 'https://images.unsplash.com/photo-1549285682-f7e066f5211d?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjEyMjEyNn0',
-          'regular': 'https://images.unsplash.com/photo-1549285682-f7e066f5211d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMjEyNn0',
-          'small': 'https://images.unsplash.com/photo-1549285682-f7e066f5211d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyMjEyNn0',
-          'thumb': 'https://images.unsplash.com/photo-1549285682-f7e066f5211d?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjEyMjEyNn0'
+        "id": "dI3J7V0GknY",
+        "created_at": "2018-02-23T17:31:29-05:00",
+        "updated_at": "2020-04-14T01:05:35-04:00",
+        "promoted_at": null,
+        "width": 5448,
+        "height": 4000,
+        "color": "#549FE9",
+        "description": "On my way to Johnston Canyon in Banff when this guy poked its white face out in the blue.  I had to drive a bit to find a safe place to stop and get out to take the picture, but I think it turned out ok.  This is the kind of image that gives me pause and to reflect on the forces that created the rockies those millions of years ago.  What a great way to time travel.",
+        "alt_description": "low-angle photography of white mountain",
+        "urls": {
+          "raw": "https://images.unsplash.com/photo-1519424872176-907da8d127f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMjEyNn0",
+          "full": "https://images.unsplash.com/photo-1519424872176-907da8d127f8?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjEyMjEyNn0",
+          "regular": "https://images.unsplash.com/photo-1519424872176-907da8d127f8?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMjEyNn0",
+          "small": "https://images.unsplash.com/photo-1519424872176-907da8d127f8?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyMjEyNn0",
+          "thumb": "https://images.unsplash.com/photo-1519424872176-907da8d127f8?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjEyMjEyNn0"
         },
-        'links': {
-          'self': 'https://api.unsplash.com/photos/rzROdBDj1RE',
-          'html': 'https://unsplash.com/photos/rzROdBDj1RE',
-          'download': 'https://unsplash.com/photos/rzROdBDj1RE/download',
-          'download_location': 'https://api.unsplash.com/photos/rzROdBDj1RE/download'
+        "links": {
+          "self": "https://api.unsplash.com/photos/dI3J7V0GknY",
+          "html": "https://unsplash.com/photos/dI3J7V0GknY",
+          "download": "https://unsplash.com/photos/dI3J7V0GknY/download",
+          "download_location": "https://api.unsplash.com/photos/dI3J7V0GknY/download"
         },
-        'categories': [],
-        'likes': 33,
-        'liked_by_user': false,
-        'current_user_collections': [],
-        'user': {
-          'id': 'jROFIZZ8ptI',
-          'updated_at': '2020-01-07T21:50:26-05:00',
-          'username': 'aron_jager',
-          'name': 'Aron Jäger',
-          'first_name': 'Aron',
-          'last_name': 'Jäger',
-          'twitter_username': null,
-          'portfolio_url': null,
-          'bio': null,
-          'location': null,
-          'links': {
-            'self': 'https://api.unsplash.com/users/aron_jager',
-            'html': 'https://unsplash.com/@aron_jager',
-            'photos': 'https://api.unsplash.com/users/aron_jager/photos',
-            'likes': 'https://api.unsplash.com/users/aron_jager/likes',
-            'portfolio': 'https://api.unsplash.com/users/aron_jager/portfolio',
-            'following': 'https://api.unsplash.com/users/aron_jager/following',
-            'followers': 'https://api.unsplash.com/users/aron_jager/followers'
+        "categories": [],
+        "likes": 28,
+        "liked_by_user": false,
+        "current_user_collections": [],
+        "user": {
+          "id": "Sdh2YdLNcrI",
+          "updated_at": "2020-04-20T06:07:46-04:00",
+          "username": "jxb511",
+          "name": "John Bakator",
+          "first_name": "John",
+          "last_name": "Bakator",
+          "twitter_username": null,
+          "portfolio_url": null,
+          "bio": "An ardent member of generation Jones |Travel Writer | Travel Photographer and all round nice guy.   Contact me: John.Bakator@gmail.com even to just say hi!",
+          "location": "Cochrane Alberta",
+          "links": {
+            "self": "https://api.unsplash.com/users/jxb511",
+            "html": "https://unsplash.com/@jxb511",
+            "photos": "https://api.unsplash.com/users/jxb511/photos",
+            "likes": "https://api.unsplash.com/users/jxb511/likes",
+            "portfolio": "https://api.unsplash.com/users/jxb511/portfolio",
+            "following": "https://api.unsplash.com/users/jxb511/following",
+            "followers": "https://api.unsplash.com/users/jxb511/followers"
           },
-          'profile_image': {
-            'small': 'https://images.unsplash.com/profile-fb-1549284762-abb92e0ff957.jpg?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=32&w=32',
-            'medium': 'https://images.unsplash.com/profile-fb-1549284762-abb92e0ff957.jpg?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=64&w=64',
-            'large': 'https://images.unsplash.com/profile-fb-1549284762-abb92e0ff957.jpg?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=128&w=128'
+          "profile_image": {
+            "small": "https://images.unsplash.com/profile-fb-1504194982-405c65f1fb61.jpg?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=32&w=32",
+            "medium": "https://images.unsplash.com/profile-fb-1504194982-405c65f1fb61.jpg?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=64&w=64",
+            "large": "https://images.unsplash.com/profile-fb-1504194982-405c65f1fb61.jpg?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=128&w=128"
           },
-          'instagram_username': 'aron_jager',
-          'total_collections': 0,
-          'total_likes': 0,
-          'total_photos': 10,
-          'accepted_tos': true
+          "instagram_username": "jbakator",
+          "total_collections": 9,
+          "total_likes": 12,
+          "total_photos": 64,
+          "accepted_tos": true
         },
-        'exif': {
-          'make': 'NIKON CORPORATION',
-          'model': 'NIKON D3',
-          'exposure_time': '30',
-          'aperture': '4.0',
-          'focal_length': '17.0',
-          'iso': 800
+        "exif": {
+          "make": "Canon",
+          "model": "Canon EOS 80D",
+          "exposure_time": "1/1250",
+          "aperture": "5.6",
+          "focal_length": "200.0",
+          "iso": 100
         },
-        'location': {
-          'title': null,
-          'name': null,
-          'city': null,
-          'country': null,
-          'position': {
-            'latitude': null,
-            'longitude': null
+        "location": {
+          "title": "Banff National Park, Canada",
+          "name": "Banff National Park, Canada",
+          "city": null,
+          "country": "Canada",
+          "position": {
+            "latitude": 51.4968464,
+            "longitude": -115.9280562
           }
         },
-        'views': 12662,
-        'downloads': 156
-      }
+        "views": 121418,
+        "downloads": 489
+      },
     }
     this.tick = this.tick.bind(this)
     this.logout = this.logout.bind(this)
@@ -107,12 +107,13 @@ export default class Dashboard extends React.Component {
   componentDidMount() {
     if (Auth.isAuthenticated()) {
       axios
-        .get('/api/story')
-        .then(res => this.setState({ stories: res.data }))
-        .catch(err => console.log(err))
+        .get('/api/story', { headers: { Authorization: `Bearer ${Auth.getToken()}` }
+        })
+        .then((res) => this.setState({ stories: res.data }))
+        .catch((err) => console.log(err))
     }
     this.unsplashBg()
-    this.timerID = setInterval(() => this.tick(), 1000)
+    this.timerID = setInterval(() => this.tick(), 2000)
   }
   componentWillUnmount() {
     clearInterval(this.timerID)
@@ -127,7 +128,7 @@ export default class Dashboard extends React.Component {
 
   logout() {
     Auth.logout()
-    this.props.history.push('/')
+    // .then(this.props.history.push('/'))
   }
 
   handleDelete(e, id) {
@@ -135,7 +136,7 @@ export default class Dashboard extends React.Component {
     window.confirm(`Are you sure you wish to delete ${e.target.name}'s story?`)
       ? axios
         .delete(`/api/story/${id}`, {
-          headers: { Authorization: `Bearer ${Auth.getToken()}` }
+          headers: { Authorization: `Bearer ${Auth.getToken()}` },
         })
         .then(window.location.reload())
       : console.log(false)
@@ -147,24 +148,23 @@ export default class Dashboard extends React.Component {
     if (!this.state.stories) return null
     if (!this.state.bg.urls) return null
 
-    console.log('state', this.state.bg)
-
     return (
       <div
         id='admin-wrap'
         style={{ backgroundImage: `url(${this.state.bg.urls.full})` }}
       >
+        <div className='admin-fade'></div>
         <AdminNav />
 
         <div className='admin-dash'>
           <div className='admin-top'>
-            <div className='left'>
+            <div>
               <h1 id='admin-title'>Content Manager</h1>
               <h2 id='admin-greeting'>{`Welcome back, ${Auth.getName()}`}</h2>
             </div>
           </div>
 
-          <div className='table animated'>
+          <div className='table animated clients'>
             <h2>Manage Clients</h2>
             <Link to='/story' id='admin-new-client'>
               Create new client
@@ -217,14 +217,14 @@ export default class Dashboard extends React.Component {
           <div id='clock'>
             {this.state.date.toLocaleTimeString('en-US', {
               hour: '2-digit',
-              minute: '2-digit'
+              minute: '2-digit',
             })}
           </div>
-
         </div>
 
         <footer id='admin-footer'>
-          {this.state.bg.alt_description} by <a href={this.state.bg.links.html}>{this.state.bg.user.name}</a>
+          {this.state.bg.alt_description} by{' '}
+          <a href={this.state.bg.links.html}>{this.state.bg.user.name}</a>
         </footer>
       </div>
     )
