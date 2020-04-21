@@ -8,6 +8,14 @@ const client = new SocketLabsClient(serverId, injectionApiKey)
 
 const Message = require('../models/Message')
 
+function index(req, res) {
+  Message.find()
+    .then(index => {
+      res.status(200).json(index)
+    })
+    .catch(err => console.log(err))
+}
+
 function create(req, res, next) {
   Message.create(req.body)
     .then(index => {
@@ -33,4 +41,4 @@ function send(req, _res){
 }
 
 
-module.exports = { send, create }
+module.exports = { index, send, create }

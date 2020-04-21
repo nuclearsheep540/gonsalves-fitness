@@ -7,17 +7,40 @@ export default class AdminNav extends React.Component {
     super()
     this.state = {
       table: true,
-      msg: false
+      msg: true
 
     }
     this.storyTable = this.storyTable.bind(this)
     this.msgTable = this.msgTable.bind(this)
   }
 
+  //MESSAGES
+  showMsg() {
+    const msg = document.querySelector('.msg')
+    msg.classList.remove('fadeOut'),
+    msg.style.display = 'block',
+    msg.classList.add('fadeIn')
+  }
+
+  hideMsg() {
+    const msg = document.querySelector('.msg')
+    msg.classList.remove('fadeIn'),
+    msg.classList.add('fadeOut'),
+    setTimeout(() => {
+      msg.style.display = 'none'
+    }, 700)
+  }
+
+  msgTable() {
+    this.state.msg ? this.showMsg() : this.hideMsg()
+    this.setState({ msg: !this.state.msg })
+  }
+
+  //CLIENT STORIES
   showStory() {
-    const stories = document.querySelector('.table')
+    const stories = document.querySelector('.clients')
     stories.classList.remove('fadeOut'),
-    stories.style.visibility = 'visible',
+    stories.style.display = 'block',
     stories.classList.add('fadeIn')
   }
 
@@ -26,8 +49,8 @@ export default class AdminNav extends React.Component {
     stories.classList.remove('fadeIn'),
     stories.classList.add('fadeOut'),
     setTimeout(() => {
-      stories.style.visibility = 'hidden'
-    }, 900)
+      stories.style.display = 'none'
+    }, 700)
   }
   
   storyTable() {
@@ -35,10 +58,6 @@ export default class AdminNav extends React.Component {
     this.setState({ table: !this.state.table })
   }
 
-  msgTable() {
-    console.log('showing messages')
-    this.setState({ msg: !this.state.msg })
-  }
   logout(){
     event.preventDefault()
     Auth.logout()

@@ -5,6 +5,15 @@
 //        GLOBAL
 // -------------
 
+th, tr, td, table {
+  text-align: center;
+  vertical-align: middle;
+}
+
+tr {
+  height: 40px;
+}
+
 $bright: #ffd912;
 .pad20 {
   padding: 20px;
@@ -172,17 +181,30 @@ div.admin-nav {
 
 
 .table {
+  display: none;
   margin: 0 auto;
   width: 80%;
-  visibility: hidden;
+  // visibility: hidden;
 }
 
 thead {
   background-color: rgba(0,0,0,0.1);
 }
+tbody#msg{
+  background-color: rgba(0, 0, 0, 0.3);
+  a {
+    text-decoration: none;
+    background-color: rgba(0,0,0,0);
+    color: white;
+    border: none;
+  }
+}
 
 th {
   width: 300px;
+}
+th#msg {
+  width: 60vw;
 }
 th:nth-child(1){
   width: 50px;

@@ -1,9 +1,10 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 import Auth from '../../lib/auth'
 import axios from 'axios'
 
 import AdminNav from '../common/AdminNav'
+import ClientIndex from './ClientIndex'
+import MsgIndex from './MsgIndex'
 
 export default class Dashboard extends React.Component {
   constructor() {
@@ -11,84 +12,85 @@ export default class Dashboard extends React.Component {
     this.state = {
       date: new Date(),
       stories: [],
+      msg: [],
       bg: {
-        "id": "dI3J7V0GknY",
-        "created_at": "2018-02-23T17:31:29-05:00",
-        "updated_at": "2020-04-14T01:05:35-04:00",
-        "promoted_at": null,
-        "width": 5448,
-        "height": 4000,
-        "color": "#549FE9",
-        "description": "On my way to Johnston Canyon in Banff when this guy poked its white face out in the blue.  I had to drive a bit to find a safe place to stop and get out to take the picture, but I think it turned out ok.  This is the kind of image that gives me pause and to reflect on the forces that created the rockies those millions of years ago.  What a great way to time travel.",
-        "alt_description": "low-angle photography of white mountain",
-        "urls": {
-          "raw": "https://images.unsplash.com/photo-1519424872176-907da8d127f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMjEyNn0",
-          "full": "https://images.unsplash.com/photo-1519424872176-907da8d127f8?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjEyMjEyNn0",
-          "regular": "https://images.unsplash.com/photo-1519424872176-907da8d127f8?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMjEyNn0",
-          "small": "https://images.unsplash.com/photo-1519424872176-907da8d127f8?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyMjEyNn0",
-          "thumb": "https://images.unsplash.com/photo-1519424872176-907da8d127f8?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjEyMjEyNn0"
+        'id': 'dI3J7V0GknY',
+        'created_at': '2018-02-23T17:31:29-05:00',
+        'updated_at': '2020-04-14T01:05:35-04:00',
+        'promoted_at': null,
+        'width': 5448,
+        'height': 4000,
+        'color': '#549FE9',
+        'description': 'On my way to Johnston Canyon in Banff when this guy poked its white face out in the blue.  I had to drive a bit to find a safe place to stop and get out to take the picture, but I think it turned out ok.  This is the kind of image that gives me pause and to reflect on the forces that created the rockies those millions of years ago.  What a great way to time travel.',
+        'alt_description': 'low-angle photography of white mountain',
+        'urls': {
+          'raw': 'https://images.unsplash.com/photo-1519424872176-907da8d127f8?ixlib=rb-1.2.1&ixid=eyJhcHBfaWQiOjEyMjEyNn0',
+          'full': 'https://images.unsplash.com/photo-1519424872176-907da8d127f8?ixlib=rb-1.2.1&q=85&fm=jpg&crop=entropy&cs=srgb&ixid=eyJhcHBfaWQiOjEyMjEyNn0',
+          'regular': 'https://images.unsplash.com/photo-1519424872176-907da8d127f8?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=1080&fit=max&ixid=eyJhcHBfaWQiOjEyMjEyNn0',
+          'small': 'https://images.unsplash.com/photo-1519424872176-907da8d127f8?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyMjEyNn0',
+          'thumb': 'https://images.unsplash.com/photo-1519424872176-907da8d127f8?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjEyMjEyNn0'
         },
-        "links": {
-          "self": "https://api.unsplash.com/photos/dI3J7V0GknY",
-          "html": "https://unsplash.com/photos/dI3J7V0GknY",
-          "download": "https://unsplash.com/photos/dI3J7V0GknY/download",
-          "download_location": "https://api.unsplash.com/photos/dI3J7V0GknY/download"
+        'links': {
+          'self': 'https://api.unsplash.com/photos/dI3J7V0GknY',
+          'html': 'https://unsplash.com/photos/dI3J7V0GknY',
+          'download': 'https://unsplash.com/photos/dI3J7V0GknY/download',
+          'download_location': 'https://api.unsplash.com/photos/dI3J7V0GknY/download'
         },
-        "categories": [],
-        "likes": 28,
-        "liked_by_user": false,
-        "current_user_collections": [],
-        "user": {
-          "id": "Sdh2YdLNcrI",
-          "updated_at": "2020-04-20T06:07:46-04:00",
-          "username": "jxb511",
-          "name": "John Bakator",
-          "first_name": "John",
-          "last_name": "Bakator",
-          "twitter_username": null,
-          "portfolio_url": null,
-          "bio": "An ardent member of generation Jones |Travel Writer | Travel Photographer and all round nice guy.   Contact me: John.Bakator@gmail.com even to just say hi!",
-          "location": "Cochrane Alberta",
-          "links": {
-            "self": "https://api.unsplash.com/users/jxb511",
-            "html": "https://unsplash.com/@jxb511",
-            "photos": "https://api.unsplash.com/users/jxb511/photos",
-            "likes": "https://api.unsplash.com/users/jxb511/likes",
-            "portfolio": "https://api.unsplash.com/users/jxb511/portfolio",
-            "following": "https://api.unsplash.com/users/jxb511/following",
-            "followers": "https://api.unsplash.com/users/jxb511/followers"
+        'categories': [],
+        'likes': 28,
+        'liked_by_user': false,
+        'current_user_collections': [],
+        'user': {
+          'id': 'Sdh2YdLNcrI',
+          'updated_at': '2020-04-20T06:07:46-04:00',
+          'username': 'jxb511',
+          'name': 'John Bakator',
+          'first_name': 'John',
+          'last_name': 'Bakator',
+          'twitter_username': null,
+          'portfolio_url': null,
+          'bio': 'An ardent member of generation Jones |Travel Writer | Travel Photographer and all round nice guy.   Contact me: John.Bakator@gmail.com even to just say hi!',
+          'location': 'Cochrane Alberta',
+          'links': {
+            'self': 'https://api.unsplash.com/users/jxb511',
+            'html': 'https://unsplash.com/@jxb511',
+            'photos': 'https://api.unsplash.com/users/jxb511/photos',
+            'likes': 'https://api.unsplash.com/users/jxb511/likes',
+            'portfolio': 'https://api.unsplash.com/users/jxb511/portfolio',
+            'following': 'https://api.unsplash.com/users/jxb511/following',
+            'followers': 'https://api.unsplash.com/users/jxb511/followers'
           },
-          "profile_image": {
-            "small": "https://images.unsplash.com/profile-fb-1504194982-405c65f1fb61.jpg?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=32&w=32",
-            "medium": "https://images.unsplash.com/profile-fb-1504194982-405c65f1fb61.jpg?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=64&w=64",
-            "large": "https://images.unsplash.com/profile-fb-1504194982-405c65f1fb61.jpg?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=128&w=128"
+          'profile_image': {
+            'small': 'https://images.unsplash.com/profile-fb-1504194982-405c65f1fb61.jpg?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=32&w=32',
+            'medium': 'https://images.unsplash.com/profile-fb-1504194982-405c65f1fb61.jpg?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=64&w=64',
+            'large': 'https://images.unsplash.com/profile-fb-1504194982-405c65f1fb61.jpg?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=128&w=128'
           },
-          "instagram_username": "jbakator",
-          "total_collections": 9,
-          "total_likes": 12,
-          "total_photos": 64,
-          "accepted_tos": true
+          'instagram_username': 'jbakator',
+          'total_collections': 9,
+          'total_likes': 12,
+          'total_photos': 64,
+          'accepted_tos': true
         },
-        "exif": {
-          "make": "Canon",
-          "model": "Canon EOS 80D",
-          "exposure_time": "1/1250",
-          "aperture": "5.6",
-          "focal_length": "200.0",
-          "iso": 100
+        'exif': {
+          'make': 'Canon',
+          'model': 'Canon EOS 80D',
+          'exposure_time': '1/1250',
+          'aperture': '5.6',
+          'focal_length': '200.0',
+          'iso': 100
         },
-        "location": {
-          "title": "Banff National Park, Canada",
-          "name": "Banff National Park, Canada",
-          "city": null,
-          "country": "Canada",
-          "position": {
-            "latitude": 51.4968464,
-            "longitude": -115.9280562
+        'location': {
+          'title': 'Banff National Park, Canada',
+          'name': 'Banff National Park, Canada',
+          'city': null,
+          'country': 'Canada',
+          'position': {
+            'latitude': 51.4968464,
+            'longitude': -115.9280562
           }
         },
-        "views": 121418,
-        "downloads": 489
+        'views': 121418,
+        'downloads': 489
       },
     }
     this.tick = this.tick.bind(this)
@@ -114,6 +116,8 @@ export default class Dashboard extends React.Component {
     }
     this.unsplashBg()
     this.timerID = setInterval(() => this.tick(), 2000)
+    axios.get('/api/contact')
+      .then(res => this.setState({ msg: res.data }))
   }
   componentWillUnmount() {
     clearInterval(this.timerID)
@@ -133,10 +137,10 @@ export default class Dashboard extends React.Component {
 
   handleDelete(e, id) {
     e.preventDefault()
-    window.confirm(`Are you sure you wish to delete ${e.target.name}'s story?`)
+    window.confirm(`Are you sure you wish to delete ${e.target.name}?`)
       ? axios
         .delete(`/api/story/${id}`, {
-          headers: { Authorization: `Bearer ${Auth.getToken()}` },
+          headers: { Authorization: `Bearer ${Auth.getToken()}` }
         })
         .then(window.location.reload())
       : console.log(false)
@@ -164,60 +168,19 @@ export default class Dashboard extends React.Component {
             </div>
           </div>
 
-          <div className='table animated clients'>
-            <h2>Manage Clients</h2>
-            <Link to='/story' id='admin-new-client'>
-              Create new client
-            </Link>
-            <table>
-              <thead>
-                <tr>
-                  <th id='num'>#</th>
-                  <th>Profile</th>
-                  <th>Feature</th>
-                  <th>Client</th>
-                  <th>Created At</th>
-                  <th>Control</th>
-                  <th>database_id</th>
-                </tr>
-              </thead>
+          <ClientIndex 
+            data={this.state.stories}
+            handleDelete={this.handleDelete}
+          />
 
-              <tbody>
-                {this.state.stories.map((story, i) => (
-                  <tr key={i + 1}>
-                    <td>{i + 1}</td>
-                    <td>
-                      <img src={story.image} className='profile-icon'></img>
-                    </td>
-                    <td>
-                      <input
-                        type='checkbox'
-                        checked={story.featured === true ? true : false}
-                        disabled
-                      />{' '}
-                    </td>
-                    <td>{story.client}</td>
-                    <td>{story.created}</td>
-                    <td>
-                      <Link to={`/story/${story._id}`}>Edit</Link>
-                      <a
-                        name={story.client}
-                        onClick={() => this.handleDelete(event, story._id)}
-                      >
-                        Delete
-                      </a>
-                    </td>
-                    <td>{story._id}</td>
-                  </tr>
-                ))}
-              </tbody>
-            </table>
-          </div>
+          <MsgIndex 
+            data={this.state.msg}
+          />
 
           <div id='clock'>
             {this.state.date.toLocaleTimeString('en-US', {
               hour: '2-digit',
-              minute: '2-digit',
+              minute: '2-digit'
             })}
           </div>
         </div>
