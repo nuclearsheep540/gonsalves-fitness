@@ -16,6 +16,16 @@ function index(req, res) {
     .catch(err => console.log(err))
 }
 
+function show(req, res) {
+  Message.findById(req.params.id)
+    .then((request) => {
+      if (!request) return res.status(404).json({ message: 'Not found' })
+      res.status(200).json(request)
+    })
+    .catch(() => res.status(404).json({ message: 'Not found' }))
+}
+
+
 function create(req, res, next) {
   Message.create(req.body)
     .then(index => {
@@ -41,4 +51,4 @@ function send(req, _res){
 }
 
 
-module.exports = { index, send, create }
+module.exports = { index, show, send, create }

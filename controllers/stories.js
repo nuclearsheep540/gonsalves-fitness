@@ -37,7 +37,6 @@ function show(req, res) {
       res.status(200).json(request)
     })
     .catch(() => res.status(404).json({ message: 'Not found' }))
-
 }
 
 // EDIT ROUTE - /story/:id
