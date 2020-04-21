@@ -7,6 +7,7 @@ import About from './About'
 import Services from './Services'
 import Feature from './Feature'
 import HeroCover from './HeroCover'
+import Footer from '../common/Footer'
 
 export default class Landing extends React.Component {
   constructor() {
@@ -118,7 +119,7 @@ export default class Landing extends React.Component {
           </div>
           
         <div className='sticker'><Link to='/booking'>Book Now</Link></div>
-          
+          <Footer />
       </>
     )
   }

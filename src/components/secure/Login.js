@@ -20,6 +20,13 @@ class Login extends React.Component {
     const data = { ...this.state.data, [name]: value }
     this.setState({ data })
   }
+  componentDidMount(){
+    Auth.isAuthenticated() && (
+      history.pushState('/admin/dashboard','Admin Control','/admin/dashboard'),
+      console.log('user already logged in, redirecting...'),
+      location.reload()
+    )
+  }
 
   handleSubmit(e) {
     e.preventDefault()

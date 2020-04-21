@@ -12,7 +12,6 @@ import StoryEdit from './components/stories/StoryEdit'
 import StoryCreate from './components/stories/StoryCreate'
 import StoryIndex from './components/stories/StoryIndex'
 import AboutMe from './components/aboutPage/AboutMe'
-import Footer from './components/common/Footer'
 import Privacy from './components/common/Privacy'
 
 import ImageUpload from '../image-upload'
@@ -24,7 +23,7 @@ import 'animate.css'
 
 // need to create new routes for secure CMS
 // routes need to path from /admin 
-
+// need secure route for edit path
 
 
 const App = () => (
@@ -37,7 +36,6 @@ const App = () => (
       <Route path='/booking' component={Book} />
       <Route exact path='/admin' component={Login} />
       <Route exact path='/admin/dashboard' component={Dash} />
-      <Route path='/dash' component={Dash} />
       <Route path='/story/:id/' component={StoryEdit} />
       <Route path='/story' component={StoryCreate} />
       <Route path='/success' component={StoryIndex} />
@@ -46,11 +44,6 @@ const App = () => (
 
       <Route path='/uploadbase' component={ImageUpload} />
     </Switch>
-    {window.location.href.includes('admin') ? (
-      ''
-    ) : (
-      <Footer location={window.location.href} />
-    )}
   </BrowserRouter>
 )
 

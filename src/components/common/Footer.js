@@ -8,12 +8,8 @@ export default class Footer extends React.Component {
     //binds
   }
   //funct
-  componentDidMount() {
-    //
-  }
 
   render() {
-    if (this.props.location.includes('admin')) return null
     return (
       <footer>
         <div className='container-fluid'>
