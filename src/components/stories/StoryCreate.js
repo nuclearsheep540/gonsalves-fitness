@@ -17,6 +17,7 @@ export default class StoryCreate extends React.Component {
         after: '',
         description: '',
         review: '',
+        published: false,
         featured: false,
         created: time.toDateString()
       }
@@ -25,6 +26,10 @@ export default class StoryCreate extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleImageUpdate = this.handleImageUpdate.bind(this)
     
+  }
+
+  componentDidMount() {
+    document.getElementById('profile-img').value && this.state.data.image ? this.setStateImage : null
   }
 
   handleImageUpdate(source, url) {
@@ -37,10 +42,6 @@ export default class StoryCreate extends React.Component {
         [source]: url 
       }
     })
-  }
-
-  componentDidMount() {
-    document.getElementById('profile-img').value && this.state.data.image ? this.setStateImage : null
   }
 
   setStateImage(){
@@ -57,7 +58,10 @@ export default class StoryCreate extends React.Component {
 
   handleChange(e) {
     const value = e.target.type === 'checkbox' ? e.target.checked : e.target.value
-    const data = { ...this.state.data, [e.target.name]: value }
+    const data = { 
+      ...this.state.data,
+      [e.target.name]: value 
+    }
     this.setState({ data })
     console.log(data)
   }
@@ -68,9 +72,10 @@ export default class StoryCreate extends React.Component {
     axios.post('/api/story', this.state.data, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
-      .then(res => console.log(res))
-      .then(this.props.history.push('/admin/dashboard'))
-      .then(window.location.reload())
+      .then(res => res.status === 201 && (
+        this.props.history.push('/admin/dashboard'),
+        window.location.reload()
+      ))
       .catch(err => console.log(err))
   }
   back() {

@@ -72,15 +72,15 @@ div.login {
 // -----------
 
 #clock {
-  position: absolute;
-  top: 0;
-  right: 0;
-  padding: 20px;
-  text-align: right;
+  z-index: 10;
   font-family: 'Exo', sans-serif;
   font-weight: 100;
-  font-size: 93.2px;
+  font-size: 80px;
+  padding: 0px;
+  margin: 0px;
+  line-height: 95%;
 }
+
 #admin-title {
   z-index: 10;
   font-family: 'Exo', sans-serif;
@@ -94,40 +94,39 @@ div.login {
 }
 
 div.admin-dash {
-  background-position: top;
+  height: fit-content;
   background-size: contain;
-  min-height: 100vh;
-  // position: absolute;
   z-index: 10;
-  background: linear-gradient(0deg, rgba(0,0,0,0.5) 0%, rgba(255,255,255,0) 40%);
-  height: 100%;
-  padding: 20px;
+  margin-top: 20px;
   width: 100vw;
 }
 
 .admin-top {
+  border: 1px solid blue;
   display: flex;
-  flex-direction: row;
-  width: 80%;
-  height: 240px;
-  margin: 0 auto;
-  padding-top: 22px;
+  justify-content: space-between;
+  width: 95%;
+  height: 90px;
+  padding-left: 128px;
+  margin-bottom: 20px;
 }
 
 div.admin-fade {
-  background-color: rgba(0, 0, 0, 0.2);
+  background: linear-gradient(0deg, rgba(0,0,0,0.4) 0%, rgba(255,255,255,0) 60%);
   width: 100vw;
-  height: 100%;
-  position: fixed;
+  height: 100vh;
+  position: absolute;
   bottom: 0;
   z-index: 0;
 }
 
 div#admin-wrap {
+  border: 1px solid greenyellow;
   width: 100vw;
-  height: 100%;
+  height: 100vh;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  justify-content: start;
   background-repeat: no-repeat;
   background-size: cover;
   background-position: fixed;
@@ -164,10 +163,14 @@ div.admin-nav {
     flex-direction: column;
     padding: 0;
     list-style: none;
+    :nth-of-type(4) {
+      margin-top: auto;
+    }
     li {
       margin-bottom: 20px;
       width: 64px;
       height: 64px;
+
       img {
         width: 100%;
         border-radius: 3px;
@@ -186,10 +189,26 @@ div.admin-nav {
 
 .table {
   display: none;
-  margin: 0 auto;
-  width: 80%;
+  padding-left: 128px;
+  width: 100%;
   margin-bottom: 24px;
   // visibility: hidden;
+}
+
+.module-wrapper {
+  width: 95%;
+  border: 1px solid yellow;
+  margin-bottom: 20px;
+  height: 100%;
+  overflow: scroll;
+  ::-webkit-scrollbar {
+    display: none;
+  }
+}
+
+.dash-check {
+  height: 25px;
+  width: 25px;
 }
 
 thead {
@@ -210,13 +229,14 @@ th {
 }
 th#msg {
   width: 60vw;
-
+  overflow: scroll;
 }
+
 td#msg {
   align-items: middle;
   display: block;
-  max-block-size: 30px;
-  max-height: 30px;
+  max-block-size: 50px;
+  max-height: 50px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
@@ -228,8 +248,8 @@ td {
 }
 
 img.profile-icon {
-  max-width: 50px;
-  max-height: 50px;
+  max-width: 40px;
+  max-height: 40px;
 }
 
 div.msg-body {

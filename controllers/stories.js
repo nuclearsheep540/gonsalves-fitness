@@ -15,6 +15,15 @@ function index(req, res) {
 function published(req, res) {
   Story.find({
     featured: /host/
+  }).where('published').equals(true)
+    .then(elem => res.status(200).json(elem))
+    .catch(()=> res.status(404).json({ message: ' 404 not found' }))
+}
+
+// index of featured
+function featured(req, res) {
+  Story.find({
+    featured: /host/
   }).where('featured').equals(true)
     .then(elem => res.status(200).json(elem))
     .catch(()=> res.status(404).json({ message: ' 404 not found' }))
@@ -69,6 +78,7 @@ function removeRoute(req,res) {
 module.exports = {
   index,
   published,
+  featured,
   create,
   show,
   edit,

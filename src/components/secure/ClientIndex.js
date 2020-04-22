@@ -13,7 +13,7 @@ export default class ClientIndex extends React.Component {
   //function
   render() {
     return (
-      <div className='table animated fast clients'>
+      <div className='table animated faster clients'>
         <h2>Manage Clients</h2>
         <Link to='/story' id='admin-new-client'>
           Create new client
@@ -23,10 +23,11 @@ export default class ClientIndex extends React.Component {
             <tr>
               <th id='num'>#</th>
               <th>Profile</th>
-              <th>Feature</th>
+              <th>Published</th>
+              <th>Featured</th>
               <th>Client</th>
-              <th>Created At</th>
               <th>Control</th>
+              <th>Created At</th>
               <th>database_id</th>
             </tr>
           </thead>
@@ -40,13 +41,21 @@ export default class ClientIndex extends React.Component {
                 </td>
                 <td>
                   <input
+                    className='dash-check'
+                    type='checkbox'
+                    checked={story.published === true ? true : false}
+                    disabled
+                  />{' '}
+                </td>
+                <td>
+                  <input
+                    className='dash-check'
                     type='checkbox'
                     checked={story.featured === true ? true : false}
                     disabled
                   />{' '}
                 </td>
                 <td>{story.client}</td>
-                <td>{story.created}</td>
                 <td>
                   <Link to={`/story/${story._id}`}>Edit</Link>
                   <a
@@ -56,6 +65,7 @@ export default class ClientIndex extends React.Component {
                     Delete
                   </a>
                 </td>
+                <td>{story.created}</td>
                 <td>{story._id}</td>
               </tr>
             ))}

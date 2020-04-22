@@ -39,6 +39,7 @@ mongoose.connect(
             after: 'https://cdn.clipart.email/fdb89e0ed802f4bc60d00e8ee9f0feb9_the-track-athlete-who-beat-cancer-and-dreams-of-an-animation-_500-500.jpeg',
             description: 'test description',
             review: 'Rhyse was really helpful, I enjoy training with him',
+            published: true,
             featured: false,
             created: time.toDateString(),
             user: user[0]
@@ -50,6 +51,7 @@ mongoose.connect(
             after: '',
             description: '',
             review: 'I feel a lot more body confident now',
+            published: true,
             featured: true,
             created: time.toDateString(),
             user: user[0]

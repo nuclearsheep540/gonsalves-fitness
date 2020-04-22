@@ -5,6 +5,7 @@ import axios from 'axios'
 import AdminNav from '../common/AdminNav'
 import ClientIndex from './ClientIndex'
 import MsgIndex from './MsgIndex'
+import TopDash from './TopDash'
 
 export default class Dashboard extends React.Component {
   constructor() {
@@ -34,14 +35,14 @@ export default class Dashboard extends React.Component {
           small:
             'https://images.unsplash.com/photo-1519424872176-907da8d127f8?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=400&fit=max&ixid=eyJhcHBfaWQiOjEyMjEyNn0',
           thumb:
-            'https://images.unsplash.com/photo-1519424872176-907da8d127f8?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjEyMjEyNn0'
+            'https://images.unsplash.com/photo-1519424872176-907da8d127f8?ixlib=rb-1.2.1&q=80&fm=jpg&crop=entropy&cs=tinysrgb&w=200&fit=max&ixid=eyJhcHBfaWQiOjEyMjEyNn0',
         },
         links: {
           self: 'https://api.unsplash.com/photos/dI3J7V0GknY',
           html: 'https://unsplash.com/photos/dI3J7V0GknY',
           download: 'https://unsplash.com/photos/dI3J7V0GknY/download',
           download_location:
-            'https://api.unsplash.com/photos/dI3J7V0GknY/download'
+            'https://api.unsplash.com/photos/dI3J7V0GknY/download',
         },
         categories: [],
         likes: 28,
@@ -66,7 +67,7 @@ export default class Dashboard extends React.Component {
             likes: 'https://api.unsplash.com/users/jxb511/likes',
             portfolio: 'https://api.unsplash.com/users/jxb511/portfolio',
             following: 'https://api.unsplash.com/users/jxb511/following',
-            followers: 'https://api.unsplash.com/users/jxb511/followers'
+            followers: 'https://api.unsplash.com/users/jxb511/followers',
           },
           profile_image: {
             small:
@@ -74,13 +75,13 @@ export default class Dashboard extends React.Component {
             medium:
               'https://images.unsplash.com/profile-fb-1504194982-405c65f1fb61.jpg?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=64&w=64',
             large:
-              'https://images.unsplash.com/profile-fb-1504194982-405c65f1fb61.jpg?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=128&w=128'
+              'https://images.unsplash.com/profile-fb-1504194982-405c65f1fb61.jpg?ixlib=rb-1.2.1&q=80&fm=jpg&crop=faces&cs=tinysrgb&fit=crop&h=128&w=128',
           },
           instagram_username: 'jbakator',
           total_collections: 9,
           total_likes: 12,
           total_photos: 64,
-          accepted_tos: true
+          accepted_tos: true,
         },
         exif: {
           make: 'Canon',
@@ -88,7 +89,7 @@ export default class Dashboard extends React.Component {
           exposure_time: '1/1250',
           aperture: '5.6',
           focal_length: '200.0',
-          iso: 100
+          iso: 100,
         },
         location: {
           title: 'Banff National Park, Canada',
@@ -97,12 +98,12 @@ export default class Dashboard extends React.Component {
           country: 'Canada',
           position: {
             latitude: 51.4968464,
-            longitude: -115.9280562
-          }
+            longitude: -115.9280562,
+          },
         },
         views: 121418,
-        downloads: 489
-      }
+        downloads: 489,
+      },
     }
     this.tick = this.tick.bind(this)
     this.logout = this.logout.bind(this)
@@ -121,7 +122,7 @@ export default class Dashboard extends React.Component {
     if (Auth.isAuthenticated()) {
       axios
         .get('/api/story', {
-          headers: { Authorization: `Bearer ${Auth.getToken()}` }
+          headers: { Authorization: `Bearer ${Auth.getToken()}` },
         })
         .then((res) => this.setState({ stories: res.data }))
         .catch((err) => console.log(err))
@@ -137,7 +138,7 @@ export default class Dashboard extends React.Component {
 
   tick() {
     this.setState({
-      date: new Date()
+      date: new Date(),
     })
   }
 
@@ -151,7 +152,7 @@ export default class Dashboard extends React.Component {
     window.confirm(`Are you sure you wish to delete ${e.target.name}?`)
       ? axios
         .delete(`/api/story/${id}`, {
-          headers: { Authorization: `Bearer ${Auth.getToken()}` }
+          headers: { Authorization: `Bearer ${Auth.getToken()}` },
         })
         .then(window.location.reload())
       : console.log(false)
@@ -165,39 +166,28 @@ export default class Dashboard extends React.Component {
 
     return (
       <>
+          <AdminNav />
+          <div className='admin-fade'></div>
         <div
           id='admin-wrap'
-          style={{ backgroundImage: `url(${this.state.bg.urls.regular})` }}
-        >
-          <div className='admin-fade'></div>
-          <AdminNav />
+          style={{ backgroundImage: `url(${this.state.bg.urls.regular})` }}>
 
-          <div className='admin-dash'>
-            <div className='admin-top'>
-              <div>
-                <h1 id='admin-title'>Content Manager</h1>
-                <h2 id='admin-greeting'>{`Welcome back, ${Auth.getName()}`}</h2>
-              </div>
-            </div>
+          <TopDash 
+            date={this.state.date}/>
 
+          <div className='module-wrapper'>
             <ClientIndex
               data={this.state.stories}
-              handleDelete={this.handleDelete}
-            />
+              handleDelete={this.handleDelete}/>
 
             <MsgIndex data={this.state.msg} />
-
-            <div id='clock'>
-              {this.state.date.toLocaleTimeString('en-US', {
-                hour: '2-digit',
-                minute: '2-digit'
-              })}
-            </div>
-            <footer id='admin-footer'>
-              {this.state.bg.alt_description} by{' '}
-              <a href={this.state.bg.links.html}>{this.state.bg.user.name}</a>
-            </footer>
           </div>
+
+          <footer id='admin-footer'>
+            {this.state.bg.alt_description} by{' '}
+            <a href={this.state.bg.links.html}>{this.state.bg.user.name}</a>
+          </footer>
+        
         </div>
 
       </>

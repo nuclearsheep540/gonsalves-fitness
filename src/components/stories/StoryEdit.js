@@ -7,15 +7,18 @@ export default class StoryEdit extends React.Component {
   constructor() {
     super()
     this.state = {
+      picture: null,
       data: {
 
       }
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
+    this.handleImageUpdate = this.handleImageUpdate.bind(this)
   }
 
   componentDidMount() {
+    document.getElementById('profile-img').value && this.state.data.image ? this.setStateImage : null
     const storyId = this.props.match.params.id
     axios.get(`/api/story/${storyId}`) //axios get is string
       .then(res => {
@@ -23,6 +26,30 @@ export default class StoryEdit extends React.Component {
         console.log('axios mount',res.data)
       })
       .catch(err => console.log(err))
+  }
+
+  handleImageUpdate(source, url) {
+    console.log('handleImageUpdate',event.target)
+    console.log('handleimgupdate', url)
+    console.log('handleImage target is ',source)
+    this.setState({ 
+      data: {
+        ...this.state.data,
+        [source]: url 
+      }
+    })
+  }
+
+  setStateImage(){
+    const image = document.getElementById('profile-img').value
+    const data = { 
+      ...this.state.data, 
+      image: image 
+    }
+    this.setState({
+      data,
+      picture: false
+    })
   }
 
   handleChange(e) {
@@ -38,21 +65,18 @@ export default class StoryEdit extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
     const storyId = this.state.data._id
-    console.log(`axios: /api/story/${storyId}`, this.state.data)
+    // console.log(`axios: /api/story/${storyId}`, this.state.data)
     axios.put(`/api/story/${storyId}`, this.state.data, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
-      .then(res => console.log('axios put',res))
-      .then(this.props.history.push('/admin/dashboard'))
-      .then(window.location.reload())
+      .then(res => res.status === 202 && (
+        this.props.history.push('/admin/dashboard'),
+        window.location.reload()
+      ))
       .catch(err => console.log(err))
   }
   back() {
     window.history.back()
-  }
-  fileUpload(e){
-    e.preventDefault()
-    window.alert('Sorry, file upload is not available at the moment')
   }
 
   render() {
@@ -71,7 +95,7 @@ export default class StoryEdit extends React.Component {
               data={this.state.data}
               handleChange={this.handleChange}
               handleSubmit={this.handleSubmit}
-              fileupload={this.fileUpload}
+              handleImage={this.handleImageUpdate}
             />
           </div>
 

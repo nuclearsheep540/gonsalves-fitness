@@ -28,7 +28,7 @@ export default class MsgIndex extends React.Component {
   //function
   render() {
     return (
-      <div className='table animated fast msg'>
+      <div className='table animated faster msg'>
         <h2>Message Centre</h2>
         <table>
           <thead>

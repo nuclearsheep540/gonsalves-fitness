@@ -13,7 +13,7 @@ export default class FeatureCard extends React.Component {
 
 
   componentDidMount() {
-    Axios.get('/api/story').then(res =>
+    Axios.get('/api/featured').then(res =>
       this.setState({ data: res.data.filter(elem => elem.featured === true) })
     )
     // setInterval(() => {

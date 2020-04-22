@@ -21,6 +21,9 @@ router.route('/story')
 router.route('/published')
   .get(story.published)
 
+router.route('/featured')
+  .get(story.featured)
+
 router.route('/story/:id')
   .get(story.show)
   .put(secureRoute, story.edit)

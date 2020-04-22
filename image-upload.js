@@ -19,7 +19,8 @@ class ImageUpload extends Component {
     console.log('firebase uploadImage',e.target)
     console.log('firebase source button = ',this.props)
     this.setState({ imageUpLoading: true }) //this boolean controls the messages in teh rended after the onChange
-    const currentImageName = 'firebase-image-' + Date.now()
+    const client = this.props.client || 'no_client_name'
+    const currentImageName = Date.now() + '_' + client.replace(/\s/g, '-').toLowerCase() + '_' + source
     const uploadImage = storage.ref(`images/${currentImageName}`).put(e.target.files[0]) 
     uploadImage.on('state_changed',
       () => { },
@@ -52,13 +53,6 @@ class ImageUpload extends Component {
 
         <label>After</label>
         <input name='after' type="file" className="process__upload-btn" onChange={(e) => this.uploadImage('after', e)} />
-
-        {this.state.imageUpLoading &&
-          <p>Your image is uploading...this might take a second</p>
-        }
-        { this.state.firebaseImageURL &&
-          <p>Your image uploaded</p>
-        }
       </>
     )
   }

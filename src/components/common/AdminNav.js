@@ -6,29 +6,33 @@ export default class AdminNav extends React.Component {
   constructor(){
     super()
     this.state = {
-      table: true,
-      msg: true
+      table: false,
+      msg: false
 
     }
     this.storyTable = this.storyTable.bind(this)
     this.msgTable = this.msgTable.bind(this)
   }
+  componentDidMount(){
+    this.showMsg()
+    this.showStory()
+  }
 
   //MESSAGES
   showMsg() {
     const msg = document.querySelector('.msg')
-    msg.classList.remove('fadeOut'),
+    msg.classList.remove('fadeOutLeft'),
     msg.style.display = 'block',
-    msg.classList.add('fadeIn')
+    msg.classList.add('fadeInLeft')
   }
 
   hideMsg() {
     const msg = document.querySelector('.msg')
-    msg.classList.remove('fadeIn'),
-    msg.classList.add('fadeOut'),
+    msg.classList.remove('fadeInLeft'),
+    msg.classList.add('fadeOutLeft'),
     setTimeout(() => {
       msg.style.display = 'none'
-    }, 700)
+    }, 500)
   }
 
   msgTable() {
@@ -39,18 +43,18 @@ export default class AdminNav extends React.Component {
   //CLIENT STORIES
   showStory() {
     const stories = document.querySelector('.clients')
-    stories.classList.remove('fadeOut'),
+    stories.classList.remove('fadeOutLeft'),
     stories.style.display = 'block',
-    stories.classList.add('fadeIn')
+    stories.classList.add('fadeInLeft')
   }
 
   hideStory() {
     const stories = document.querySelector('.clients')
-    stories.classList.remove('fadeIn'),
-    stories.classList.add('fadeOut'),
+    stories.classList.remove('fadeInLeft'),
+    stories.classList.add('fadeOutLeft'),
     setTimeout(() => {
       stories.style.display = 'none'
-    }, 700)
+    }, 500)
   }
   
   storyTable() {
@@ -62,6 +66,10 @@ export default class AdminNav extends React.Component {
     event.preventDefault()
     Auth.logout()
     console.log('clearing tokens')
+  }
+
+  settings(){
+    console.log('settings')
   }
 
   render(){
@@ -80,14 +88,20 @@ export default class AdminNav extends React.Component {
           </a>
 
           {Auth.isAuthenticated() && (
-            <Link to ='/admin' onClick={this.logout}>
+            <Link to='/admin' onClick={this.logout}>
               <li>
                 <img id='logout' src='../../assets/logout.png' />
               </li>
             </Link>
           )}
+
+          <a onClick={this.settings}>
+            <li>
+              <img src='../../assets/settings.png' />
+            </li>
+          </a>
+          
         </ul>
-        
       </div>
     )
   }

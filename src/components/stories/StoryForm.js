@@ -19,8 +19,8 @@ const StoryForm = ({ handleImage, handleChange, handleSubmit, data }) => {
           ></input>
         </div>
 
-        <ImageUpload handleImage={handleImage} data={data} />
-
+        <br />
+        <ImageUpload handleImage={handleImage} data={data} client={data.client} />
 
         <div className='half-width'>
           {/* <label name='exampleMessage'>Profile</label> */}
@@ -85,6 +85,15 @@ const StoryForm = ({ handleImage, handleChange, handleSubmit, data }) => {
         </div>
 
         <div className='half-width'>
+          <label name='checkbox'>Publish</label>
+          <input
+            value={data.featured}
+            type='checkbox'
+            className='input-area'
+            name='published'
+            checked={data.published}
+            onChange={handleChange}
+          ></input>
           <label name='checkbox'>Featured</label>
           <input
             value={data.featured}
@@ -94,6 +103,8 @@ const StoryForm = ({ handleImage, handleChange, handleSubmit, data }) => {
             checked={data.featured}
             onChange={handleChange}
           ></input>
+
+
         </div>
 
         <button type='submit' className=''>

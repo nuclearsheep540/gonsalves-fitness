@@ -24,7 +24,7 @@ export default class HeroCover extends React.Component {
       document.querySelector('.overlay').style.backgroundColor =
         'rgba(0, 0, 0, 0.3)'
       this.setState({ transition: true })
-    }, 4000)
+    }, 2000)
   }
 
   render() {
