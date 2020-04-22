@@ -70,8 +70,8 @@ export default class StoryEdit extends React.Component {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(res => res.status === 202 && (
-        this.props.history.push('/admin/dashboard'),
-        window.location.reload()
+        this.props.history.push('/admin/dashboard')
+        // window.location.reload()
       ))
       .catch(err => console.log(err))
   }

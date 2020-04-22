@@ -108,6 +108,7 @@ export default class Dashboard extends React.Component {
     this.tick = this.tick.bind(this)
     this.logout = this.logout.bind(this)
     this.unsplashBg = this.unsplashBg.bind(this)
+    this.handleDelete = this.handleDelete.bind(this)
   }
 
   unsplashBg() {
@@ -122,18 +123,18 @@ export default class Dashboard extends React.Component {
     if (Auth.isAuthenticated()) {
       axios
         .get('/api/story', {
-          headers: { Authorization: `Bearer ${Auth.getToken()}` },
+          headers: { Authorization: `Bearer ${Auth.getToken()}` }
         })
-        .then((res) => this.setState({ stories: res.data }))
+        .then((res) => this.setState({ stories: res.data.reverse() }))
         .catch((err) => console.log(err))
     }
     this.unsplashBg()
     this.timerID = setInterval(() => this.tick(), 2000)
-    axios.get('/api/contact').then((res) => this.setState({ msg: res.data }))
+    axios.get('/api/contact').then((res) => this.setState({ msg: res.data.reverse() }))
   }
   componentWillUnmount() {
     clearInterval(this.timerID)
-    window.location.reload()
+    // window.location.reload()
   }
 
   tick() {
@@ -152,9 +153,13 @@ export default class Dashboard extends React.Component {
     window.confirm(`Are you sure you wish to delete ${e.target.name}?`)
       ? axios
         .delete(`/api/story/${id}`, {
-          headers: { Authorization: `Bearer ${Auth.getToken()}` },
+          headers: { Authorization: `Bearer ${Auth.getToken()}` }
         })
-        .then(window.location.reload())
+        .then(axios.get('/api/story', {
+          headers: { Authorization: `Bearer ${Auth.getToken()}` }
+        })
+          .then(res => this.setState({ stories: res.data }))
+        )
       : console.log(false)
   }
 
@@ -181,6 +186,7 @@ export default class Dashboard extends React.Component {
               handleDelete={this.handleDelete}/>
 
             <MsgIndex data={this.state.msg} />
+            
           </div>
 
           <footer id='admin-footer'>

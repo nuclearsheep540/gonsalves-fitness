@@ -6,16 +6,15 @@ export default class AdminNav extends React.Component {
   constructor(){
     super()
     this.state = {
-      table: false,
-      msg: false
+      table: true,
+      msg: true
 
     }
     this.storyTable = this.storyTable.bind(this)
     this.msgTable = this.msgTable.bind(this)
   }
   componentDidMount(){
-    this.showMsg()
-    this.showStory()
+    console.log(window.history)
   }
 
   //MESSAGES
