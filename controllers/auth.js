@@ -28,7 +28,32 @@ function login(req, res) {
     })
 }
 
+// get user logged in
+function call(req, res) {
+  req.body.user = req.currentUser
+  User.findById(req.currentUser)
+    .then(elem => res.status(200).json(elem))
+}
+
+//update user
+function edit(req, res) {
+  logger.info('attempting user update')
+  logger.info('found user ',req.currentUser._id)
+  logger.info('body: ',req.body)
+  User.findById(req.currentUser._id)
+    .then(request => {
+      if (!request) return res.status(404).json({ message: 'Not found' })
+      return request.set(req.body)
+    })
+    .then(request => request.save())
+    .then(request => res.status(202).json(request))
+    .then(request => logger.info(request))
+    .catch(err => logger.error(err))
+}
+
 module.exports = {
   register,
-  login
+  login,
+  call,
+  edit
 }

@@ -52,6 +52,7 @@ const ContactForm = ({ handleSubmit, handleChange, form, status, handleprivacy, 
           <textarea
             className=''
             placeholder='Your message'
+            maxLength={1000}
             type='textarea'
             name='message'
             value={form.message}
