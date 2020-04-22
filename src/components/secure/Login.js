@@ -1,6 +1,7 @@
 import React from 'react'
 import axios from 'axios'
 import Auth from '../../lib/auth'
+import { Link } from 'react-router-dom'
 
 class Login extends React.Component {
   constructor() {
@@ -26,6 +27,9 @@ class Login extends React.Component {
       console.log('user already logged in, redirecting...'),
       location.reload()
     )
+  }
+  backToSite(){
+    this.props.history.push('/')
   }
 
   handleSubmit(e) {
@@ -82,6 +86,9 @@ class Login extends React.Component {
                 </div>
                 <button type='submit' className=''>
                   Login
+                </button>
+                <button>
+                  <Link to='/'>Back to site</Link>
                 </button>
               </div>
               <br />

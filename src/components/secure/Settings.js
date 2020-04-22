@@ -41,7 +41,6 @@ export default class Settings extends React.Component {
       <div className='table animated faster settings'>
         <h1>Settings</h1>
 
-        <label>Change Background</label>
         <button onClick={this.changeBackground}>Change Background Image</button>
       </div>
     )
