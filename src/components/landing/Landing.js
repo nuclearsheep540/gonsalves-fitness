@@ -42,7 +42,7 @@ export default class Landing extends React.Component {
     e.preventDefault()
     const obj = {
       privacy: this.state.privacy,
-      to: 'gonsalvesfitness@gmail.com', //client's email address
+      to: 'matt.davey540@me.com', //client's email address
       from: this.state.form.email, //reply-to customer address
       subject: `${this.state.form.firstname} has contacted you at Gonsalves-Fitness.com`,
       textBody: this.state.form.message,

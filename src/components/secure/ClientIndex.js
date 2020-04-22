@@ -14,7 +14,7 @@ export default class ClientIndex extends React.Component {
   render() {
     return (
       <div className='table animated faster clients'>
-        <h2>Manage Clients</h2>
+        <h1>Manage Content</h1>
         <Link to='/story' id='admin-new-client'>
           Create new client
         </Link>
