@@ -150,7 +150,7 @@ footer#admin-footer {
 }
 div.admin-nav {
   position: fixed;
-  padding-top: 32px;
+  padding-top: 16px;
   z-index: 11;
   display: flex;
   justify-content: center;
@@ -215,6 +215,7 @@ thead {
   background-color: rgba(0,0,0,0.1);
 }
 tbody{
+
   background-color: rgba(0, 0, 0, 0.3);
   a {
     text-decoration: none;
@@ -227,6 +228,7 @@ tbody{
 th {
   width: 300px;
 }
+
 th#msg {
   width: 60vw;
   overflow: scroll;
@@ -235,13 +237,13 @@ th#msg {
 td#msg {
   align-items: middle;
   display: block;
-  max-block-size: 50px;
-  max-height: 50px;
+  max-block-size: 44px;
+  max-height: 44px;
   overflow: hidden;
   text-overflow: ellipsis;
 }
 th:nth-child(1){
-  width: 50px;
+  width: 44px;
 }
 td {
   text-align: center;
@@ -250,6 +252,7 @@ td {
 img.profile-icon {
   max-width: 40px;
   max-height: 40px;
+  border-radius: 2px;
 }
 
 div.msg-body {
