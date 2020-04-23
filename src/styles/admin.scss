@@ -36,26 +36,7 @@ div.image-upload{
   display: flex;
 }
 
-div.two-up{
-  display: flex;
-  max-width: 95vw;
-  justify-content: space-evenly;
-  margin: auto;
-}
-div.col-left{
-  margin-left: 4%;
-  display: flex;
-  max-width: 40vw;
-  flex-wrap: nowrap;
-  margin-bottom: 50px;
-}
-div.col-right{
-  margin-right: 4%;
-  display: flex;
-  flex-direction: column;
-  max-width: 40vw;
-  margin-bottom: 50px;
-}
+
 
 div.login {
   display: flex;
@@ -140,23 +121,93 @@ div#admin-wrap {
   color: white;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
-div.editform {
-  min-width: 100vw;
-}
-iframe#editarea {
-  padding: 20px;
-  background-color: rgba(255, 255, 255, 0.8) !important;
-  border: 1px solid red;
-  border-top-left-radius: 10px;
-  border-top-right-radius: 10px;
+
+div.iframecontainer { //top lvl
+  // border: 1px solid red;
+  display: flex;
   position: absolute;
   bottom: 0px;
-  height: 80%;
-  left: 108px;
-  width: 90%;
+  width: 100vw;
+  height: 80vh;
+  z-index: 20;
+
+
 }
-div.editmain {
-  //
+div.iframewrap { //wrapper
+  // border: 1px solid blue;
+  background-color: rgba(245, 245, 245, 0.8);
+  width: 100%;
+  height: 100%;
+  overflow: scroll;
+  margin-left: 128px;
+  margin-right: 5%;
+  border: none;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  
+  
+
+}
+#editarea { //iframe elem
+  // border: 1px solid green;
+  border: none;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  height: 100%;
+  overflow: scroll;
+  width: inherit;
+  position: relative;
+
+}
+div.edittop { //header info
+  // border: 1px solid yellow;
+  position: absolute;
+  z-index: 20;
+  top: 0;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  background: whitesmoke;
+  width: 100%;
+  height: 128px;
+  color: black;
+  padding: 20px;
+  h1{
+    padding: 0px;
+    margin: 0px;
+    text-shadow: none !important;
+  }
+}
+
+div.editmain { //form info
+  // border: 1px solid orange;
+  position: relative;
+  max-height: 100%;
+  overflow: scroll;
+  color: black;
+}
+
+
+div.two-up{
+  margin-top: 125px;
+  // border: 1px solid green;
+  display: flex;
+  max-width: 95vw;
+  justify-content: space-evenly;
+  padding: 20px;
+}
+div.col-left{
+  margin-left: 4%;
+  display: flex;
+  max-width: 40vw;
+  flex-wrap: nowrap;
+  margin-bottom: 50px;
+}
+div.col-right{
+  margin-right: 4%;
+  display: flex;
+  flex-direction: column;
+  max-width: 40vw;
+  margin-bottom: 50px;
 }
 
 footer#admin-footer {

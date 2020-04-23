@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
+import { Link, Switch } from 'react-router-dom'
 import StoryEdit from '../stories/StoryEdit'
 
 export default class ClientIndex extends React.Component {
@@ -9,6 +9,7 @@ export default class ClientIndex extends React.Component {
       storyId: null,
     }
     this.openEdit = this.openEdit.bind(this)
+    this.closeEdit = this.closeEdit.bind(this)
   }
   componentDidMount() {
     console.log(this.props)
@@ -16,12 +17,18 @@ export default class ClientIndex extends React.Component {
 
   openEdit(storyId) {
     const id = storyId
-    const elem = document.getElementsByTagName('iframe')[0]
     this.setState({ storyId: id })
-    elem.classList.remove('hidden')
+    document.getElementsByClassName('iframecontainer')[0].classList.remove('hidden')
   }
+  closeEdit(storyId) {
+    console.log('closing id ',storyId)
+    document.getElementsByClassName('iframecontainer')[0].classList.add('hidden')
+    this.setState({ storyId: null })
+  }
+
   //function
   render() {
+
     return (
       <>
         <div className='table animated faster clients'>
@@ -84,11 +91,16 @@ export default class ClientIndex extends React.Component {
             </tbody>
           </table>
         </div>
-        <div id='editform'>
-          <iframe 
-            src={`/story/${this.state.storyId}`}
-            id='editarea'
-            className='hidden'></iframe>
+        <div className='iframecontainer hidden'>
+          <div className='iframewrap'>
+            <div id='editarea'>
+              {this.state.storyId !== null &&
+              <StoryEdit 
+                source={this.state.storyId}
+                close={this.closeEdit}
+              />}
+            </div>
+          </div>
         </div>
       </>
     )
