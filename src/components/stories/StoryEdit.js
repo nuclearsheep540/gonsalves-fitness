@@ -82,7 +82,7 @@ export default class StoryEdit extends React.Component {
   render() {
     if (!this.state.data) return null
     return (
-      <div className='pad20'>
+      <div className='editmain'>
 
         <h1>Editing {this.state.data.client}&apos;s Story</h1>
         <small> id:{this.props.match.params.id} </small>

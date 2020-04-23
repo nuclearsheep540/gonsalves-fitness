@@ -140,6 +140,25 @@ div#admin-wrap {
   color: white;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
 }
+div.editform {
+  min-width: 100vw;
+}
+iframe#editarea {
+  padding: 20px;
+  background-color: rgba(255, 255, 255, 0.8) !important;
+  border: 1px solid red;
+  border-top-left-radius: 10px;
+  border-top-right-radius: 10px;
+  position: absolute;
+  bottom: 0px;
+  height: 80%;
+  left: 108px;
+  width: 90%;
+}
+div.editmain {
+  //
+}
+
 footer#admin-footer {
   a {
     color: white;
