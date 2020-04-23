@@ -130,9 +130,8 @@ div.iframecontainer { //top lvl
   width: 100vw;
   height: 80vh;
   z-index: 20;
-
-
 }
+
 div.iframewrap { //wrapper
   // border: 1px solid blue;
   background-color: rgba(245, 245, 245, 0.8);
@@ -144,10 +143,8 @@ div.iframewrap { //wrapper
   border: none;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
-  
-  
-
 }
+
 #editarea { //iframe elem
   // border: 1px solid green;
   border: none;
@@ -157,8 +154,8 @@ div.iframewrap { //wrapper
   overflow: scroll;
   width: inherit;
   position: relative;
-
 }
+
 div.edittop { //header info
   // border: 1px solid yellow;
   position: absolute;
@@ -185,7 +182,6 @@ div.editmain { //form info
   overflow: scroll;
   color: black;
 }
-
 
 div.two-up{
   margin-top: 125px;

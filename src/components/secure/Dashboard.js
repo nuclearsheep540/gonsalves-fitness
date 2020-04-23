@@ -20,6 +20,7 @@ export default class Dashboard extends React.Component {
     this.tick = this.tick.bind(this)
     this.logout = this.logout.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
+    this.api = this.api.bind(this)
   }
 
   componentDidMount() {
@@ -66,6 +67,19 @@ export default class Dashboard extends React.Component {
         )
       : console.log(false)
   }
+  api(){
+    if (Auth.isAuthenticated()) {
+      axios
+        .get('/api/story', {
+          headers: { Authorization: `Bearer ${Auth.getToken()}` }
+        })
+        .then((res) => this.setState({ stories: res.data.reverse() }))
+        .catch((err) => console.log(err))
+    }
+    this.timerID = setInterval(() => this.tick(), 2000)
+    axios.get('/api/contact').then((res) => this.setState({ msg: res.data.reverse() }))
+    axios.get('/api/login',{ headers: { Authorization: `Bearer ${Auth.getToken()}` } })
+  }
 
   render() {
     if (!Auth.isAuthenticated())
@@ -90,7 +104,9 @@ export default class Dashboard extends React.Component {
 
             <ClientIndex
               data={this.state.stories}
-              handleDelete={this.handleDelete}/>
+              handleDelete={this.handleDelete}
+              api={this.api}
+            />
 
             <MsgIndex data={this.state.msg} />
           </div>

@@ -19,6 +19,15 @@ export default class AdminNav extends React.Component {
   componentDidMount(){
     console.log(window.history)
   }
+  //IF STORYEDIT IS OPEN
+  closeEdit() {
+    document.getElementsByClassName('iframecontainer')[0].classList.remove('fadeInUp')
+    document.getElementsByClassName('iframecontainer')[0].classList.add('fadeOutDown')
+    setTimeout(()=>{
+      document.getElementsByClassName('iframecontainer')[0].classList.add('hidden')
+    },500)
+  }
+
   //SETTINGS
   showSettings(){
     setTimeout(()=>{
@@ -128,8 +137,10 @@ export default class AdminNav extends React.Component {
 
   
   render(){
+    console.log()
+
     return (
-      <div className='admin-nav'>
+      <div className='admin-nav' onClick={this.closeEdit}>
         <ul>
           <a onClick={this.storyToggle}>
             <li>

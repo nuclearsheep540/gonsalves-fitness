@@ -19,10 +19,17 @@ export default class ClientIndex extends React.Component {
     const id = storyId
     this.setState({ storyId: id })
     document.getElementsByClassName('iframecontainer')[0].classList.remove('hidden')
+    document.getElementsByClassName('iframecontainer')[0].classList.remove('fadeOutDown')
+    document.getElementsByClassName('iframecontainer')[0].classList.add('fadeInUp')
   }
   closeEdit(storyId) {
+    this.props.api()
     console.log('closing id ',storyId)
-    document.getElementsByClassName('iframecontainer')[0].classList.add('hidden')
+    document.getElementsByClassName('iframecontainer')[0].classList.remove('fadeInUp')
+    document.getElementsByClassName('iframecontainer')[0].classList.add('fadeOutDown')
+    setTimeout(()=>{
+      document.getElementsByClassName('iframecontainer')[0].classList.add('hidden')
+    },500)
     this.setState({ storyId: null })
   }
 
@@ -91,7 +98,7 @@ export default class ClientIndex extends React.Component {
             </tbody>
           </table>
         </div>
-        <div className='iframecontainer hidden'>
+        <div className='iframecontainer hidden animated faster'>
           <div className='iframewrap'>
             <div id='editarea'>
               {this.state.storyId !== null &&
