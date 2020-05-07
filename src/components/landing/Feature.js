@@ -1,14 +1,12 @@
 import React from 'react'
-import FeatureCard from './FeatureCard'
+import FeatureCardMap from './FeatureCardMap'
 
 const Feature = () => {
   return (
     <div id='feature'>
-      <div className='feature-card'>
-        <p className='left-q'>&ldquo;</p>
-        <FeatureCard />
-        <p className='right-q'>&rdquo;</p>
-      </div>
+     
+      <FeatureCardMap />
+ 
     </div>
   )
 }

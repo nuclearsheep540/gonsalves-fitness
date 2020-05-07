@@ -70,6 +70,7 @@ const StoryForm = ({ handleImage, handleChange, handleSubmit, data }) => {
             name='description'
             value={data.description}
             onChange={handleChange}
+            max={1000}
           ></textarea>
         </div>
 
@@ -81,6 +82,7 @@ const StoryForm = ({ handleImage, handleChange, handleSubmit, data }) => {
             name='review'
             value={data.review}
             onChange={handleChange}
+            max={120}
           ></textarea>
         </div>
 

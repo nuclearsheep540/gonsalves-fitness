@@ -8,10 +8,11 @@ const router = require('./config/router')
 require('dotenv').config()
 // const errorHandler = require('./lib/errorHandler')
 
+//mongodb+srv://admin:<password>@rhyse-pt-sb9m6.gcp.mongodb.net/test?retryWrites=true&w=majority
 
 mongoose.set('useFindAndModify', false)
 
-mongoose.connect(dbURI,
+mongoose.connect(process.env.MONGOD_URI || dbURI,
   { useNewUrlParser: true, useUnifiedTopology: true, useCreateIndex: true },
   () => logger.info('Mongo is connected')
 )

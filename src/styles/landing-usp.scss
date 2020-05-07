@@ -1,23 +1,25 @@
 .gridbox {
-  border: 1px solid red;
+  // border: 1px solid red;
   display: flex;
-  margin: auto;
+  flex-wrap: wrap;
   justify-content: center;
-  width: 70%;
-  max-width: 50%;
+  margin: 5% auto;
+  width: 80%;
+  max-width: 830px;
   height: fit-content;
   flex-wrap: wrap;
+  
 }
 
 .gridcell {
-  border: 1px solid blue;
+  // border: 1px solid blue;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   width: 275px;
-  min-height: 320px;
-  margin: 0 auto;
+  min-height: 280px;
+  margin: 12px;
   list-style: none;
 }
 
@@ -26,5 +28,23 @@
   max-width: 70px;
 }
 .service-heading {
-  height: 30px;
+  height: 45px;
 }
+
+
+.gridtop {
+  height: fit-content;
+  padding: 4px;
+  width: 100%;
+  border: 2px solid gold;
+  background: gold;
+}
+.gridbot {
+  height: 100%;
+  padding: 12px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: 2px solid white;
+  background: white;
+}
+

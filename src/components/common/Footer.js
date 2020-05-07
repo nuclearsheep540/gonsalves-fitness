@@ -13,14 +13,19 @@ export default class Footer extends React.Component {
     return (
       <footer>
         <div className='container-fluid'>
-          <p>External Booking</p>
-          <p>Merchandise</p>
-          <Link to='/privacy'>
-            <p>Privacy Policy</p>
-          </Link>
-          <Link to='/admin'>
-            <p>Admin Panel</p>
-          </Link>
+          <div id='footer'>
+
+            <Link to='/privacy'>
+              <p className='p14'>Privacy Policy</p>
+            </Link>
+            <p className='p14'>Booking</p>
+            <Link to='/#contact'>
+              <p className='p14'>Contact</p>
+            </Link>
+    
+            <a href='https://www.facebook.com/GonsalvesFitness' target='blank'><p className='p14'>Facebook</p></a>
+            <a href='https://www.instagram.com/gonsalvesfitness/' target='blank'><p className='p14'>Instagram</p></a>
+          </div>
         </div>
       </footer>
     )

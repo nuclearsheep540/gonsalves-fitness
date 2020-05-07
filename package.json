@@ -29,7 +29,7 @@
     "babel-loader": "^8.0.6",
     "css-loader": "^3.2.0",
     "html-webpack-plugin": "^3.2.0",
-    "node-sass": "^4.13.1",
+    "node-sass": "^4.14.1",
     "nodemon": "^1.19.4",
     "sass-loader": "^8.0.0",
     "style-loader": "^1.0.0",
@@ -38,6 +38,9 @@
     "webpack-dev-server": "^3.9.0"
   },
   "dependencies": {
+    "@fortawesome/fontawesome-svg-core": "^1.2.28",
+    "@fortawesome/free-solid-svg-icons": "^5.13.0",
+    "@fortawesome/react-fontawesome": "^0.1.9",
     "@socketlabs/email": "^1.0.2",
     "animate.css": "^3.7.2",
     "axios": "^0.19.0",
@@ -55,6 +58,8 @@
     "normalize.css": "^8.0.1",
     "react": "^16.7.0",
     "react-dom": "^16.7.0",
+    "react-fontawesome": "^1.7.1",
+    "react-pdf": "^4.1.0",
     "react-router-dom": "^5.1.2",
     "react-video-cover": "^1.2.2"
   }

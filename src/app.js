@@ -20,6 +20,7 @@ import ImageUpload from '../image-upload'
 import './styles/main.scss'
 import 'normalize.css'
 import 'animate.css'
+import 'react-fontawesome'
 
 // need to create new routes for secure CMS
 // routes need to path from /admin 

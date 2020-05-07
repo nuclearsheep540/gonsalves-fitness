@@ -7,7 +7,7 @@ const TopDash = ({ date }) => {
       <div className='admin-top'>
         <div>
           <h1 id='admin-title'>Content Manager</h1>
-          <h2 id='admin-greeting'>{`Welcome back, ${Auth.getName()}`}</h2>
+          <h3 id='admin-greeting'>{`Welcome back, ${Auth.getName()}`}</h3>
         </div>
         <div id='clock'>
           {date.toLocaleTimeString('en-US', {

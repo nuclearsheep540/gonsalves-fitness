@@ -49,7 +49,7 @@ export default class Landing extends React.Component {
       htmlBody: `
       <html>
       <div>
-      <p>From: ${this.state.form.firstname}, ${this.state.form.lastname}</p>
+      <p>From: ${this.state.form.firstname} ${this.state.form.lastname},</p>
       <p>Contact: ${this.state.form.number}</p>
       <p>Email: ${this.state.form.email}</p>
       <p>${this.state.form.message.replace('\n\n', '<br /> <br />')}</p>
@@ -68,7 +68,7 @@ export default class Landing extends React.Component {
           console.log(err)
           this.setState({ formstatus: 'error' })
         })
-    },500)
+    },1500)
   }
 
   handleChange({ target: { name, value } }) {
@@ -105,7 +105,7 @@ export default class Landing extends React.Component {
               </div>
             </div>
             <div className='row contact'>
-              <div className='col'>
+              <div className='col' id='contact'>
                 <ContactForm
                   handleSubmit={this.handleSubmit}
                   handleChange={this.handleChange}
@@ -114,6 +114,24 @@ export default class Landing extends React.Component {
                   handleprivacy={this.handlePrivacy}
                   privacy={this.state.privacy}
                 />
+                
+                
+                <div className={this.state.formstatus !== 'open' &
+                this.state.formstatus !== 'pending' ? 'hidden' : 'formresult' }>
+                </div>
+
+                {this.state.formstatus === 'status201' &&
+                  <div className='formresult' id='formsent'>
+                    <h2>Message Sent</h2>
+                  </div>
+                }
+                
+                {this.state.formstatus === 'error' &&
+                <div className='formresult' id='formerror'>
+                  <h2>Error</h2>
+                </div>
+                }
+
               </div>
             </div>
           </div>

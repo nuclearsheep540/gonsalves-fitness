@@ -4,14 +4,48 @@
 
 
 #about {
-  border: 1px solid red;
-  background-color: black;
+  position: relative;
+  // border: 1px solid red;
+  width: 100vw;
+  height: 70vh;
+  color: white;
+  overflow: hidden;
+}
+
+.rhyse-img {
+  z-index: 1;
+  position:absolute;
   background-image: url('/assets/rhyse.jpg') !important;
   background-repeat: no-repeat;
-  background-size: contain;
-  width: 100vw;
-  height: 60vh;
-  color: white;
+  background-size: cover;
+  background-position: left;
+  background-position-x: -15vw;
+  width: 75vw;
+  height: 70vh;
+}
+
+.rhyse-info {
+  z-index: 2;
+  position: absolute;
+  color: black;
+  background-color: white;
+  height: fit-content;
+  right: -10vw;
+  width: 60vw;
+  height: 101%;
+  transform: skewX(15deg) translateX(5%);
+  display: flex;
+  justify-content: center;
+  .text {
+    position: absolute;
+    top: 15%;
+    left: 12.5vw;
+    margin: auto;
+    height: 80%;
+    width: 350px;
+    overflow: hidden;
+    transform: skewX(-15deg) translateX(-20%);
+  }
 }
 
 //             STICKER
@@ -29,11 +63,17 @@ div.sticker {
   padding-top: 10px;
   max-width: 140px;
   min-width: 140px;
-  max-height: 30px;
-  min-height: 30px;
-  border-top-right-radius: 3px;
-  border-top-left-radius: 3px;
+  max-height: 38px;
+  min-height: 38px;
+  border-top-right-radius: 10px;
+  border-top-left-radius: 10px;
   transition: 0.3s ease-out;
+
+  a {
+    font-family: 'exo', sans-serif;
+    font-size: 24px;
+    text-decoration: none;
+  }
 }
 div.sticker:hover{
   min-height: 54px;
@@ -50,13 +90,41 @@ div.sticker:hover{
 }
 
 .right {
+  color: black;
+  background-color: whitesmoke;
   height: fit-content;
-  width: 350px;
+  width: 30vw;
   position: absolute;
-  right: 12.5%;
+  right: 10%;
+  height: 100%;
 }
 
 h2.hero {
   font-size: 79px;
   color: white;
+}
+
+footer {
+  background: rgb(24, 24, 24);
+  color: white;
+  a {
+    color: white;
+  }
+  a:hover {
+    list-style: none;
+    text-decoration: none;
+    color: goldenrod;
+  }
+}
+
+#footer {
+  padding: 20px;
+  font-size: small;
+  display: flex;
+  flex-direction: column;
+  flex-wrap: wrap;
+  max-height: 180px;
+  width: 50%;
+  min-width: fit-content;
+  justify-content: space-evenly;
 }

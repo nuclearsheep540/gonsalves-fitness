@@ -1,0 +1,50 @@
+new backend?
+
+
+user: {
+	userData: {
+		name:
+		email:
+		password:
+	}
+	content: {
+		clients: [
+				{
+				name: "string",
+				image: "string",
+				before: "string",
+				after: "string",
+				description: "string",
+				review: "string",
+				featured: boolean,
+				published: boolean,
+				user: ObjectID,
+				},	
+				{
+				name: "string",
+				image: "string",
+				before: "string",
+				after: "string",
+				description: "string",
+				review: "string",
+				featured: boolean,
+				published: boolean,
+				user: ObjectID,	
+				}
+			],
+		about_me: {
+			snippet: "string",
+			full: "string"
+		}
+		messages: [
+			{
+				privacy: boolean,
+				to: "string",			      //can we grab the userData.email ?
+				from: "string",
+				textBody: "string",
+				htmlBody: "string",
+				messageType: "string"	  //always make this default "basic" and remove from front end
+			}
+		]
+	}
+}

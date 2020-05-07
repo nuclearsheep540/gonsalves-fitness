@@ -8,7 +8,8 @@
 @import './landing-featured.scss';
 
 @import url('https://fonts.googleapis.com/css?family=Exo:200,300,400&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Exo:wght@300;400;600;700&display=swap');
+  //font-family: 'Exo', sans-serif; size: 300,400,600,700
 main {
   padding: 0;
   margin: 0;
@@ -26,7 +27,7 @@ button {
 }
 
 body {
-  background-color: rgba(255, 255, 255, 0);
+  background-color: rgb(245, 245, 245);
 }
 
 html {
@@ -39,13 +40,54 @@ button {
   background-color: white;
   border-radius: 4px;
 }
-footer {
-  border: 1px solid red;
-}
 .on-top {
   position: relative;
   z-index: 99;  
 }
 .stealth {
   visibility: hidden;
+}
+
+h2 {
+  font-family: 'Exo', sans-serif;
+  font-weight: 600;
+  font-size: 32px;
+}
+h3 {
+  font-family: 'Exo', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+p {
+  font-family: 'Exo', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+p.p14 {
+  font-size: 14px; 
+ }
+p.p12 {
+  font-size: 12px
+}
+
+//privacy policy
+.policy-pdf {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  min-height: 95vh;
+}
+.pdf-controls {
+  margin: 5px;
+  width: 50vw;
+  display: flex;
+  justify-content: space-between;
+  top: 0px;
+}
+canvas {
+  position: relative;
+  margin: 20px;
+  border-bottom-left-radius: 10px;
+  border-bottom-right-radius: 10px;
 }
