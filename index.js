@@ -8,7 +8,8 @@ const router = require('./config/router')
 require('dotenv').config()
 // const errorHandler = require('./lib/errorHandler')
 
-//mongodb+srv://admin:<password>@rhyse-pt-sb9m6.gcp.mongodb.net/test?retryWrites=true&w=majority
+
+app.use(express.static(`${__dirname}/dist`))
 
 mongoose.set('useFindAndModify', false)
 
@@ -25,7 +26,9 @@ app.use('/api', router)
 
 // app.use(errorHandler)
 
-app.get('/*', (req, res) => res.status(404).json({ message: 'Not found' }))
+// app.get('/*', (req, res) => res.status(404).json({ message: 'Not found' }))
+
+app.use('/*', (req, res) => res.sendFile(`${__dirname}/dist/index.html`))
 
 app.listen(port, () => logger.info(`node server running on :${port}`))
 
