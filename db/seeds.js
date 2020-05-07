@@ -49,7 +49,7 @@ mongoose.connect(
             image: 'https://image.flaticon.com/icons/svg/201/201634.svg',
             before: '',
             after: '',
-            description: '',
+            description: 'test description',
             review: 'I feel a lot more body confident now',
             published: true,
             featured: true,

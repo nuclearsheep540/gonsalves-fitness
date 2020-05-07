@@ -9,17 +9,6 @@ require('dotenv').config()
 // const errorHandler = require('./lib/errorHandler')
 
 
-const MongoClient = require('mongodb').MongoClient;
-const uri = "mongodb+srv://admin:Madness-540!@rhyse-pt-sb9m6.gcp.mongodb.net/test?retryWrites=true&w=majority";
-const client = new MongoClient(uri, { useNewUrlParser: true })
-client.connect(err => {
-  const collection = client.db("test").collection("devices")
-  // perform actions on the collection object
-  client.close()
-})
-
-
-
 app.use(express.static(`${__dirname}/dist`))
 
 mongoose.set('useFindAndModify', false)
