@@ -25,9 +25,7 @@ app.use('/api', router)
 
 // app.use(errorHandler)
 
-// app.get('/*', (req, res) => res.status(404).json({ message: 'Not found' }))
-
-app.use('/*', (req, res) => res.sendFile(`${__dirname}/dist/index.html`))
+app.get('/*', (req, res) => res.status(404).json({ message: 'Not found' }))
 
 app.listen(port, () => logger.info(`node server running on :${port}`))
 
