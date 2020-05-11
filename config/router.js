@@ -10,6 +10,7 @@ router.route('/contact')
 
 router.route('/contact/:id')
   .get(contactForm.show)
+  .delete(secureRoute, contactForm.remove)
 
 router.route('/login') // just handling user login controller
   .post(users.login) // we dont use a param.id to find the user, see the controller

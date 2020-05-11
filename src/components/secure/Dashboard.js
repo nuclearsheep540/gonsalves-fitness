@@ -20,6 +20,7 @@ export default class Dashboard extends React.Component {
     this.tick = this.tick.bind(this)
     this.logout = this.logout.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
+    this.deleteMsg = this.deleteMsg.bind(this)
     this.api = this.api.bind(this)
   }
 
@@ -67,6 +68,15 @@ export default class Dashboard extends React.Component {
         )
       : console.log(false)
   }
+
+  deleteMsg(id, from){
+    window.confirm(`Are you sure you want to delete this message from ${from}?`)
+      ? axios.delete(`/api/contact/${id}`, {
+        headers: { Authorization: `Bearer ${Auth.getToken()}` }
+      }).then(this.api) : null
+  }
+
+
   api(){
     if (Auth.isAuthenticated()) {
       axios
@@ -108,7 +118,10 @@ export default class Dashboard extends React.Component {
               api={this.api}
             />
 
-            <MsgIndex data={this.state.msg} />
+            <MsgIndex 
+              data={this.state.msg} 
+              handleDelete={this.deleteMsg}
+            />
           </div>
          
           <footer id='admin-footer'>

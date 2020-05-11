@@ -258,6 +258,13 @@ div.admin-nav {
 }
 
 
+table {
+  ::-webkit-scrollbar{display: none;};
+  display: block;
+  width: 100%;
+  max-height: 396px;
+  overflow: scroll;
+}
 
 .table {
   display: none;
@@ -284,7 +291,7 @@ div.admin-nav {
 }
 
 thead {
-  background-color: rgba(0,0,0,0.1);
+  background-color: rgba(0,0,0,0.5);
 }
 tbody{
   background-color: rgba(0, 0, 0, 0.4);

@@ -1,5 +1,6 @@
 import React from 'react'
 import Axios from 'axios'
+import Auth from '../../lib/auth'
 
 export default class MsgIndex extends React.Component {
   constructor() {
@@ -36,16 +37,20 @@ export default class MsgIndex extends React.Component {
               <th id='num'>#</th>
               <th>From</th>
               <th id='msg'>Message</th>
+              <th>Delete</th>
               <th>Recieved At</th>
             </tr>
           </thead>
 
           <tbody id='msg'>
             {this.props.data.map((msg, i) => (
-              <tr key={i + 1} onClick={()=> this.showMsg(msg._id)}>
+              <tr key={i + 1}>
                 <td>{i + 1}</td>
-                <td id='from'>{msg.from}</td>
-                <td id='msg'>{msg.textBody}</td>
+                <td id='from' onClick={()=> this.showMsg(msg._id)}>{msg.from}</td>
+                <td id='msg' onClick={()=> this.showMsg(msg._id)}>{msg.textBody}</td>
+                <td><a onClick={() => {
+                  this.props.handleDelete(msg._id, msg.from)
+                }}>🗑</a></td>
                 <td>{msg.createdAt.toLocaleString('en-us')}</td>
               </tr>
             ))}

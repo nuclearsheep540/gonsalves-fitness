@@ -8,6 +8,8 @@ const client = new SocketLabsClient(serverId, injectionApiKey)
 
 const Message = require('../models/Message')
 
+
+//find all msgs
 function index(req, res) {
   Message.find()
     .then(index => {
@@ -16,6 +18,7 @@ function index(req, res) {
     .catch(err => console.log(err))
 }
 
+//messages
 function show(req, res) {
   Message.findById(req.params.id)
     .then((request) => {
@@ -25,7 +28,21 @@ function show(req, res) {
     .catch(() => res.status(404).json({ message: 'Not found' }))
 }
 
+//msg delete SECURE ROUTE
+function remove(req,res) {
+  Message.findByIdAndDelete(req.params.id)
+    .then(request => {
+      if (!request.user === req.currentUser._id) return res.status(401).json({ message: 'Unauthorized' })
+      return request.remove()
+    })
+    .then(()=> res.sendStatus(204))
+    .catch(err => {
+      res.status(400).sjon(err)
+      logger.error(err)
+    })
+}
 
+//msg create
 function create(req, res, next) {
   Message.create(req.body)
     .then(index => {
@@ -37,6 +54,7 @@ function create(req, res, next) {
 }
 
 
+//comms to API for email
 // eslint-disable-next-line no-unused-vars
 function send(req, _res){
   client.send(req.body).then(
@@ -51,4 +69,4 @@ function send(req, _res){
 }
 
 
-module.exports = { index, show, send, create }
+module.exports = { index, show, remove, create, send }
