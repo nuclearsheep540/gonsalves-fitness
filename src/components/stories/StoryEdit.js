@@ -79,7 +79,7 @@ export default class StoryEdit extends React.Component {
 
   cancelEdit(storyId){
     event.preventDefault()
-    this.props.close(storyId)
+    this.props.close('story-edit', storyId)
     this.setState({
       picture: null,
       data: {

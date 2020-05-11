@@ -63,7 +63,7 @@ export default class Dashboard extends React.Component {
         .then(axios.get('/api/story', {
           headers: { Authorization: `Bearer ${Auth.getToken()}` }
         })
-          .then(res => this.setState({ stories: res.data }))
+          .then(res => this.setState({ stories: res.data.reverse() }))
         )
       : console.log(false)
   }

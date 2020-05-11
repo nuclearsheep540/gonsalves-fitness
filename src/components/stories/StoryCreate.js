@@ -25,7 +25,7 @@ export default class StoryCreate extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handleImageUpdate = this.handleImageUpdate.bind(this)
-    
+    this.cancelCreate = this.cancelCreate.bind(this)
   }
 
   componentDidMount() {
@@ -73,27 +73,43 @@ export default class StoryCreate extends React.Component {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(res => res.status === 201 && (
-        this.props.history.push('/admin/dashboard'),
-        window.location.reload()
+        this.cancelCreate()
       ))
       .catch(err => console.log(err))
   }
-  back() {
-    window.history.back()
+
+  cancelCreate(){
+    event.preventDefault()
+    this.setState({
+      picture: null,
+      data: {
+        client: '',
+        image: '',
+        before: '',
+        after: '',
+        description: '',
+        review: '',
+        published: false,
+        featured: false,
+        created: time.toDateString()
+      }
+    })
+    this.props.close('story-create')
   }
 
 
   render() {
     if (!this.state.data) return null
     return (
-      <div className='pad20'>
-
+      <>
+      <div className='edittop'>
         <h1>{this.state.data.client}&apos;s Story</h1>
-        <small> id:{this.props.match.params.id || 'created upon submit'} </small>
-        <h5 className='button' onClick={this.back}>Cancel</h5>
+        <small> id: data ID created upon submit </small>
+        <h5 className='button' onClick={this.cancelCreate}>Cancel</h5>
+      </div>
 
+      <div className='editmain'>
         <div className='two-up'>
-
           <div className='col-left'>
             <StoryForm
               data={this.state.data}
@@ -115,8 +131,8 @@ export default class StoryCreate extends React.Component {
           </div>
 
         </div>
-
       </div>
+      </>
     )
   }
 }

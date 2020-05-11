@@ -48,3 +48,7 @@ user: {
 		]
 	}
 }
+
+//
+
+backend, route published + featured, using same keys.

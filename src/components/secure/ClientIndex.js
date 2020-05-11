@@ -1,6 +1,7 @@
 import React from 'react'
 import { Link, Switch } from 'react-router-dom'
 import StoryEdit from '../stories/StoryEdit'
+import StoryCreate from '../stories/StoryCreate'
 
 export default class ClientIndex extends React.Component {
   constructor() {
@@ -15,22 +16,22 @@ export default class ClientIndex extends React.Component {
     console.log(this.props)
   }
 
-  openEdit(storyId) {
+  openEdit(element, storyId) {
     const id = storyId
-    this.setState({ storyId: id })
-    document.getElementsByClassName('iframecontainer')[0].classList.remove('hidden')
-    document.getElementsByClassName('iframecontainer')[0].classList.remove('fadeOutDown')
-    document.getElementsByClassName('iframecontainer')[0].classList.add('fadeInUp')
+    storyId && this.setState({ storyId: id })
+    document.getElementById(element).classList.remove('hidden')
+    document.getElementById(element).classList.remove('fadeOutDown')
+    document.getElementById(element).classList.add('fadeInUp')
   }
-  closeEdit(storyId) {
+  closeEdit(element, storyId) {
+    // console.log('closing id ',storyId)
     this.props.api()
-    console.log('closing id ',storyId)
-    document.getElementsByClassName('iframecontainer')[0].classList.remove('fadeInUp')
-    document.getElementsByClassName('iframecontainer')[0].classList.add('fadeOutDown')
+    document.getElementById(element).classList.remove('fadeInUp')
+    document.getElementById(element).classList.add('fadeOutDown')
     setTimeout(()=>{
-      document.getElementsByClassName('iframecontainer')[0].classList.add('hidden')
+      document.getElementById(element).classList.add('hidden')
     },500)
-    this.setState({ storyId: null })
+    storyId && this.setState({ storyId: null })
   }
 
   //function
@@ -40,9 +41,11 @@ export default class ClientIndex extends React.Component {
       <>
         <div className='table animated faster clients'>
           <h1>Manage Content</h1>
-          <Link to='/story' id='admin-new-client'>
+          <a onClick={() => { 
+            this.openEdit('story-create') 
+          } }>
             Create new client
-          </Link>
+          </a>
           <table>
             <thead>
               <tr>
@@ -83,7 +86,7 @@ export default class ClientIndex extends React.Component {
                   <td>{story.client}</td>
                   <td>
                     {/* <Link to={`/story/${story._id}`}>Edit</Link> */}
-                    <a onClick={() => this.openEdit(story._id)}>Edit</a>
+                    <a onClick={() => this.openEdit('story-edit', story._id)}>Edit</a>
                     <a
                       name={story.client}
                       onClick={() => this.props.handleDelete(event, story._id)}
@@ -98,7 +101,8 @@ export default class ClientIndex extends React.Component {
             </tbody>
           </table>
         </div>
-        <div className='iframecontainer hidden animated faster'>
+        {/* edit page div, hidden until called */}
+        <div className='iframecontainer hidden animated faster' id='story-edit'>
           <div className='iframewrap'>
             <div id='editarea'>
               {this.state.storyId !== null &&
@@ -109,6 +113,21 @@ export default class ClientIndex extends React.Component {
             </div>
           </div>
         </div>
+
+        {/* create new div, hidden until called */}
+
+        <div className='iframecontainer hidden animated faster' id='story-create'>
+          <div className='iframewrap'>
+            <div id='editarea'>
+              <StoryCreate 
+                source={this.state.storyId}
+                close={this.closeEdit}
+              />
+            </div>
+          </div>
+        </div>
+
+
       </>
     )
   }
