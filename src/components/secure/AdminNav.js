@@ -139,39 +139,41 @@ export default class AdminNav extends React.Component {
   logout(){
     event.preventDefault()
     Auth.logout()
-    console.log('clearing tokens')
+    console.log('tokens cleared')
+    window.history.pushState('admin','/admin')
   }
 
 
   
   render(){
-    console.log()
-
+    const style = {
+      color: this.props.color
+    }
     return (
       <div className='admin-nav' onClick={this.closeEdit}>
         <ul>
           <a onClick={this.storyToggle}>
             <li id='story'>
-              <i className="fas fa-folder-plus fa-3x"></i>
+              <i className="fas fa-folder-plus fa-3x" style={style}></i>
             </li>
           </a>
           <a onClick={this.msgToggle}>
             <li id='message'>
-              <i className="fas fa-envelope fa-3x"></i>
+              <i className="fas fa-envelope fa-3x" style={style}></i>
             </li>
           </a>
 
           {Auth.isAuthenticated() && (
             <Link to='/admin' onClick={this.logout}>
               <li>
-                <i className="fas fa-sign-out-alt fa-3x"></i>
+                <i className="fas fa-sign-out-alt fa-3x" style={style}></i>
               </li>
             </Link>
           )}
 
           <a onClick={this.settingsToggle}>
             <li id='settings'>
-              <i className="fas fa-cogs fa-3x"></i>
+              <i className="fas fa-cogs fa-3x" style={style}></i>
             </li>
           </a>
           

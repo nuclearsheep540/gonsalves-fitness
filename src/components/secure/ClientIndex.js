@@ -41,11 +41,11 @@ export default class ClientIndex extends React.Component {
       <>
         <div className='table animated faster clients'>
           <h1>Manage Content</h1>
-          <a onClick={() => { 
+          <p style={{cursor: 'pointer'}} onClick={() => { 
             this.openEdit('story-create') 
           } }>
-            Create new client
-          </a>
+            <i className="fas fa-plus fa-1x"></i> Create Content
+          </p>
           <table>
             <thead>
               <tr>
@@ -56,7 +56,7 @@ export default class ClientIndex extends React.Component {
                 <th>Client</th>
                 <th>Control</th>
                 <th>Created At</th>
-                <th>database_id</th>
+                
               </tr>
             </thead>
 
@@ -95,7 +95,7 @@ export default class ClientIndex extends React.Component {
                     </a>
                   </td>
                   <td>{story.created}</td>
-                  <td>{story._id}</td>
+                  
                 </tr>
               ))}
             </tbody>

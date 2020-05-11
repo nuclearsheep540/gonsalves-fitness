@@ -47,10 +47,10 @@ export default class MsgIndex extends React.Component {
               <tr key={i + 1}>
                 <td>{i + 1}</td>
                 <td id='from' onClick={()=> this.showMsg(msg._id)}>{msg.from}</td>
-                <td id='msg' onClick={()=> this.showMsg(msg._id)}>{msg.textBody}</td>
+                <td id='msg' onClick={()=> this.showMsg(msg._id)}>{msg.textBody.substring(0, (window.innerWidth / 100) * 5)}</td>
                 <td><a onClick={() => {
                   this.props.handleDelete(msg._id, msg.from)
-                }}>🗑</a></td>
+                }}><i className="fas fa-trash-alt fa-2x"></i></a></td>
                 <td>{msg.createdAt.toLocaleString('en-us')}</td>
               </tr>
             ))}

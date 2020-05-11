@@ -11,7 +11,8 @@ class Login extends React.Component {
       data: {
         username: '',
         password: ''
-      }
+      },
+      snooper: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -22,12 +23,10 @@ class Login extends React.Component {
     this.setState({ data })
   }
   componentDidMount(){
-    Auth.isAuthenticated() && (
-      history.pushState('/admin/dashboard','Admin Control','/admin/dashboard'),
-      console.log('user already logged in, redirecting...'),
-      location.reload()
-    )
+    axios.get('https://www.cloudflare.com/cdn-cgi/trace')
+      .then(res => console.log(res.data))
   }
+
   backToSite(){
     this.props.history.push('/')
   }
@@ -46,57 +45,55 @@ class Login extends React.Component {
   }
 
   render() {
-    console.log('admin', window.location.href)
     return (
-      <>
-      <div>
-        <center><h1>Content Manager</h1></center>
-        
-      </div>
-      <div className='login'>
-        <div className='col-left'>
-          <form className='login-form' onSubmit={this.handleSubmit}>
-            <h2 className=''>Login</h2>
-            <div className=''>
+
+      <div className='login-page'>
+        <div className='login'>
+          <div className='col'>
+            <form className='login-form' onSubmit={this.handleSubmit}>
+              <h2 className=''>Login</h2>
               <div className=''>
                 <div className=''>
-                  
                   <div className=''>
-                    <input
-                      className='input-area'
-                      name='username'
-                      type='text'
-                      placeholder='username'
-                      onChange={this.handleChange}
-                    />
+                  
+                    <div className=''>
+                      <input
+                        className='input-area'
+                        name='username'
+                        type='text'
+                        placeholder='e-mail'
+                        onChange={this.handleChange}
+                      />
+                    </div>
                   </div>
-                </div>
 
-                <div className=''>
-                  
                   <div className=''>
-                    <input
-                      className='input-area'
-                      type='password'
-                      name='password'
-                      placeholder='password'
-                      onChange={this.handleChange}
-                    ></input>
+                  
+                    <div className=''>
+                      <input
+                        className='input-area'
+                        type='password'
+                        name='password'
+                        placeholder='password'
+                        onChange={this.handleChange}
+                      ></input>
+                    </div>
                   </div>
-                </div>
-                <button type='submit' className=''>
+                  <button type='submit' className=''>
                   Login
-                </button>
-                <button>
-                  <Link to='/'>Back to site</Link>
-                </button>
+                  </button>
+                  <button>
+                    <Link to='/'>Back to site</Link>
+                  </button>
+                </div>
+                <br />
               </div>
-              <br />
-            </div>
-          </form>
+            </form>
+          </div>
+
         </div>
+
       </div>
-      </>
     )
   }
 }

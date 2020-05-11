@@ -121,7 +121,7 @@ export default class StoryCreate extends React.Component {
 
           <div className='col-right'>
             <small>Profile</small>
-            <img src={this.state.data.image} className='admin-story-edit'></img>
+            <img src={this.state.data.image} id='story-create-profileImg' className='admin-story-edit'></img>
 
             <small>Before</small>
             <img src={this.state.data.before} className='admin-story-edit'></img>

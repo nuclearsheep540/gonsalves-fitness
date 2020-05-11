@@ -34,18 +34,26 @@ div.half-width{
 div.image-upload{
   display: flex;
 }
-
-
-
+div.login-page {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  background-color: lightgrey;
+  height: 100vh;
+  width: 100vw;
+}
 div.login {
+  margin-top: 50px;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin: 40px auto;
-  height: 320px;
-  max-width: 500px;
-  border: 2px solid silver;
-  border-radius: 5px;
+  height: 270px;
+  width: 500px;
+  border-bottom-right-radius: 10px;
+  border-bottom-left-radius: 10px;
+  border: 2px solid gold;
+  background: gold;
+
 }
 
 //        DASH
@@ -60,6 +68,10 @@ div.login {
   margin: 0px;
   line-height: 95%;
   text-shadow: 1px 2px 3px black;
+  @media (max-width: 1050px) {
+    font-size: 40px;
+    font-weight: 300;
+  }
 }
 
 #admin-title {
@@ -83,11 +95,10 @@ div.admin-dash {
 }
 
 .admin-top {
-  // border: 1px solid blue;
   display: flex;
   justify-content: space-between;
   width: 95%;
-  height: 90px;
+  height: 120px;
   padding-left: 128px;
   margin-bottom: 20px;
 }
@@ -119,7 +130,6 @@ div#admin-wrap {
 }
 
 div.iframecontainer { //top lvl
-  // border: 1px solid red;
   display: flex;
   position: absolute;
   bottom: 0px;
@@ -129,7 +139,6 @@ div.iframecontainer { //top lvl
 }
 
 div.iframewrap { //wrapper
-  // border: 1px solid blue;
   background-color: rgba(245, 245, 245, 0.8);
   width: 100%;
   height: 100%;
@@ -142,7 +151,6 @@ div.iframewrap { //wrapper
 }
 
 #editarea { //iframe elem
-  // border: 1px solid green;
   border: none;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
@@ -154,7 +162,6 @@ div.iframewrap { //wrapper
 }
 
 div.edittop { //header info
-  // border: 1px solid yellow;
   position: absolute;
   z-index: 20;
   top: 0;
@@ -170,6 +177,9 @@ div.edittop { //header info
     margin: 0px;
     text-shadow: none !important;
   }
+}
+#story-create-profileImg {
+  border-radius: 150px;
 }
 
 div.editmain { //form info
@@ -227,8 +237,8 @@ div.admin-nav {
   justify-content: space-around;
   height: 100vh;
   width: 74px;
-  border-right: 1px solid rgba(255, 255, 255, 0.4);
-  background-color: rgba(255, 255, 255, 0.2);
+  border-right: 1px solid rgba(255, 255, 255, 0.45);
+  background-color: rgba(255, 255, 255, 0.25);
   ul {
     a:hover {
         text-decoration: none;
@@ -244,14 +254,14 @@ div.admin-nav {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-bottom: 12px;
+      margin-bottom: 25px;
       width: 60px;
-      height: 50px;
+      height: 45px;
       border-right: 4px solid rgba(0,0,0,0);
-      border-radius: 3px;
+      border-radius: 2px;
       i {
         cursor: pointer;
-        filter: invert(1);
+        filter: invert(0);
       }
     }
   }
@@ -271,12 +281,11 @@ table {
   padding-left: 128px;
   width: 100%;
   margin-bottom: 24px;
-  // visibility: hidden;
+  height: 50vh;
 }
 
 .module-wrapper {
   width: 95%;
-  // border: 1px solid yellow;
   margin-bottom: 20px;
   height: 100%;
   overflow: scroll;
@@ -306,17 +315,24 @@ tbody{
 
 th {
   width: 300px;
+  background-color: rgba(0, 0, 0, 0.5);
 }
 
 th#msg {
   width: 60vw;
   overflow: scroll;
 }
+td {
+  text-align: center;
+  a {
+    cursor: pointer;
+  }
+}
 
 td#msg {
-  align-items: middle;
-  display: block;
-  max-block-size: 44px;
+  align-items: center;
+  text-align: left;
+  max-block-size: 100%;
   max-height: 44px;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -324,8 +340,9 @@ td#msg {
 th:nth-child(1){
   width: 44px;
 }
-td {
-  text-align: center;
+
+tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.3);
 }
 
 img.profile-icon {
