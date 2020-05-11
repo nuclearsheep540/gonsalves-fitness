@@ -24,8 +24,6 @@ const StoryForm = ({ handleImage, handleChange, handleSubmit, data }) => {
 
         <div className='half-width'>
           {/* <label name='exampleMessage'>Profile</label> */}
-          {console.log(data)}
-
           <input
             id='profile-img'
             className='stealth'

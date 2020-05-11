@@ -2,6 +2,7 @@
 // ---------- ADMIN
 // ################
 
+
 //        GLOBAL
 // -------------
 
@@ -73,7 +74,6 @@ div.login {
   text-shadow: 1px 2px 3px black;
   font-weight: 400;
 }
-
 div.admin-dash {
   height: fit-content;
   background-size: contain;
@@ -102,7 +102,6 @@ div.admin-fade {
 }
 
 div#admin-wrap {
-  // border: 1px solid greenyellow;
   h1 {
     text-shadow: 1px 2px 3px black;
   }
@@ -225,12 +224,15 @@ div.admin-nav {
   padding-top: 16px;
   z-index: 11;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
   height: 100vh;
   width: 74px;
-  border-right: 1px solid rgba(255, 255, 255, 0.2);
-  background-color: rgba(255, 255, 255, 0.1);
+  border-right: 1px solid rgba(255, 255, 255, 0.4);
+  background-color: rgba(255, 255, 255, 0.2);
   ul {
+    a:hover {
+        text-decoration: none;
+      }
     display: flex;
     flex-direction: column;
     padding: 0;
@@ -239,22 +241,20 @@ div.admin-nav {
       margin-top: auto;
     }
     li {
-      margin-bottom: 20px;
-      width: 64px;
-      height: 64px;
-
-      img {
-        width: 100%;
-        border-radius: 3px;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      margin-bottom: 12px;
+      width: 60px;
+      height: 50px;
+      border-right: 4px solid rgba(0,0,0,0);
+      border-radius: 3px;
+      i {
         cursor: pointer;
-      }
-      img#logout {
-        transform: translateX(4px);
+        filter: invert(1);
       }
     }
-    
   }
-  
 }
 
 

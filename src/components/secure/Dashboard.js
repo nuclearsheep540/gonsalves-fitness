@@ -15,7 +15,8 @@ export default class Dashboard extends React.Component {
       date: new Date(),
       stories: [],
       msg: [],
-      bg: {}
+      bg: {},
+      color: ''
     }
     this.tick = this.tick.bind(this)
     this.logout = this.logout.bind(this)
@@ -37,7 +38,13 @@ export default class Dashboard extends React.Component {
     axios.get('/api/contact').then((res) => this.setState({ msg: res.data.reverse() }))
     axios.get('/api/login',{ headers: { Authorization: `Bearer ${Auth.getToken()}` } })
       .then(res => this.setState({ bg: res.data.unsplash }))
+      
+    //send color props to admin nav 
+    setTimeout(()=>{
+      this.invertHex(this.state.bg.color)
+    },500)
   }
+  
   componentWillUnmount() {
     clearInterval(this.timerID)
     // window.location.reload()
@@ -91,16 +98,33 @@ export default class Dashboard extends React.Component {
     axios.get('/api/login',{ headers: { Authorization: `Bearer ${Auth.getToken()}` } })
   }
 
+  invertHex(hex) {
+    let color = hex
+    color = color.substring(1); // remove #
+    color = parseInt(color, 16); // convert to integer
+    color = 0xFFFFFF ^ color; // invert three bytes
+    color = color.toString(16); // convert to hex
+    color = ("000000" + color).slice(-6); // pad with leading zeros
+    color = "#" + color; // prepend #  }
+    
+    this.setState({ color })
+
+  }
+
   render() {
     if (!Auth.isAuthenticated())
       return <h1>You must be logged in to view this page</h1>
     if (!this.state.stories) return null
     if (!this.state.bg.urls) return null
+  
+    console.log('dash state',this.state)
 
     return (
       <>
       <div className='admin-fade'></div>
-          <AdminNav />
+          <AdminNav 
+            color={this.state.color}
+          />
           
         <div
           id='admin-wrap'

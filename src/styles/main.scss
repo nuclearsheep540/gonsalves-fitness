@@ -6,6 +6,7 @@
 @import './hero-video.scss';
 @import './landing-usp.scss';
 @import './landing-featured.scss';
+@import './switch.scss';
 
 @import url('https://fonts.googleapis.com/css?family=Exo:200,300,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@300;400;600;700&display=swap');
@@ -39,6 +40,7 @@ button {
   height: 40px;
   background-color: white;
   border-radius: 4px;
+  margin: 4px !important;
 }
 .on-top {
   position: relative;

@@ -39,9 +39,15 @@ export default class Settings extends React.Component {
   render(){
     return (
       <div className='table animated faster settings'>
-        <h1>Settings</h1>
+        <div className='col'>
+          <h1>Settings</h1>
+          <button onClick={this.changeBackground}>Change Background Image</button>
+          <br />
+          <button>Update Password</button>
+          <div className='updatepassword'>
 
-        <button onClick={this.changeBackground}>Change Background Image</button>
+          </div>
+        </div>
       </div>
     )
   }

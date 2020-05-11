@@ -19,6 +19,7 @@ export default class AdminNav extends React.Component {
   componentDidMount(){
     console.log(window.history)
   }
+
   //IF STORYEDIT IS OPEN
   closeEdit() {
     document.getElementsByClassName('iframecontainer')[0].classList.remove('fadeInUp')
@@ -46,6 +47,7 @@ export default class AdminNav extends React.Component {
   }
 
   hideSettings() {
+    document.getElementById('settings').style.borderRight = '4px solid rgba(0,0,0,0)'
     const elem = document.querySelector('.settings')
     elem.classList.remove('fadeInLeft'),
     elem.classList.add('fadeOutLeft'),
@@ -55,6 +57,7 @@ export default class AdminNav extends React.Component {
   }
 
   settingsToggle() {
+    document.getElementById('settings').style.borderRight = `4px solid ${this.props.color}`
     this.state.settings ? this.hideSettings() : this.showSettings()
     this.setState({ settings: !this.state.settings })
   }
@@ -79,6 +82,7 @@ export default class AdminNav extends React.Component {
   }
 
   hideMsg() {
+    document.getElementById('message').style.borderRight = '4px solid rgba(0,0,0,0)'
     const elem = document.querySelector('.msg')
     elem.classList.remove('fadeInLeft'),
     elem.classList.add('fadeOutLeft'),
@@ -88,6 +92,7 @@ export default class AdminNav extends React.Component {
   }
 
   msgToggle() {
+    document.getElementById('message').style.borderRight = `4px solid ${this.props.color}`
     this.state.msg ? this.hideMsg() : this.showMsg()
     this.setState({ msg: !this.state.msg })
   }
@@ -112,6 +117,8 @@ export default class AdminNav extends React.Component {
   }
 
   hideStory() {
+    document.getElementById('story').style.borderRight = '4px solid rgba(0,0,0,0)'
+
     const elem = document.querySelector('.clients')
     elem.classList.remove('fadeInLeft'),
     elem.classList.add('fadeOutLeft'),
@@ -121,6 +128,7 @@ export default class AdminNav extends React.Component {
   }
   
   storyToggle() {
+    document.getElementById('story').style.borderRight = `4px solid ${this.props.color}`
     this.state.story ? this.hideStory() : this.showStory()
     this.setState({ story: !this.state.story })
   }
@@ -143,27 +151,27 @@ export default class AdminNav extends React.Component {
       <div className='admin-nav' onClick={this.closeEdit}>
         <ul>
           <a onClick={this.storyToggle}>
-            <li>
-              <img src='../../assets/stories.png' />
+            <li id='story'>
+              <i className="fas fa-folder-plus fa-3x"></i>
             </li>
           </a>
           <a onClick={this.msgToggle}>
-            <li>
-              <img src='../../assets/mail.png' />
+            <li id='message'>
+              <i className="fas fa-envelope fa-3x"></i>
             </li>
           </a>
 
           {Auth.isAuthenticated() && (
             <Link to='/admin' onClick={this.logout}>
               <li>
-                <img id='logout' src='../../assets/logout.png' />
+                <i className="fas fa-sign-out-alt fa-3x"></i>
               </li>
             </Link>
           )}
 
           <a onClick={this.settingsToggle}>
-            <li>
-              <img src='../../assets/settings.png' />
+            <li id='settings'>
+              <i className="fas fa-cogs fa-3x"></i>
             </li>
           </a>
           

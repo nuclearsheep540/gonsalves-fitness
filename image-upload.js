@@ -43,8 +43,6 @@ class ImageUpload extends Component {
   render() {
     return (
       <>
-      {console.log('image', this.props)}
-        
         <label>Profile</label>
         <input name='image' type="file" className="process__upload-btn" onChange={(e) => this.uploadImage('image', e)} />
 
