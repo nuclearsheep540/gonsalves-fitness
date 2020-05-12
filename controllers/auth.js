@@ -51,9 +51,32 @@ function edit(req, res) {
     .catch(err => logger.error(err))
 }
 
+//change password
+function changePassword(req, res) {
+  req.body.user = req.currentUser
+  const password = req.body.password
+  const update = {
+    currentUser: {
+      _id: req.currentUser._id
+    },
+    body: {
+      password: req.body.updatePassword,
+      passwordConfirmation: req.body.updatePassword
+    }
+  }
+  User.findById(req.currentUser._id)
+    .then(user => {
+      if (!user || !user.validatePassword(password)) {
+        return res.status(401).json({ message: 'Password is inccorect' })
+      }
+      edit(update, res)
+    })
+}
+
 module.exports = {
   register,
   login,
   call,
-  edit
+  edit,
+  changePassword
 }

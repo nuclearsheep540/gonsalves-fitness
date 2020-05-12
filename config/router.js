@@ -20,8 +20,8 @@ router.route('/story')
   .get(secureRoute, story.index)
   .post(secureRoute, story.create)
 
-router.route('/login/:id')
-  .put(secureRoute, users.edit)
+router.route('/login/')
+  .patch(secureRoute, users.changePassword)
 
 router.route('/published')
   .get(story.published)

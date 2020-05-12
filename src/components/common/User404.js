@@ -25,7 +25,7 @@ export default class User404 extends React.Component{
         height: '100vh'
       }}>
         <div style={style}>
-          <i className="fas fa-ghost fa-5x"></i>
+          <i className="fas fa-ghost fa-8x"></i>
           <h2>Oops!</h2>
           <p>We&apos;re unable to find that page!</p>
         </div>
