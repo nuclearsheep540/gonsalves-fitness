@@ -30,7 +30,7 @@ export default class Settings extends React.Component {
     const sendData = {
       unsplash: data.data
     }
-    axios.put(`/api/login/${Auth.getToken}`, sendData, { headers: { Authorization: `Bearer ${Auth.getToken()}` } 
+    axios.put(`/api/login/${Auth.getToken()}`, sendData, { headers: { Authorization: `Bearer ${Auth.getToken()}` } 
     }).then(res=> console.log('axios response ',res.data))
       .then(setTimeout(()=>{
         location.reload()

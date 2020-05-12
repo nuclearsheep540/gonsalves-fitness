@@ -15,6 +15,7 @@ export default class AdminNav extends React.Component {
     this.msgToggle = this.msgToggle.bind(this)
     this.settingsToggle = this.settingsToggle.bind(this)
     this.showSettings = this.showSettings.bind(this)
+    this.logout = this.logout.bind(this)
   }
   componentDidMount(){
     console.log(window.history)
@@ -139,8 +140,8 @@ export default class AdminNav extends React.Component {
   logout(){
     event.preventDefault()
     Auth.logout()
-    console.log('tokens cleared')
     window.history.pushState('admin','/admin')
+    console.log('tokens cleared') 
   }
 
 
@@ -154,29 +155,26 @@ export default class AdminNav extends React.Component {
         <ul>
           <a onClick={this.storyToggle}>
             <li id='story'>
-              <i className="fas fa-folder-plus fa-3x" style={style}></i>
+              <i className='fas fa-folder-plus fa-3x' style={style}></i>
             </li>
           </a>
           <a onClick={this.msgToggle}>
             <li id='message'>
-              <i className="fas fa-envelope fa-3x" style={style}></i>
+              <i className='fas fa-envelope fa-3x' style={style}></i>
             </li>
           </a>
 
-          {Auth.isAuthenticated() && (
-            <Link to='/admin' onClick={this.logout}>
-              <li>
-                <i className="fas fa-sign-out-alt fa-3x" style={style}></i>
-              </li>
-            </Link>
-          )}
+          <Link to='/admin' onClick={this.logout}>
+            <li>
+              <i className='fas fa-sign-out-alt fa-3x' style={style}></i>
+            </li>
+          </Link>
 
           <a onClick={this.settingsToggle}>
             <li id='settings'>
-              <i className="fas fa-cogs fa-3x" style={style}></i>
+              <i className='fas fa-cogs fa-3x' style={style}></i>
             </li>
           </a>
-          
         </ul>
       </div>
     )

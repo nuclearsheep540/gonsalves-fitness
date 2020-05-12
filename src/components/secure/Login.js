@@ -46,53 +46,42 @@ class Login extends React.Component {
 
   render() {
     return (
-
       <div className='login-page'>
         <div className='login'>
           <div className='col'>
+            
             <form className='login-form' onSubmit={this.handleSubmit}>
               <h2 className=''>Login</h2>
-              <div className=''>
-                <div className=''>
-                  <div className=''>
-                  
-                    <div className=''>
-                      <input
-                        className='input-area'
-                        name='username'
-                        type='text'
-                        placeholder='e-mail'
-                        onChange={this.handleChange}
-                      />
-                    </div>
-                  </div>
 
-                  <div className=''>
-                  
-                    <div className=''>
-                      <input
-                        className='input-area'
-                        type='password'
-                        name='password'
-                        placeholder='password'
-                        onChange={this.handleChange}
-                      ></input>
-                    </div>
-                  </div>
-                  <button type='submit' className=''>
+              <input
+                className='input-area'
+                name='username'
+                type='text'
+                placeholder='e-mail'
+                onChange={this.handleChange}
+              />
+
+              <input
+                className='input-area'
+                type='password'
+                name='password'
+                placeholder='password'
+                onChange={this.handleChange}
+              ></input>
+
+              <div>
+                <button type='submit' className='loginBtn'>
                   Login
-                  </button>
-                  <button>
-                    <Link to='/'>Back to site</Link>
-                  </button>
-                </div>
-                <br />
+                </button>
+
+                <button className='loginBtn'>
+                  <Link to='/'>Back to site</Link>
+                </button>
               </div>
             </form>
+
           </div>
-
         </div>
-
       </div>
     )
   }

@@ -19,7 +19,6 @@ export default class Dashboard extends React.Component {
       color: ''
     }
     this.tick = this.tick.bind(this)
-    this.logout = this.logout.bind(this)
     this.handleDelete = this.handleDelete.bind(this)
     this.deleteMsg = this.deleteMsg.bind(this)
     this.api = this.api.bind(this)
@@ -56,11 +55,6 @@ export default class Dashboard extends React.Component {
     this.setState({
       date: new Date()
     })
-  }
-
-  logout() {
-    Auth.logout()
-    // .then(this.props.history.push('/'))
   }
 
   handleDelete(e, id) {
