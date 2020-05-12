@@ -8,7 +8,7 @@ Gonsalves Fitness PT Website
 
 * CMS:
     * Security
-      * 401 pages now display if a user tries to naviate to a password-protected page.
+      - 401 pages now display if an unauthorized-user tries to naviate to a password-protected page.
       - 404 pages now displayed if a user types an incorrect address in address bar.
       - You can now update your password! This requires you to include current password for security. There are currently no rules on what your password can be. !! Currently No UI Response when you update your password, will be added in next changelog.
   * Functionality 
@@ -19,6 +19,7 @@ Gonsalves Fitness PT Website
       - Removed database ID from tables (this was just used for dev debugging).
       - Alternate rows are now formatted differently for clarity.
       - Only 10 rows of any given content will be visable in a table, scroll down to see more.
+      - Messages now dont show the entire message in the table. It'll show you a variable amount depending on how large your screen is.
       - Added border to currently active CMS page on nav-bar icon.
       - Themes now update your icon colors! Icons will automatically update to be the opposite color given from your background image, and icon border will be a matching color.
 
