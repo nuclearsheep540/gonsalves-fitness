@@ -17,7 +17,9 @@ export default class HeroCover extends React.Component {
       loop: true,
       muted: true
     }
-    this.setState({ videoOptions })
+    setTimeout(()=>{
+      this.setState({ videoOptions })
+    },5000)
 
     setTimeout(() => {
       // overlay 40% alphwa on video
@@ -33,7 +35,7 @@ export default class HeroCover extends React.Component {
         <div className='video'>
           <div className='overlay'>
             {this.state.transition && (
-              <img src='../assets/logo_bw.png' className='animated fadeIn' />
+              <img src='../assets/logo_bw.png' className='animated fadeIn' id='hero-logo' />
             )}
           </div>
           <VideoCover id='hero-vid' videoOptions={this.state.videoOptions} />

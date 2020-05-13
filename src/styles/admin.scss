@@ -38,7 +38,7 @@ div.login-page {
   display: flex;
   flex-direction: column;
   align-items: center;
-  background-color: lightgrey;
+  background-color: whitesmoke;
   height: 100vh;
   width: 100vw;
 }
@@ -368,6 +368,33 @@ div.msg-body {
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   margin-bottom: 24px;
+}
+
+
+//              TABS
+// -----------------
+
+.admintabs-index {
+  display: flex;
+  overflow: scroll;
+  background-color: rgba(255, 255, 255, 0.25);
+  border-top: 1px solid rgba(255, 255, 255, 0.45);
+  margin-bottom: 4px;
+
+  .admintabs{
+    margin-right: 10px;
+    background-color: white;
+    border: 1px solid rgba(255, 255, 255, 0.45);
+    color: black;
+    text-align: center;
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    width: 200px;
+    p {
+      padding: 4px;
+      margin: 0;
+    }
+  }
 }
 
 //          SETTINGS

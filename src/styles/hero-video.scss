@@ -20,4 +20,11 @@
     }
   }
 }
-
+#hero-logo {
+  @media only screen and (max-width: 900px) {
+    
+      max-width: 70%;
+      max-height: 70%;
+    
+  }
+}

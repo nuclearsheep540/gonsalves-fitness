@@ -4,7 +4,22 @@ Gonsalves Fitness PT Website
 
 # changelog
 
-## 20.05.14
+## 20.05.13
+
+* Operations:
+  * Domain
+    - Domain `gonsalvesfitness.co.uk` is now succesfully pointing to Heroku and all child pages load correctly. Website is now live!
+* UI
+  * Global:
+    - Your image in the 'About' section, should now always behave as to keep your merch branding in view.
+    - Featured success story 'Cards' now have fixed size and match the size and behavior of the USP cards.
+  * Mobile:
+    - Hero Logo now scales appropriately on mobile
+    - 'About' section has a new format for mobile view
+    - Contact form terms checkbox is now normal size for mobile
+
+
+## 20.05.12
 
 * CMS:
     * Security

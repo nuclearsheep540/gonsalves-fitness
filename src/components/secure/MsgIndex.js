@@ -1,6 +1,6 @@
 import React from 'react'
 import Axios from 'axios'
-import Auth from '../../lib/auth'
+// import Auth from '../../lib/auth'
 
 export default class MsgIndex extends React.Component {
   constructor() {
@@ -51,7 +51,7 @@ export default class MsgIndex extends React.Component {
                 <td><a onClick={() => {
                   this.props.handleDelete(msg._id, msg.from)
                 }}><i className="fas fa-trash-alt fa-2x"></i></a></td>
-                <td>{msg.createdAt.toLocaleString('en-us')}</td>
+                <td>{msg.createdAt.toLocaleString('en-us').replace('T',' ').substring(0,19)}</td>
               </tr>
             ))}
           </tbody>

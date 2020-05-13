@@ -1,21 +1,19 @@
 #feature {
-  position: relative;
-  display: flex;
-  flex-direction: row;
-  justify-content: center;
-  align-items: center;
-  height: 70vh;
-  min-height: 300px;
-  width: 100vw;
+display: flex;
+justify-content: center;
+align-items: center;
 }
 
 .feature-wrap {
+  display: flex;
+  justify-content: center;
+  align-items: center;
   position: relative;
-  align-self: center;
   text-align: left;
   padding: 20px;
-  width: 360px;
-  height: 360px;
+  width: 280px;
+  height: fit-content;
+  margin: 12px;
 }
 
 .feature-card {
@@ -25,7 +23,7 @@
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.15);
   position: relative;
   // border: 1px solid red;
-  width: 100%;
+  min-width: 280px;
   height: 300px;
   display: flex;
   flex-direction: column;
@@ -63,11 +61,12 @@
 .right-q {
   z-index: -1;
   background-color: gold;
-  line-height: 1.2em;
+  line-height: 1em;
   position: absolute;
   right: 40px;
-  bottom: 10px; 
-  block-size: 50px;
+  bottom: -5px; 
+  transform: scaleY(-1);
+  block-size: 40px;
   margin: 0;
   color: white;
   font-size: 100px;

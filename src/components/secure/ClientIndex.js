@@ -1,5 +1,5 @@
 import React from 'react'
-import { Link, Switch } from 'react-router-dom'
+// import { Link, Switch } from 'react-router-dom'
 import StoryEdit from '../stories/StoryEdit'
 import StoryCreate from '../stories/StoryCreate'
 
@@ -7,7 +7,7 @@ export default class ClientIndex extends React.Component {
   constructor() {
     super()
     this.state = {
-      storyId: null,
+      storyId: null
     }
     this.openEdit = this.openEdit.bind(this)
     this.closeEdit = this.closeEdit.bind(this)
@@ -41,11 +41,18 @@ export default class ClientIndex extends React.Component {
       <>
         <div className='table animated faster clients'>
           <h1>Manage Content</h1>
-          <p style={{cursor: 'pointer'}} onClick={() => { 
-            this.openEdit('story-create') 
-          } }>
-            <i className="fas fa-plus fa-1x"></i> Create Content
-          </p>
+
+          <div className='admintabs-index'>
+            <div className='admintabs'>
+              <p style={{ cursor: 'pointer' }} onClick={() => { 
+                this.openEdit('story-create') 
+              } }>
+                <i className="fas fa-plus fa-1x"></i> Create Content
+              </p>
+            </div>
+
+          </div>
+
           <table>
             <thead>
               <tr>
@@ -100,6 +107,8 @@ export default class ClientIndex extends React.Component {
               ))}
             </tbody>
           </table>
+
+
         </div>
         {/* edit page div, hidden until called */}
         <div className='iframecontainer hidden animated faster' id='story-edit'>
@@ -114,8 +123,8 @@ export default class ClientIndex extends React.Component {
           </div>
         </div>
 
-        {/* create new div, hidden until called */}
 
+        {/* create new div, hidden until called */}
         <div className='iframecontainer hidden animated faster' id='story-create'>
           <div className='iframewrap'>
             <div id='editarea'>

@@ -10,7 +10,60 @@
   height: 70vh;
   color: white;
   overflow: hidden;
+  background-color: black;
+
+  @media only screen and (max-width: 950px) {
+    
+    background-color: rgba(0,0,0,0);
+     position: relative;
+     display: flex;
+     flex-direction: column;
+     justify-content: center;
+     align-items: center;
+     height: 110vh;
+     .rhyse-img {
+       position: relative;
+       width: 100vw;
+       height: 100vh;
+       background-position: bottom;
+       background-position-x: auto;
+       background-size: 100vw;
+     }
+     .rhyse-info {
+      box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 3px;
+
+       transform: none;
+        margin: 4px;
+       display: flex;
+      //  justify-content: center;
+      //  align-items: center;
+       position: relative;
+       min-width: fit-content;
+       width: 70vw;
+       left: 0px;
+       padding: 14px;
+       height: 110vh;
+       h2 {
+         font-size: 24px;
+       }
+       p {
+         font-size: 15px;
+       }
+       .text {
+        height: 50vh;
+        width: 70%;
+        position: relative;
+        margin: 4px;
+        transform: none;
+        left: 0;
+        top: 0;
+        padding: 0;
+      }
+     }
+   }
+
 }
+
 
 .rhyse-img {
   z-index: 1;
@@ -18,9 +71,10 @@
   background-image: url('/assets/rhyse.jpg') !important;
   background-repeat: no-repeat;
   background-size: cover;
-  background-position: left;
+  background-position: bottom;
   background-position-x: -15vw;
-  width: 75vw;
+  width: 70vw;
+  max-width: 1080px;
   height: 70vh;
 }
 
@@ -30,19 +84,25 @@
   color: black;
   background-color: white;
   height: fit-content;
-  right: -10vw;
-  width: 60vw;
+  left: 40%;
+  width: 75vw;
   height: 101%;
   transform: skewX(15deg) translateX(5%);
   display: flex;
+  flex-direction: column;
   justify-content: center;
+  align-items: center;
   .text {
     position: absolute;
-    top: 15%;
-    left: 12.5vw;
-    margin: auto;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    left: 0;
+    padding-left: 20vw;
     height: 80%;
-    width: 350px;
+    width: 80%;
+    max-width: 1050px;
+    min-width: 350px;
     overflow: hidden;
     transform: skewX(-15deg) translateX(-20%);
   }

@@ -6,7 +6,7 @@ export default class FeatureCardMap extends React.Component {
     super()
     this.state = {
       data: [],
-      carIndex: 1,
+      carIndex: 1
     }
     this.autoCarousel = this.autoCarousel.bind(this)
   }
@@ -60,7 +60,7 @@ export default class FeatureCardMap extends React.Component {
     review && console.log('review:\n', review)
 
     return (
-      <>
+      <div className='gridbox'>
         {this.state.data.map((feature, i) => (
           <div className='feature-wrap' key={i}>
             <p className='left-q'>&ldquo;</p>
@@ -74,7 +74,7 @@ export default class FeatureCardMap extends React.Component {
             <p className='right-q'>&rdquo;</p>
           </div>
         ))}
-      </>
+      </div>
     )
   }
 }

@@ -137,11 +137,18 @@ export default class AdminNav extends React.Component {
 
 
   //AUTH
+  redirect() {
+    if (!Auth.getToken()) {
+      window.history.pushState('admin','/admin')
+    } else {
+      window.location.reload()
+    }
+  }
   logout(){
     event.preventDefault()
     Auth.logout()
-    window.history.pushState('admin','/admin')
     console.log('tokens cleared') 
+    this.redirect()
   }
 
 

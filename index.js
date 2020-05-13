@@ -6,7 +6,7 @@ const bodyParser = require('body-parser')
 const logger = require('./lib/logger')
 const router = require('./config/router')
 require('dotenv').config()
-// const errorHandler = require('./lib/errorHandler')
+const errorHandler = require('./lib/errorHandler')
 
 
 app.use(express.static(`${__dirname}/dist`))
@@ -24,7 +24,7 @@ app.use(bodyParser.json())
 
 app.use('/api', router)
 
-// app.use(errorHandler)
+app.use(errorHandler)
 
 // app.get('/*', (req, res) => res.status(404).json({ message: 'Not found' }))
 
