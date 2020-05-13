@@ -22,69 +22,54 @@ const StoryForm = ({ handleImage, handleChange, handleSubmit, data }) => {
         <br />
         <ImageUpload handleImage={handleImage} data={data} client={data.client} />
 
-        <div className='half-width'>
-          {/* <label name='exampleMessage'>Profile</label> */}
-          <input
-            id='profile-img'
-            className='stealth'
-            placeholder='image upload'
-            name='image'
-            value={data.image}
-            onChange={handleChange}
-          ></input>
-        </div>
-
-        <div className='half-width'>
-          {/* <label name='exampleMessage'>Before</label> */}
+        <input
+          id='profile-img'
+          className='stealth'
+          placeholder='image upload'
+          name='image'
+          value={data.image}
+          onChange={handleChange}
+        />
         
-          <input
-            id='before-img'
-            className='stealth'
-            placeholder='image upload'
-            name='before'
-            value={data.before}
-            onChange={handleChange}
-          ></input>
-        </div>
+        <input
+          id='before-img'
+          className='stealth'
+          placeholder='image upload'
+          name='before'
+          value={data.before}
+          onChange={handleChange}
+        />
 
-        <div className='half-width'>
-          {/* <label name='exampleMessage'>After</label> */}
-         
-          <input
-            id='after-img'
-            className='stealth'
-            placeholder='image upload'
-            name='after'
-            value={data.after}
-            onChange={handleChange}
-          ></input>
-        </div>
+        <input
+          id='after-img'
+          className='stealth'
+          placeholder='image upload'
+          name='after'
+          value={data.after}
+          onChange={handleChange}
+        />
 
-        <div className='half-width'>
-          <label name='exampleMessage'>Description</label>
-          <textarea
-            className='input-area'
-            placeholder='Description'
-            name='description'
-            value={data.description}
-            onChange={handleChange}
-            max={1000}
-          ></textarea>
-        </div>
+        <label name='exampleMessage'>Description</label>
+        <textarea
+          className='input-area'
+          placeholder='Max 1000 Characters'
+          name='description'
+          value={data.description}
+          onChange={handleChange}
+          max={1000}
+        />
 
-        <div className='half-width'>
-          <label name='exampleMessage'>Testimonial</label>
-          <textarea
-            className='input-area'
-            placeholder='Testimonial'
-            name='review'
-            value={data.review}
-            onChange={handleChange}
-            max={120}
-          ></textarea>
-        </div>
+        <label name='exampleMessage'>Testimonial</label>
+        <textarea
+          className='input-area'
+          placeholder='Max 120 Characters'
+          name='review'
+          value={data.review}
+          onChange={handleChange}
+          max={120}
+        />
 
-        <div className='half-width'>
+        <div className='input-area'>
           <label name='checkbox'>Publish</label>
           <input
             value={data.featured}
@@ -93,7 +78,8 @@ const StoryForm = ({ handleImage, handleChange, handleSubmit, data }) => {
             name='published'
             checked={data.published}
             onChange={handleChange}
-          ></input>
+          />
+
           <label name='checkbox'>Featured</label>
           <input
             value={data.featured}
@@ -102,14 +88,16 @@ const StoryForm = ({ handleImage, handleChange, handleSubmit, data }) => {
             name='featured'
             checked={data.featured}
             onChange={handleChange}
-          ></input>
-
+          />
+          <button type='submit' className=''>
+          Submit
+          </button>
 
         </div>
+         
 
-        <button type='submit' className=''>
-          Submit
-        </button>
+
+
       </form>
     </section>
   )

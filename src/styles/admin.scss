@@ -210,10 +210,13 @@ div.col-left{
   margin-left: 4%;
   display: flex;
   max-width: 40vw;
+  width: 50%;
   flex-wrap: nowrap;
   margin-bottom: 50px;
 }
 div.col-right{
+  align-items: center;
+  width: 50%;
   margin-right: 4%;
   display: flex;
   flex-direction: column;

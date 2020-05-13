@@ -42,7 +42,7 @@ class ImageUpload extends Component {
   }
   render() {
     return (
-      <>
+      <div className='input-area'>
         <label>Profile</label>
         <input name='image' type="file" className="process__upload-btn" onChange={(e) => this.uploadImage('image', e)} />
 
@@ -51,7 +51,7 @@ class ImageUpload extends Component {
 
         <label>After</label>
         <input name='after' type="file" className="process__upload-btn" onChange={(e) => this.uploadImage('after', e)} />
-      </>
+      </div>
     )
   }
 }

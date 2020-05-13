@@ -23,8 +23,7 @@ function login(req, res) {
       logger.info(user)
     })
     .catch(() => {
-      res.status(401).json({ message: 'catch error' })
-      logger.info('username = ',req.body.username ,'pass=', req.body.password)
+      return res.status(401).json({ message: 'catch error' })
     })
 }
 

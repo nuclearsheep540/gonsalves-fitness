@@ -12,7 +12,8 @@ class Login extends React.Component {
         username: '',
         password: ''
       },
-      snooper: ''
+      snooper: '',
+      error: ''
     }
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
@@ -33,6 +34,7 @@ class Login extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
+    this.setState({ error: '' })
     axios
       .post('/api/login', this.state.data)
       .then(res => {
@@ -40,8 +42,8 @@ class Login extends React.Component {
         Auth.setName(res.data.name)
         this.props.history.push('/admin/dashboard')
       })
-      .catch(err => console.log(err))
-    console.log('submitted')
+      .catch(err => this.setState({ error: String(err) }))
+    console.log('login result: ',this.state)
   }
 
   render() {
@@ -68,6 +70,8 @@ class Login extends React.Component {
                 placeholder='password'
                 onChange={this.handleChange}
               ></input>
+
+              <small style={{ color: 'red' }}>{this.state.error}</small>
 
               <div>
                 <button type='submit' className='loginBtn'>

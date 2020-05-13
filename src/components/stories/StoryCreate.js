@@ -120,13 +120,13 @@ export default class StoryCreate extends React.Component {
           </div>
 
           <div className='col-right'>
-            <small>Profile</small>
+            <label>Profile</label>
             <img src={this.state.data.image} id='story-create-profileImg' className='admin-story-edit'></img>
 
-            <small>Before</small>
+            <label>Before</label>
             <img src={this.state.data.before} className='admin-story-edit'></img>
 
-            <small>After</small>
+            <label>After</label>
             <img src={this.state.data.after} className='admin-story-edit'></img>
           </div>
 
