@@ -7,6 +7,7 @@ const logger = require('./lib/logger')
 const router = require('./config/router')
 require('dotenv').config()
 const errorHandler = require('./lib/errorHandler')
+const regeneratorRuntime = require('regenerator-runtime')
 
 
 app.use(express.static(`${__dirname}/dist`))

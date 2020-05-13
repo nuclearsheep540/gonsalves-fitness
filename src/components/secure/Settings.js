@@ -66,8 +66,6 @@ export default class Settings extends React.Component {
   }
 
   render(){
-    console.log(this.state.form)
-
     const confirm = this.state.form.confPassword
     return (
       <div className='table animated faster settings'>

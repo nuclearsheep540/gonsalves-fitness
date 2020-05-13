@@ -1,6 +1,7 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
 import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import 'regenerator-runtime/runtime.js'
 
 // import Topnav from './components/common/Topnav'
 // import Navbar from './components/common/Navbar'
@@ -27,11 +28,6 @@ import 'react-fontawesome'
 
 import SecureRoute from './components/common/SecureRoute'
 import Auth from './lib/auth'
-
-// need to create new routes for secure CMS
-// routes need to path from /admin 
-// need secure route for edit path
-
 
 const App = () => (
   <BrowserRouter>

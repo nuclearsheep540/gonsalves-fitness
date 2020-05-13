@@ -17,9 +17,6 @@ export default class AdminNav extends React.Component {
     this.showSettings = this.showSettings.bind(this)
     this.logout = this.logout.bind(this)
   }
-  componentDidMount(){
-    console.log(window.history)
-  }
 
   //IF STORYEDIT IS OPEN
   closeEdit() {
@@ -137,18 +134,8 @@ export default class AdminNav extends React.Component {
 
 
   //AUTH
-  redirect() {
-    if (!Auth.getToken()) {
-      window.history.pushState('admin','/admin')
-    } else {
-      window.location.reload()
-    }
-  }
-  logout(){
-    event.preventDefault()
-    Auth.logout()
-    console.log('tokens cleared') 
-    this.redirect()
+  async logout(){
+    await Auth.logout()
   }
 
 

@@ -32,8 +32,10 @@ export default class Dashboard extends React.Component {
         })
         .then((res) => this.setState({ stories: res.data.reverse() }))
         .catch((err) => console.log(err))
+    } else {  //replaces logout fnct from updating route
+      window.location.reload()
     }
-    this.timerID = setInterval(() => this.tick(), 2000)
+    this.timerID = setInterval(() => this.tick(), 3000)
     axios.get('/api/contact').then((res) => this.setState({ msg: res.data.reverse() }))
     axios.get('/api/login',{ headers: { Authorization: `Bearer ${Auth.getToken()}` } })
       .then(res => {

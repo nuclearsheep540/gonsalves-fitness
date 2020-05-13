@@ -12,9 +12,6 @@ export default class ClientIndex extends React.Component {
     this.openEdit = this.openEdit.bind(this)
     this.closeEdit = this.closeEdit.bind(this)
   }
-  componentDidMount() {
-    console.log(this.props)
-  }
 
   openEdit(element, storyId) {
     const id = storyId
@@ -24,7 +21,6 @@ export default class ClientIndex extends React.Component {
     document.getElementById(element).classList.add('fadeInUp')
   }
   closeEdit(element, storyId) {
-    // console.log('closing id ',storyId)
     this.props.api()
     document.getElementById(element).classList.remove('fadeInUp')
     document.getElementById(element).classList.add('fadeOutDown')

@@ -19,7 +19,7 @@ export default class HeroCover extends React.Component {
     }
     setTimeout(()=>{
       this.setState({ videoOptions })
-    },5000)
+    },1000)
 
     setTimeout(() => {
       // overlay 40% alphwa on video

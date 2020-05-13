@@ -1,27 +1,30 @@
 # gonsalves-fitness
 Gonsalves Fitness PT Website
 
-
 # changelog
 
 ## 20.05.13
-
-* Operations:
+* Operations
   * Domain
-    - Domain `gonsalvesfitness.co.uk` is now succesfully pointing to Heroku and all child pages load correctly. Website is now live!
+    - Website is now live! Domain `gonsalvesfitness.co.uk` is now succesfully pointing to Heroku and all child pages load correctly.
+    >Note that we're still on a free version of Heroku, so the website goes to sleep after an hour of in-activity and takes 30 seconds to wake up!
 * UI
-  * Global:
+  * Global
     - Your image in the 'About' section, should now always behave as to keep your merch branding in view.
     - Featured success story 'Cards' now have fixed size and match the size and behavior of the USP cards.
-  * Mobile:
+    - Spruced up the 'Edit' and 'Create' forms, for a bit more clairty around image uploads section and publish/submitting section.
+    - Added a tab above the content table to allow you to create more conent. In the future, these tabs will show more editable sections of available content for your website.
+  * Mobile
     - Hero Logo now scales appropriately on mobile
     - 'About' section has a new format for mobile view
     - Contact form terms checkbox is now normal size for mobile
+* Bug Fixes
+    - Upon logging out, page will always re-direct you to the login page (100%).
 
+#
 
 ## 20.05.12
-
-* CMS:
+* CMS
     * Security
       - 401 pages now display if an unauthorized-user tries to naviate to a password-protected page.
       - 404 pages now displayed if a user types an incorrect address in address bar.
@@ -38,11 +41,11 @@ Gonsalves Fitness PT Website
       - Added border to currently active CMS page on nav-bar icon.
       - Themes now update your icon colors! Icons will automatically update to be the opposite color given from your background image, and icon border will be a matching color.
 
-
+#
 
 ## 20.04.30
 
-* Operations:
+* Operations
   * Storage
     - Google Firebase storage/images now writing filenames as: `date_clientName_uploadTarget`
   * Hosting
