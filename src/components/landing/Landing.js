@@ -30,9 +30,46 @@ export default class Landing extends React.Component {
     this.handleChange = this.handleChange.bind(this)
     this.handleSubmit = this.handleSubmit.bind(this)
     this.handlePrivacy = this.handlePrivacy.bind(this)
+    this.handleCC = this.handleCC.bind(this)
   }
 
   //functions
+  handleCC(){
+    event.preventDefault()
+    const obj = {
+      privacy: this.state.privacy,
+      to: this.state.form.email, //customer's email address
+      from: 'gonsalvesfitness@gmail.com', //reply-to client address
+      subject: `${this.state.form.firstname} has contacted you at Gonsalves-Fitness.com`,
+      textBody: this.state.form.message,
+      htmlBody: `
+      <html>
+      <center>
+      <img src='https://firebasestorage.googleapis.com/v0/b/rhyse-pt.appspot.com/o/images%2FGF%20LOGO%20BLACK%20(1)%20copy.png?alt=media&token=cda8a4ad-affc-43d8-b7c2-200b79530d3a' width='300' />
+      </center>
+      <body style="background-color: #f5f5f5">
+      <div style="background-color: #ffffff; border: 10px solid #f5f5f5; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; padding: 8px">
+      <p>From: ${this.state.form.firstname} ${this.state.form.lastname},</p>
+      <p>Email: ${this.state.form.email}</p>
+      <p>Contact: ${this.state.form.number}</p>
+      <br />
+      <p>${this.state.form.message.replace('\n\n', '<br /> <br />')}</p>
+      </div>
+      </body>
+      </html>`,
+      messageType: 'basic'
+    }
+    axios.post('api/contact', obj)
+      .then((res) => {
+        console.log(res.status)
+      })
+      .catch((err) => {
+        console.log(err)
+        this.setState({ formstatus: 'error' })
+      })
+
+
+  }
   handleSubmit(e) {
     // form has 3 states
     // open = ready for input
@@ -42,18 +79,25 @@ export default class Landing extends React.Component {
     e.preventDefault()
     const obj = {
       privacy: this.state.privacy,
-      to: 'matt.davey540@me.com', //client's email address
+      to: 'gonsalvesfitness@gmail.com', //client's email address
       from: this.state.form.email, //reply-to customer address
       subject: `${this.state.form.firstname} has contacted you at Gonsalves-Fitness.com`,
       textBody: this.state.form.message,
       htmlBody: `
       <html>
-      <div>
+      <center>
+      <img src='https://firebasestorage.googleapis.com/v0/b/rhyse-pt.appspot.com/o/images%2FGF%20LOGO%20BLACK%20(1)%20copy.png?alt=media&token=cda8a4ad-affc-43d8-b7c2-200b79530d3a' width='300' />
+      </center>
+      <body style="background-color: #f5f5f5">
+      <div style="background-color: #ffffff; border: 10px solid #f5f5f5; border-bottom-right-radius: 20px; border-bottom-left-radius: 20px; padding: 8px">
+      <h3>This is an email confirming we've received your message below:</h3>
       <p>From: ${this.state.form.firstname} ${this.state.form.lastname},</p>
-      <p>Contact: ${this.state.form.number}</p>
       <p>Email: ${this.state.form.email}</p>
+      <p>Contact: ${this.state.form.number}</p>
+      <br />
       <p>${this.state.form.message.replace('\n\n', '<br /> <br />')}</p>
       </div>
+      </body>
       </html>`,
       messageType: 'basic'
     }
@@ -68,7 +112,8 @@ export default class Landing extends React.Component {
           console.log(err)
           this.setState({ formstatus: 'error' })
         })
-    },1500)
+    },1000)
+    this.handleCC()
   }
 
   handleChange({ target: { name, value } }) {
@@ -106,6 +151,7 @@ export default class Landing extends React.Component {
             </div>
             <div className='row contact'>
               <div className='col' id='contact'>
+
                 <ContactForm
                   handleSubmit={this.handleSubmit}
                   handleChange={this.handleChange}
@@ -123,12 +169,16 @@ export default class Landing extends React.Component {
                 {this.state.formstatus === 'status201' &&
                   <div className='formresult' id='formsent'>
                     <h2>Message Sent</h2>
+                    <br />
+                    <p>A copy of your message has been sent to {this.state.form.email}</p>
+                    <p>I hope to get back to you as soon as possible!</p>
+                    <br />
                   </div>
                 }
                 
                 {this.state.formstatus === 'error' &&
                 <div className='formresult' id='formerror'>
-                  <h2>Error</h2>
+                  <h2>Error. Please check form is complete</h2>
                 </div>
                 }
 

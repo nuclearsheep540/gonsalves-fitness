@@ -10,6 +10,7 @@ const ContactForm = ({ handleSubmit, handleChange, form, status, handleprivacy, 
         
         <span>
           <input
+            required={true}
             className='form-area half'
             placeholder='First Name'
             type='text'
@@ -18,6 +19,7 @@ const ContactForm = ({ handleSubmit, handleChange, form, status, handleprivacy, 
             onChange={handleChange}
           />
           <input
+            required={true}
             className='form-area half'
             placeholder='Last Name'
             type='text'
@@ -28,6 +30,7 @@ const ContactForm = ({ handleSubmit, handleChange, form, status, handleprivacy, 
         </span>
               
         <input
+          required={true}
           className='form-area full'
           placeholder='your-email@example.com'
           type='email'
@@ -48,6 +51,7 @@ const ContactForm = ({ handleSubmit, handleChange, form, status, handleprivacy, 
         ></input>
                 
         <textarea
+          required={true}
           className=''
           placeholder='Your message'
           maxLength={500}

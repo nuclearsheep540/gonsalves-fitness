@@ -4,18 +4,22 @@ Gonsalves Fitness PT Website
 # changelog
 
 ## 20.05.14
-
+* Functionality
+  - Contact form now sends a copy to the end user, with a reply-to to your email address.
 * UI
   * Mobile
     - Landing page now optimised, specifically around the About sections.
-    - Footer now spaces the link columns
-
+    - Footer now spaces the linkå columns
+    - Contact form now closes if msg is successful.
 
 * Bug Fixes
   - Admin Nav bar now unmounts upon logging out, and not after.
   - Admin login page - Back to site button doesn't call the login form.
   - Admin Logout now respects the app's redirect rules to redirect you on logout.
   - Footer 'Contact' link now calls in promise, so always scrolls you to the contact form once the page loads.
+
+#
+
 
 ## 20.05.13
 * Operations
