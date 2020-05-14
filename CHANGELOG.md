@@ -15,6 +15,7 @@ Gonsalves Fitness PT Website
   - Admin Nav bar now unmounts upon logging out, and not after.
   - Admin login page - Back to site button doesn't call the login form.
   - Admin Logout now respects the app's redirect rules to redirect you on logout.
+  - Footer 'Contact' link now calls in promise, so always scrolls you to the contact form once the page loads.
 
 ## 20.05.13
 * Operations

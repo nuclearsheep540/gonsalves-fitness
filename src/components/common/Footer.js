@@ -8,10 +8,9 @@ export default class Footer extends React.Component {
     //binds
   }
   //funct
-  scrollContact(){
-    setTimeout(() => {
-      window.history.pushState('contact','/#contact')
-    }, 100)
+  async scrollContact(){
+    await window.history.pushState('contact','/#contact')
+    location.reload()
   }
 
   render() {

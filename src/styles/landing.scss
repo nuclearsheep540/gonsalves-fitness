@@ -4,13 +4,18 @@
 
 
 #about {
-  width: 100vw;
+  // overflow hidden doesnt work without being set relative
+  position: relative;
+  min-width: 100vw;
+  max-width: 100vw;
   height: 70vh;
   color: white;
   background-color: black;
   min-height: 300px;
+  overflow: hidden;
 
 .rhyse-info {
+  overflow: hidden;
   z-index: 2;
   position: absolute;
   color: black;
@@ -18,7 +23,7 @@
   height: fit-content;
   left: 40%;
   width: 75vw;
-  height: 70%;
+  height: 70vh;
   transform: skewX(15deg) translateX(5%);
   display: flex;
   flex-direction: column;
@@ -51,7 +56,6 @@
   width: 70vw;
   max-width: 1080px;
   height: 70vh;
-  min-height: 60vw;
 
 }
 
@@ -71,6 +75,7 @@
     background-position: bottom;
     background-position-x: auto;
     background-size: 100vw;
+    min-height: 60vw;
   }
   .rhyse-info {
    box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 3px;
