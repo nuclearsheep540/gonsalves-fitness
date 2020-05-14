@@ -40,7 +40,7 @@ export default class Landing extends React.Component {
       privacy: this.state.privacy,
       to: this.state.form.email, //customer's email address
       from: 'gonsalvesfitness@gmail.com', //reply-to client address
-      subject: `${this.state.form.firstname} has contacted you at Gonsalves-Fitness.com`,
+      subject: `${this.state.form.firstname} has contacted you at gonsalvesfitness.co.uk`,
       textBody: this.state.form.message,
       htmlBody: `
       <html>
@@ -81,7 +81,7 @@ export default class Landing extends React.Component {
       privacy: this.state.privacy,
       to: 'gonsalvesfitness@gmail.com', //client's email address
       from: this.state.form.email, //reply-to customer address
-      subject: `${this.state.form.firstname} has contacted you at Gonsalves-Fitness.com`,
+      subject: `${this.state.form.firstname} has contacted you at gonsalvesfitness.co.uk`,
       textBody: this.state.form.message,
       htmlBody: `
       <html>

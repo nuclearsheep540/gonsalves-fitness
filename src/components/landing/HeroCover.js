@@ -38,7 +38,7 @@ export default class HeroCover extends React.Component {
               <img src='../assets/logo_bw.png' className='animated fadeIn' id='hero-logo' />
             )}
           </div>
-          <VideoCover id='hero-vid' videoOptions={this.state.videoOptions} />
+          <VideoCover onClick={null} id='hero-vid' videoOptions={this.state.videoOptions} />
         </div>
       </div>
     )

@@ -7,10 +7,12 @@ export default class Footer extends React.Component {
     this.state = {}
     //binds
   }
-  //funct
-  async scrollContact(){
-    await window.history.pushState('contact','/#contact')
-    location.reload()
+
+  async scroll(){
+    await (
+      history.pushState('contact','/#contact','/#contact'),
+      Promise.resolve()
+    ).then(location.reload())
   }
 
   render() {
@@ -22,10 +24,14 @@ export default class Footer extends React.Component {
             <Link to='/privacy'>
               <p className='p14'>Privacy Policy</p>
             </Link>
-            <p className='p14'>Booking</p>
-            <Link to='/#contact' onClick={this.scrollContact}>
-              <p className='p14'>Contact</p>
+
+            <Link to='/booking'>
+              <p className='p14'>Booking</p>
             </Link>
+
+            <a href='/#contact' >
+              <p className='p14'>Contact</p>
+            </a>
     
             <a href='https://www.facebook.com/GonsalvesFitness' target='blank'><p className='p14'>Facebook</p></a>
             <a href='https://www.instagram.com/gonsalvesfitness/' target='blank'><p className='p14'>Instagram</p></a>

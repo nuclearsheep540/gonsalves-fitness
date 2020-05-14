@@ -1,5 +1,5 @@
 import React from 'react'
-// import { Link, withRouter } from 'react-router-dom'
+import Footer from '../common/Footer'
 
 export default class Book extends React.Component {
   constructor() {
@@ -12,10 +12,16 @@ export default class Book extends React.Component {
 
   render() {
     return (
-      <div className='hero'>
-        <h1>Page Not Built</h1>
-        <h1>Come back soon! :)</h1>
-      </div>
+      <>
+        <div className='container-fluid'>
+          <div className='row'>
+            <div className='col'>
+
+            </div>
+          </div>
+        </div>
+        <Footer />
+      </>
     )
   }
 }
