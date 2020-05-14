@@ -16,6 +16,8 @@ class Auth {
   static logout() {
     localStorage.removeItem('token')
     localStorage.removeItem('user')
+    console.log('tokens cleared')
+    return Promise.resolve()
   }
 
   static getPayLoad(){

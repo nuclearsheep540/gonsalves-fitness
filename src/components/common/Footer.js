@@ -8,6 +8,11 @@ export default class Footer extends React.Component {
     //binds
   }
   //funct
+  scrollContact(){
+    setTimeout(() => {
+      window.history.pushState('contact','/#contact')
+    }, 100)
+  }
 
   render() {
     return (
@@ -19,7 +24,7 @@ export default class Footer extends React.Component {
               <p className='p14'>Privacy Policy</p>
             </Link>
             <p className='p14'>Booking</p>
-            <Link to='/#contact'>
+            <Link to='/#contact' onClick={this.scrollContact}>
               <p className='p14'>Contact</p>
             </Link>
     

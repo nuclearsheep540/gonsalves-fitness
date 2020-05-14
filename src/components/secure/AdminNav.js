@@ -17,14 +17,20 @@ export default class AdminNav extends React.Component {
     this.showSettings = this.showSettings.bind(this)
     this.logout = this.logout.bind(this)
   }
+  componentDidMount(){
+  }
 
   //IF STORYEDIT IS OPEN
   closeEdit() {
-    document.getElementsByClassName('iframecontainer')[0].classList.remove('fadeInUp')
-    document.getElementsByClassName('iframecontainer')[0].classList.add('fadeOutDown')
-    setTimeout(()=>{
-      document.getElementsByClassName('iframecontainer')[0].classList.add('hidden')
-    },500)
+    if (event.target.id === 'logout') {
+      return null
+    } else {
+      document.getElementsByClassName('iframecontainer')[0].classList.remove('fadeInUp')
+      document.getElementsByClassName('iframecontainer')[0].classList.add('fadeOutDown')
+      setTimeout(()=>{
+        document.getElementsByClassName('iframecontainer')[0].classList.add('hidden')
+      },500)
+    }
   }
 
   //SETTINGS
@@ -135,7 +141,9 @@ export default class AdminNav extends React.Component {
 
   //AUTH
   async logout(){
-    await Auth.logout()
+    Auth.logout()
+      .then(console.log('logout complete'))
+    //app.js switch will re-direct for us
   }
 
 
@@ -160,13 +168,13 @@ export default class AdminNav extends React.Component {
 
           <Link to='/admin' onClick={this.logout}>
             <li>
-              <i className='fas fa-sign-out-alt fa-3x' style={style}></i>
+              <i id='logout' className='fas fa-sign-out-alt fa-3x' style={style}></i>
             </li>
           </Link>
 
           <a onClick={this.settingsToggle}>
-            <li id='settings'>
-              <i className='fas fa-cogs fa-3x' style={style}></i>
+            <li>
+              <i id='settings' className='fas fa-cogs fa-3x' style={style}></i>
             </li>
           </a>
         </ul>

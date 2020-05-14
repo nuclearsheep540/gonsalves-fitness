@@ -32,9 +32,7 @@ export default class Dashboard extends React.Component {
         })
         .then((res) => this.setState({ stories: res.data.reverse() }))
         .catch((err) => console.log(err))
-    } else {  //replaces logout fnct from updating route
-      window.location.reload()
-    }
+    } 
     this.timerID = setInterval(() => this.tick(), 3000)
     axios.get('/api/contact').then((res) => this.setState({ msg: res.data.reverse() }))
     axios.get('/api/login',{ headers: { Authorization: `Bearer ${Auth.getToken()}` } })
@@ -42,15 +40,13 @@ export default class Dashboard extends React.Component {
         this.setState({ bg: res.data.unsplash }),
         this.setState({ color: res.data.unsplash.color })
       })
-      //send inverted color props to admin nav 
-    // this.invertHex(this.state..bg.color)
-
-      
+      // to send inverted color props to admin nav 
+      // no using CSS to filter: invert the color instead.
+      // this.invertHex(this.state..bg.color)
   }
 
   componentWillUnmount() {
     clearInterval(this.timerID)
-    // window.location.reload()
   }
 
   tick() {
@@ -104,9 +100,7 @@ export default class Dashboard extends React.Component {
   //   color = color.toString(16); // convert to hex
   //   color = ("000000" + color).slice(-6); // pad with leading zeros
   //   color = "#" + color; // prepend #  }
-    
   //   this.setState({ color: hex })
-
   // }
 
   render() {

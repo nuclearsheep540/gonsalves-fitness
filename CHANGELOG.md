@@ -3,6 +3,19 @@ Gonsalves Fitness PT Website
 
 # changelog
 
+## 20.05.14
+
+* UI
+  * Mobile
+    - Landing page now optimised, specifically around the About sections.
+    - Footer now spaces the link columns
+
+
+* Bug Fixes
+  - Admin Nav bar now unmounts upon logging out, and not after.
+  - Admin login page - Back to site button doesn't call the login form.
+  - Admin Logout now respects the app's redirect rules to redirect you on logout.
+
 ## 20.05.13
 * Operations
   * Domain
