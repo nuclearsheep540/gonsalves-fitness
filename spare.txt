@@ -43,3 +43,67 @@
                   <li>Update Photos</li>
                   <li>Contact with PT via Phone, Text, Email</li>
                 </ul>
+
+
+########
+
+USE SUBDOCUMENTS WITHIN SCHEMATIC,
+in controller, a callback has to be made to the parent to save the sub doc, 
+
+PERSONAL TRAINING
+  PT single sessions
+    @ 1 Person 
+    @ 2 Persons 
+    @ groups
+  PT block sessions
+    @ 1 Person
+      5, 10, 20, 30, 40, 50, 100
+    @ 2 Persons
+      5, 10, 20, 30, 40, 50, 100
+    @ groups
+      5, 10, 20, 30, 40, 50, 100
+  Monthly Package PT
+    @ 1 Person 
+      1 per week, 2 per week, 3 per week, 4 per week, 5 per week
+    @ 2 Persons
+      1 per week, 2 per week, 3 per week, 4 per week, 5 per week
+    @ 3 Persons
+      1 per week, 2 per week, 3 per week, 4 per week, 5 per week
+
+DEEP TISSUE MASSAGE
+  30 mins
+    1x, 5x, 10x
+  60 mins
+    1x 5x 10x
+  90 mins
+    1x 5x 10x
+  120 mins 
+    1x 5x 10x
+
+KINESIOLOGY TAPING
+  per body part
+
+
+
+productSchema {
+  productName: string
+  packages: [package.mongooseObject]
+}
+
+  packageSchema {
+    packageName: string,
+    package: [prices.mongooseObject]
+  }
+
+    pricesSchema {
+      name: string,
+      quantity: number,
+      price: number,
+    }
+
+package {
+  packageName: string
+  quantity: number
+  price: number
+  description: string
+}
