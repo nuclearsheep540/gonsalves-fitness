@@ -1,6 +1,5 @@
 import React from 'react'
 import Footer from '../common/Footer'
-import HeroCover from '../landing/HeroCover'
 
 export default class Book extends React.Component {
   constructor() {
@@ -13,13 +12,24 @@ export default class Book extends React.Component {
   render() {
     return (
       <div id='booking'>
-        <div className='container-fluid'>
-          <div className='row hero-video'>
-            <div className='col'>
-              <HeroCover />
-            </div>
-          </div>
+        <div className='hero'>
+          <div className='video'>
+            <div className='overlay'>
+              <img className='logo' src='../../assets/logo_bw.png' id='hero-logo' />
+              <img
+                className='hero'
+                src='https://media.istockphoto.com/photos/closeup-of-dumbbell-on-the-floor-in-gym-copy-space-picture-id1162162438'
+              />
 
+            </div>
+
+            <h2>BOOKING</h2>
+
+          </div>
+        </div>
+
+        <div className='col pricing'></div>
+        <div className='container-fluid'>
           <div className='row'>
             <div className='col pricing'>
               <h2 style={{ textAlign: 'center' }}>Personal Training</h2>
@@ -277,7 +287,6 @@ export default class Book extends React.Component {
                       </p>
                     </li>
 
-
                     <li>
                       <p>
                         <b>10x Session</b>
@@ -307,7 +316,6 @@ export default class Book extends React.Component {
                         £270
                       </p>
                     </li>
-
 
                     <li>
                       <p>
@@ -339,7 +347,6 @@ export default class Book extends React.Component {
                       </p>
                     </li>
 
-
                     <li>
                       <p>
                         <b>10x Session</b>
@@ -369,7 +376,6 @@ export default class Book extends React.Component {
                         £495
                       </p>
                     </li>
-
 
                     <li>
                       <p>
@@ -440,7 +446,6 @@ export default class Book extends React.Component {
               </p>
             </div>
           </div>
-          
         </div>
         <Footer />
       </div>

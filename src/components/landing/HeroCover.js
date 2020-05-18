@@ -35,7 +35,7 @@ export default class HeroCover extends React.Component {
         <div className='video'>
           <div className='overlay'>
             {this.state.transition && (
-              <img src='../assets/logo_bw.png' className='animated fadeIn' id='hero-logo' />
+              <img src='../assets/logo_bw.png' className='animated fadeIn logo' id='hero-logo' />
             )}
           </div>
           <VideoCover onClick={null} id='hero-vid' videoOptions={this.state.videoOptions} />
