@@ -169,6 +169,7 @@ h2.hero {
 }
 
 footer {
+  z-index: 3;
   background: rgb(24, 24, 24);
   color: white;
   a {
@@ -182,6 +183,7 @@ footer {
 }
 
 #footer {
+  z-index: 3;
   padding: 20px;
   font-size: small;
   display: flex;

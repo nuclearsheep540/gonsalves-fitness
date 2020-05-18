@@ -1,5 +1,6 @@
 import React from 'react'
 import Footer from '../common/Footer'
+import HeroCover from '../landing/HeroCover'
 
 export default class Book extends React.Component {
   constructor() {
@@ -12,24 +13,27 @@ export default class Book extends React.Component {
   render() {
     return (
       <div id='booking'>
-        <div className='hero'>
-          <div className='video'>
-            <div className='overlay'>
-              <img className='logo' src='../../assets/logo_bw.png' id='hero-logo' />
-              <img
-                className='hero'
-                src='https://media.istockphoto.com/photos/closeup-of-dumbbell-on-the-floor-in-gym-copy-space-picture-id1162162438'
-              />
-
-            </div>
-
-            <h2>BOOKING</h2>
-
-          </div>
-        </div>
-
-        <div className='col pricing'></div>
         <div className='container-fluid'>
+          <div className='row hero-video'>
+            <div className='col'>
+              <div className='hero'>
+                <div className='video'>
+                  <div className='overlay'>
+                    <img
+                      src='../assets/logo_bw.png'
+                      className='animated fadeIn logo'
+                      id='hero-logo'
+                    />
+                  </div>
+                  <img
+                    className='hero'
+                    src='https://simplygym.co.uk/wp-content/uploads/2018/05/AdobeStock_177818164-1024x683.jpeg'
+                  />
+                </div>
+              </div>
+            </div>
+          </div>
+
           <div className='row'>
             <div className='col pricing'>
               <h2 style={{ textAlign: 'center' }}>Personal Training</h2>
@@ -434,16 +438,25 @@ export default class Book extends React.Component {
 
           <div className='row'>
             <div className='col pricing'>
-              <h2>Want to book a session?</h2>
-              <p>
-                If you want to discuss rates or a personal training plan, please
-                get in touch
-              </p>
+              <div className='pthub'>
+                <object data='https://www.mypthub.net/assets/img/logo-white.svg' type="image/svg+xml"></object>
+                <h2>Want to book a session?</h2>
+                <p>
+                  If you want to discuss rates or a personal training plan,
+                  please get in touch
+                </p>
 
-              <p>
-                You can book me over at *website* where you can check my
-                availability and confirm bookings with me.
-              </p>
+                <p>
+                  You can book me over at <a href='https://gonsalvesfitness.mypthub.net/3/auth/'>PT HUB</a> where you can check my
+                  availability and confirm bookings with me.
+                </p>
+
+                <a href='https://gonsalvesfitness.mypthub.net/3/auth/' target='blank'>
+                  <button>
+                    Book a session
+                  </button>
+                </a>
+              </div>
             </div>
           </div>
         </div>
