@@ -20,10 +20,9 @@
     z-index: 999;
   }
   img.hero {
-    size: cover;
-    height: 100vh;
-    width: 100vw;
-    overflow: hidden;
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
   }
 
 

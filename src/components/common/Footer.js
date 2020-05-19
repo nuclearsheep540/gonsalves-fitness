@@ -21,8 +21,8 @@ export default class Footer extends React.Component {
         <div className='container-fluid'>
           <div id='footer'>
 
-            <Link to='/privacy'>
-              <p className='p14'>Privacy Policy</p>
+            <Link to='/'>
+              <p className='p14'>Home</p>
             </Link>
 
             <Link to='/booking'>
@@ -32,6 +32,10 @@ export default class Footer extends React.Component {
             <a href='/#contact' >
               <p className='p14'>Contact</p>
             </a>
+
+            <Link to='/privacy'>
+              <p className='p14'>Privacy Policy</p>
+            </Link>
     
             <a href='https://www.facebook.com/GonsalvesFitness' target='blank'><p className='p14'>Facebook</p></a>
             <a href='https://www.instagram.com/gonsalvesfitness/' target='blank'><p className='p14'>Instagram</p></a>

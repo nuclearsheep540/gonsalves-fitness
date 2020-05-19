@@ -263,6 +263,35 @@ export default class Book extends React.Component {
                   </h3>
                 </div>
               </div>
+
+              <div className='col'>
+                <h3 style={{ textAlign: 'center' }}>
+                  Monthly Package Also Includes:
+                </h3>
+                <ul>
+                  <li>
+                    <p>Monthly Fitness Assessment</p>
+                  </li>
+                  <li>
+                    <p>Body Composition Analys</p>
+                  </li>
+                  <li>
+                    <p>Tailored Gym Programme</p>
+                  </li>
+                  <li>
+                    <p>Bespoke Nutrition Guide (Macros + Calories)</p>
+                  </li>
+                  <li>
+                    <p>SMART GOAL Setting</p>
+                  </li>
+                  <li>
+                    <p>Update Photos</p>
+                  </li>
+                  <li>
+                    <p>Contact with PT via Phone, Text, Email</p>
+                  </li>
+                </ul>
+              </div>
             </div>
           </div>
 
@@ -409,37 +438,11 @@ export default class Book extends React.Component {
 
           <div className='row'>
             <div className='col pricing'>
-              <h3>Every Packages Includes:</h3>
-              <ul>
-                <li>
-                  <p>Monthly Fitness Assessment</p>
-                </li>
-                <li>
-                  <p>Body Composition Analys</p>
-                </li>
-                <li>
-                  <p>Tailored Gym Programme</p>
-                </li>
-                <li>
-                  <p>Bespoke Nutrition Guide (Macros + Calories)</p>
-                </li>
-                <li>
-                  <p>SMART GOAL Setting</p>
-                </li>
-                <li>
-                  <p>Update Photos</p>
-                </li>
-                <li>
-                  <p>Contact with PT via Phone, Text, Email</p>
-                </li>
-              </ul>
-            </div>
-          </div>
-
-          <div className='row'>
-            <div className='col pricing'>
               <div className='pthub'>
-                <object data='https://www.mypthub.net/assets/img/logo-white.svg' type="image/svg+xml"></object>
+                <object
+                  data='https://www.mypthub.net/assets/img/logo-white.svg'
+                  type='image/svg+xml'
+                ></object>
                 <h2>Want to book a session?</h2>
                 <p>
                   If you want to discuss rates or a personal training plan,
@@ -447,14 +450,19 @@ export default class Book extends React.Component {
                 </p>
 
                 <p>
-                  You can book me over at <a href='https://gonsalvesfitness.mypthub.net/3/auth/'>PT HUB</a> where you can check my
-                  availability and confirm bookings with me.
+                  You can book me over at{' '}
+                  <a href='https://gonsalvesfitness.mypthub.net/3/auth/'>
+                    PT HUB
+                  </a>{' '}
+                  where you can check my availability and confirm bookings with
+                  me.
                 </p>
 
-                <a href='https://gonsalvesfitness.mypthub.net/3/auth/' target='blank'>
-                  <button>
-                    Book a session
-                  </button>
+                <a
+                  href='https://gonsalvesfitness.mypthub.net/3/auth/'
+                  target='blank'
+                >
+                  <button>Book a session</button>
                 </a>
               </div>
             </div>

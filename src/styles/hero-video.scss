@@ -3,7 +3,10 @@
     max-width: inherit;
   }
   .video {
+    position: relative;
     height: 100vh; 
+    width: 100vw;
+    overflow: hidden;
   }
   .overlay {
     background-color: rgba(0, 0, 0, 0.3);
@@ -19,10 +22,5 @@
   }
 }
 #hero-logo {
-  @media only screen and (max-width: 900px) {
-    
-      max-width: 70%;
-      max-height: 70%;
-    
-  }
+  min-width: 400px;
 }
