@@ -446,12 +446,15 @@ export default class Book extends React.Component {
                 <h2>Want to book a session?</h2>
                 <p>
                   If you want to discuss rates or a personal training plan,
-                  please get in touch
+                  please get in touch.
                 </p>
 
                 <p>
                   You can book me over at{' '}
-                  <a href='https://gonsalvesfitness.mypthub.net/3/auth/'>
+                  <a 
+                    href='https://gonsalvesfitness.mypthub.net/3/auth/'
+                    target='blank'
+                  >
                     PT HUB
                   </a>{' '}
                   where you can check my availability and confirm bookings with
