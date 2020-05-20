@@ -9,6 +9,13 @@
 th, tr, td, table {
   text-align: center;
   vertical-align: middle;
+
+}
+
+table {
+  @media only screen and (max-width: 950px){
+    max-height: 30vh!important;
+  }
 }
 
 tr {
@@ -81,6 +88,7 @@ button.loginBtn {
   @media (max-width: 1050px) {
     font-size: 40px;
     font-weight: 300;
+    line-height: 1.15em;
   }
 }
 
@@ -111,6 +119,9 @@ div.admin-dash {
   height: 120px;
   padding-left: 128px;
   margin-bottom: 20px;
+  @media only screen and (max-width: 950px) {
+  padding-left: 14px;
+  }
 }
 
 div.admin-fade {
@@ -118,8 +129,28 @@ div.admin-fade {
   width: 100vw;
   height: 100vh;
   position: absolute;
+  background-position: bottom;
   bottom: 0;
   z-index: 0;
+}
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
+  div.admin-fade {                           
+      height: 1024px;                         
+  }                       
+}   
+                                          
+/* iPad with landscape orientation. */                       
+@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape) {                         
+  div.admin-fade {                           
+      height: 768px;                         
+  }                       
+}
+                                             
+/* iPhone 5 
+You can also target devices with aspect ratio. */                       @media screen and (device-aspect-ratio: 40/71) {                              
+  div.admin-fade {                           
+      height: 500px;                         
+  }                       
 }
 
 div#admin-wrap {
@@ -137,6 +168,10 @@ div#admin-wrap {
   overflow: hidden;
   color: white;
   font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+  @media only screen and (max-width: 950px) {
+    padding-top: 74px;
+  }
+  
 }
 
 div.iframecontainer { //top lvl
@@ -154,6 +189,9 @@ div.iframewrap { //wrapper
   height: 100%;
   overflow: scroll;
   margin-left: 128px;
+  @media only screen and (max-width: 950px){
+    margin-left: 14px;
+  }
   margin-right: 5%;
   border: none;
   border-top-left-radius: 10px;
@@ -254,6 +292,23 @@ div.admin-nav {
   width: 74px;
   border-right: 1px solid rgba(255, 255, 255, 0.45);
   background-color: rgba(255, 255, 255, 0.25);
+  @media only screen and (max-width: 950px) {
+    border-right: 0px;
+    border-bottom: 1px solid rgba(255, 255, 255, 0.45);
+    a {
+      width: 74px;
+      height: 74px;
+    }
+    padding-top: 0px;
+    justify-content: center;
+    align-items: center;
+    flex-direction: row;
+    width: 100vw;
+    height: 74px;
+    ul {
+      flex-direction: row!important;
+    }
+  }
   ul {
     a:hover {
         text-decoration: none;
@@ -261,30 +316,32 @@ div.admin-nav {
     display: flex;
     flex-direction: column;
     padding: 0;
+    padding-left: 8px;
     list-style: none;
     :nth-of-type(4) {
       margin-top: auto;
-      @media only screen and (max-width: 950px) {
-        margin-top: 0;
-      }
     }
     li {
+      margin: 10px!important;
       display: flex;
       justify-content: center;
       align-items: center;
       margin-bottom: 20px;
       min-width: 64px;
       min-height: 64px;
-      border-right: 4px solid rgba(0,0,0,0);
-      border-radius: 2px;
+      @media only screen and (max-width: 950px) {
+        border: 4px solid rgba(0,0,0,0);
+        margin-bottom: 0px;
+      }
       i {
         display: flex;
         align-items: center;
         justify-content: center;
         margin-bottom: auto;
-        border-right: 4px solid rgba(0,0,0,0);
-        border-left: 4px solid rgba(0,0,0,0);
-        border-radius: 2px;
+        border: 4px solid rgba(0,0,0,0);
+        @media only screen and (max-width: 950px) {
+          margin-right: 20px
+        }
         min-height: 64px;
         min-width: 64px;
         cursor: pointer;
@@ -309,9 +366,15 @@ table {
   width: 100%;
   margin-bottom: 24px;
   height: 50vh;
+  @media only screen and (max-width: 950px) {
+    padding-left: 14px;
+  }
 }
 
 .module-wrapper {
+  @media only screen and (max-width: 950px){
+    padding-top: 20px;
+  }
   width: 95%;
   margin-bottom: 20px;
   height: 100%;

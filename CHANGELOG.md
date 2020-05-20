@@ -13,6 +13,7 @@ simplified booking pricing lists
 admin page nav, last button no longer dissapears on mobile view
 admin page nav, icons have now been re-aligned to match largest icons
 admin page nav, swapped logout with settings tab
+  --admin cms now portrait for mobile view
 login username field is now case in-sensitive
 
 
