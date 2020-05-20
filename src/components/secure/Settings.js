@@ -20,6 +20,7 @@ export default class Settings extends React.Component {
   }
   //funct
   componentDidMount(){
+    console.log('unsplash query ',process.env.UNSPLASH_QUERY)
     axios.get('/api/login',{ headers: { Authorization: `Bearer ${Auth.getToken()}` } 
     })
       .then(res => this.setState({ unsplash: res.data.unsplash }))
