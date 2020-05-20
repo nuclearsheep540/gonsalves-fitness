@@ -106,7 +106,8 @@ export default class Dashboard extends React.Component {
   render() {
     if (!this.state.stories) return null
     if (!this.state.bg.urls) return null
-
+    const background = `url(${this.state.bg.urls.regular})`
+    
     return (
       <>
       <div className='admin-fade'></div>
@@ -116,7 +117,7 @@ export default class Dashboard extends React.Component {
             : null }
         <div
           id='admin-wrap'
-          style={{ backgroundImage: `url(${this.state.bg.urls.regular})` }}>
+          style={{ backgroundImage: background }}>
 
           <TopDash 
             date={this.state.date}

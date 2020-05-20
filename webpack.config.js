@@ -50,6 +50,6 @@ module.exports = {
     new CopyWebpackPlugin([
       { from: './src/assets', to: 'assets' }
     ]),
-    new webpack.EnvironmentPlugin(['UNSPLASH'])
+    new webpack.EnvironmentPlugin(['UNSPLASH','UNSPLASH_QUERY'])
   ]
 }

@@ -41,7 +41,7 @@ export default class Settings extends React.Component {
     event.preventDefault()
     console.log('changing background, calling splash API...')
     axios
-      .get(`https://api.unsplash.com/photos/random/?client_id=${process.env.UNSPLASH}&orientation=landscape`)
+      .get(`https://api.unsplash.com/photos/random/?client_id=${process.env.UNSPLASH}&orientation=landscape${process.env.UNSPLASH_QUERY}`)
       .then(res => this.forceUpdate(res))
   }
 
