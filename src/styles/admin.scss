@@ -243,13 +243,14 @@ footer#admin-footer {
   border: none;
   background-color: rgba(0,0,0,0);
 }
+
 div.admin-nav {
   position: fixed;
   padding-top: 16px;
   z-index: 11;
   display: flex;
   justify-content: space-around;
-  height: 100vh;
+  height: 100%;
   width: 74px;
   border-right: 1px solid rgba(255, 255, 255, 0.45);
   background-color: rgba(255, 255, 255, 0.25);
@@ -263,17 +264,29 @@ div.admin-nav {
     list-style: none;
     :nth-of-type(4) {
       margin-top: auto;
+      @media only screen and (max-width: 950px) {
+        margin-top: 0;
+      }
     }
     li {
       display: flex;
       justify-content: center;
       align-items: center;
-      margin-bottom: 25px;
-      width: 60px;
-      height: 45px;
+      margin-bottom: 20px;
+      min-width: 64px;
+      min-height: 64px;
       border-right: 4px solid rgba(0,0,0,0);
       border-radius: 2px;
       i {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        margin-bottom: auto;
+        border-right: 4px solid rgba(0,0,0,0);
+        border-left: 4px solid rgba(0,0,0,0);
+        border-radius: 2px;
+        min-height: 64px;
+        min-width: 64px;
         cursor: pointer;
         filter: invert(0);
       }
@@ -411,7 +424,7 @@ div.msg-body {
   flex-direction: column;
   justify-content: center;
   height: fit-content;
-  min-width: 316px;
+  min-width: 346px;
   width: 33%;
   padding: 4px;
   margin-bottom: 8px;

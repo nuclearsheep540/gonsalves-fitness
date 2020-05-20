@@ -1,8 +1,19 @@
 import React from 'react'
 import ReactDOM from 'react-dom'
-import { BrowserRouter, Switch, Route } from 'react-router-dom'
+import { BrowserRouter as Router, Switch, Route } from 'react-router-dom'
 import 'regenerator-runtime/runtime.js'
+import SecureRoute from './components/common/SecureRoute'
+import Auth from './lib/auth'
+import ImageUpload from '../image-upload'
 
+//libs
+import './styles/main.scss'
+import 'normalize.css'
+import 'animate.css'
+import 'react-fontawesome'
+
+
+//components
 // import Topnav from './components/common/Topnav'
 // import Navbar from './components/common/Navbar'
 import Landing from './components/landing/Landing'
@@ -17,26 +28,15 @@ import Privacy from './components/common/Privacy'
 import User401 from './components/common/User401'
 import User404 from './components/common/User404'
 
-
-import ImageUpload from '../image-upload'
-
-
-import './styles/main.scss'
-import 'normalize.css'
-import 'animate.css'
-import 'react-fontawesome'
-
-import SecureRoute from './components/common/SecureRoute'
-import Auth from './lib/auth'
-
 const App = () => (
-  <BrowserRouter>
+  <Router >
     {/* <Topnav /> */}
     {/* <Navbar /> */}
 
-    <Switch>
 
-      <Route path='/401' component={User401} />
+
+    <Switch>
+      <Route exact path='/401' component={User401} />
       <Route exact path='/' component={Landing} />
       <Route path='/booking' component={Book} />
       <Route path='/about' component={AboutMe} />
@@ -54,7 +54,7 @@ const App = () => (
 
       <Route path='/*' component={User404} />
     </Switch>
-  </BrowserRouter>
+  </Router>
 )
 
 ReactDOM.render(

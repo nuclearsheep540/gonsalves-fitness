@@ -27,20 +27,19 @@ align-items: center;
   height: 300px;
   display: flex;
   flex-direction: column;
-  justify-content: center;
+  justify-content: flex-start;
   align-items: center;
   padding: 20px;
   margin: auto;
 }
 .feature-card-img {
-  z-index: 3;
-  margin: 10px;
-  left: 33%;
-  top: 40px;
   border-radius: 50px;
-  position: absolute;
+  position: relative;
   width: 100px;
   height: 100px;
+  @media only screen and (max-width: 950px) {
+    border: 1px solid lightgrey;
+  }
 }
 
 
@@ -57,11 +56,15 @@ align-items: center;
   font-size: 100px;
   align-self: flex-start;
   @media only screen and (max-width: 950px) {
-    color: gold;
-    background-color: white;
-    line-height: 0.5em;
-    position: relative;
-    block-size: 0px;
+    color: white;
+    background-color: gold;
+    line-height: .9em;
+    position: absolute;
+    block-size: 40px;
+    max-height: 40px;
+    top: 0px;
+    left: 10px;
+    z-index: 9;
   }
 
 }
@@ -81,7 +84,8 @@ align-items: center;
 }
 
 .feature-p {
-  padding-top: 60px;
+  padding-top: 20px;
+  padding-right: 0px!important;
 }
 .check {
   max-width: 30px;

@@ -64,9 +64,9 @@ export default class FeatureCardMap extends React.Component {
         {this.state.data.map((feature, i) => (
           <div className='feature-wrap' key={i}>
             <p className='left-q'>&ldquo;</p>
-            <img src={feature.image} className='feature-card-img' />
 
             <div className='feature-card animated fast'>
+              <img src={feature.image} className='feature-card-img' />
               <p className='p14 feature-p'>{feature.review}</p>
 
               <p className='p12'> - {feature.client}</p>

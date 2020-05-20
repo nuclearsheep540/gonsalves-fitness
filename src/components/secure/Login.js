@@ -20,7 +20,7 @@ class Login extends React.Component {
   }
 
   handleChange({ target: { name, value } }) {
-    const data = { ...this.state.data, [name]: value }
+    const data = { ...this.state.data, [name]: name === 'username' ? value.toLowerCase() : value }
     this.setState({ data })
   }
   componentDidMount(){

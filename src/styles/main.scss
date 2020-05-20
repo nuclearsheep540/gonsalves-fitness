@@ -12,18 +12,24 @@
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@300;400;600;700&display=swap');
   //font-family: 'Exo', sans-serif; size: 300,400,600,700
 
+.width-50 {
+  width: 50%;
+}
+.width-80 {
+  width: 80%;
+}
 
-  img.logo{
-    filter: invert(1);
-    max-width: 50%;
-    position: absolute;
-    z-index: 999;
-  }
-  img.hero {
-    object-fit: cover;
-    height: 100%;
-    width: 100%;
-  }
+img.logo{
+  filter: invert(1);
+  max-width: 50%;
+  position: absolute;
+  z-index: 999;
+}
+img.hero {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
+}
 
 
 main {

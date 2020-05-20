@@ -32,8 +32,11 @@ export default class Landing extends React.Component {
     this.handlePrivacy = this.handlePrivacy.bind(this)
     this.handleCC = this.handleCC.bind(this)
   }
-
   //functions
+  componentDidMount(){
+    document.querySelector('.hero').scrollIntoView()
+  }
+
   handleCC(){
     event.preventDefault()
     const obj = {

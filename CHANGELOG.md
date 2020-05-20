@@ -3,6 +3,30 @@ Gonsalves Fitness PT Website
 
 # changelog
 
+## 20.05.20
+
+landing page and about page now scroll to top on pageload
+fixed quote marks on feature cards
+fixed positioning issues for profile img on feature cards
+sticker height set to max on mobile devices
+simplified booking pricing lists
+admin page nav, last button no longer dissapears on mobile view
+admin page nav, icons have now been re-aligned to match largest icons
+admin page nav, swapped logout with settings tab
+login username field is now case in-sensitive
+
+
+#
+
+## 20.05.19
+
+* Booking page now built, with links to external booking app.
+* UI
+  * Mobile
+    - Booking page now optimised for mobile
+
+#
+
 ## 20.05.14
 * Functionality
   - Contact form now sends a copy to the end user, with a reply-to to your email address.

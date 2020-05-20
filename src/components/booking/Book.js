@@ -1,6 +1,5 @@
 import React from 'react'
 import Footer from '../common/Footer'
-import HeroCover from '../landing/HeroCover'
 
 export default class Book extends React.Component {
   constructor() {
@@ -8,6 +7,9 @@ export default class Book extends React.Component {
     this.state = {
 
     }
+  }
+  componentDidMount(){
+    document.querySelector('.hero').scrollIntoView()
   }
 
   render() {
@@ -43,22 +45,66 @@ export default class Book extends React.Component {
                 <div>
                   <i className='fas fa-user fa-4x'></i>
                   <h3>Solo</h3>
-                  <p>60 Minute Session £45</p>
-                  <p>30 Minute Session £30</p>
+                  <ul>
+                    <li>
+                      <p>
+                        <b>60 Minutes</b>
+                        <br />
+                        £45
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        <b>30 Minutes</b>
+                        <br />
+                        £30
+                      </p>
+                    </li>
+                  </ul>
                 </div>
 
                 <div>
                   <i className='fas fa-user-friends fa-4x'></i>
                   <h3>Duo</h3>
-                  <p>60 Minute Session £35pp</p>
-                  <p>30 Minute Session £20pp</p>
+                  <ul>
+                    <li>
+                      <p>
+                        <b>60 Minutes</b>
+                        <br />
+                        £35pp
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <b>30 Minutes</b>
+                        <br />
+                        £20pp
+                      </p>
+                    </li>
+                  </ul>
                 </div>
 
                 <div>
                   <i className='fas fa-users fa-4x'></i>
                   <h3>Groups of 3+</h3>
-                  <p>60 Minute Session £25pp</p>
-                  <p>30 Minute Session £10pp</p>
+                  <ul>
+                    <li>
+                      <p>
+                        <b>60 Minutes</b>
+                        <br />
+                        £25pp
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        <b>30 Minutes</b>
+                        <br />
+                        £10pp
+                      </p>
+                    </li>
+                  </ul>
                 </div>
 
                 <div>
@@ -75,21 +121,14 @@ export default class Book extends React.Component {
                   <ul>
                     <li>
                       <p>
-                        <b>5 Sessions</b>
-                        <br />
-                        £45 per session
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        <b>10 Sessions</b>
+                        <b>10 Hourly Sessions</b>
                         <br />
                         £42.50 per session
                       </p>
                     </li>
                     <li>
                       <p>
-                        <b>20 Sessions</b>
+                        <b>20 Hourly Sessions</b>
                         <br />
                         £40.50 per sesion
                       </p>
@@ -104,21 +143,14 @@ export default class Book extends React.Component {
                   <ul>
                     <li>
                       <p>
-                        <b>5 Sessions</b>
-                        <br />
-                        £35pp per session
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        <b>10 Sessions</b>
+                        <b>10 Hourly Sessions</b>
                         <br />
                         £32.50pp per session
                       </p>
                     </li>
                     <li>
                       <p>
-                        <b>20 Sessions</b>
+                        <b>20 Hourly Sessions</b>
                         <br />
                         £30pp per sesion
                       </p>
@@ -133,21 +165,14 @@ export default class Book extends React.Component {
                   <ul>
                     <li>
                       <p>
-                        <b>5 Sessions</b>
-                        <br />
-                        £25pp per session
-                      </p>
-                    </li>
-                    <li>
-                      <p>
-                        <b>10 Sessions</b>
+                        <b>10 Hourly Sessions</b>
                         <br />
                         £22.50pp per session
                       </p>
                     </li>
                     <li>
                       <p>
-                        <b>20 Sessions</b>
+                        <b>20 Hourly Sessions</b>
                         <br />
                         £20pp per sesion
                       </p>
@@ -157,7 +182,8 @@ export default class Book extends React.Component {
 
                 <div>
                   <h3>
-                    Consecutive 10x session blocks = £2.50 discount per session
+                    £2.50 discount per session for every additional 10x session
+                    block per booking.
                   </h3>
                 </div>
               </div>
@@ -171,7 +197,7 @@ export default class Book extends React.Component {
                   <ul>
                     <li>
                       <p>
-                        <b>1x Hour session per week</b>
+                        <b>1 Hourly session per week</b>
                         <br />
                         £35 per session
                       </p>
@@ -179,17 +205,9 @@ export default class Book extends React.Component {
 
                     <li>
                       <p>
-                        <b>2x Hour sessions per week</b>
+                        <b>2 Hourly sessions per week</b>
                         <br />
                         £32.50 per session
-                      </p>
-                    </li>
-
-                    <li>
-                      <p>
-                        <b>3x Hour sessions per week</b>
-                        <br />
-                        £30 per session
                       </p>
                     </li>
                   </ul>
@@ -202,7 +220,7 @@ export default class Book extends React.Component {
                   <ul>
                     <li>
                       <p>
-                        <b>1x Hour session per week</b>
+                        <b>1 Hourly session per week</b>
                         <br />
                         £30pp per session
                       </p>
@@ -210,17 +228,9 @@ export default class Book extends React.Component {
 
                     <li>
                       <p>
-                        <b>2x Hour sessions per week</b>
+                        <b>2 Hourly sessions per week</b>
                         <br />
                         £27.50pp per session
-                      </p>
-                    </li>
-
-                    <li>
-                      <p>
-                        <b>3x Hour sessions per week</b>
-                        <br />
-                        £25pp per session
                       </p>
                     </li>
                   </ul>
@@ -233,7 +243,7 @@ export default class Book extends React.Component {
                   <ul>
                     <li>
                       <p>
-                        <b>1x Hour session per week</b>
+                        <b>1 Hourly session per week</b>
                         <br />
                         £25pp per session
                       </p>
@@ -241,17 +251,9 @@ export default class Book extends React.Component {
 
                     <li>
                       <p>
-                        <b>2x Hour sessions per week</b>
+                        <b>2 Hourly sessions per week</b>
                         <br />
                         £22.50pp per session
-                      </p>
-                    </li>
-
-                    <li>
-                      <p>
-                        <b>3x Hour sessions per week</b>
-                        <br />
-                        £20pp per session
                       </p>
                     </li>
                   </ul>
@@ -259,21 +261,22 @@ export default class Book extends React.Component {
 
                 <div>
                   <h3>
-                    Consecutive session per week = £2.50 discount per session
+                    £2.50 discount per session for every additional session
+                    booked per week.
                   </h3>
                 </div>
               </div>
 
               <div className='col'>
                 <h3 style={{ textAlign: 'center' }}>
-                  Monthly Package Also Includes:
+                  Monthly Packages Also Include:
                 </h3>
                 <ul>
                   <li>
                     <p>Monthly Fitness Assessment</p>
                   </li>
                   <li>
-                    <p>Body Composition Analys</p>
+                    <p>Body Composition Analysis</p>
                   </li>
                   <li>
                     <p>Tailored Gym Programme</p>
@@ -439,34 +442,37 @@ export default class Book extends React.Component {
           <div className='row'>
             <div className='col pricing'>
               <div className='pthub'>
-                <object
-                  data='https://www.mypthub.net/assets/img/logo-white.svg'
-                  type='image/svg+xml'
-                ></object>
-                <h2>Want to book a session?</h2>
-                <p>
-                  If you want to discuss rates or a personal training plan,
-                  please get in touch.
-                </p>
+                <div className='width-80'>
+                  <object
+                    data='https://www.mypthub.net/assets/img/logo-white.svg'
+                    type='image/svg+xml'
+                  />
+                  <h2>Want to book a session?</h2>
 
-                <p>
-                  You can book me over at{' '}
-                  <a 
+                  <p>
+                    If you want to discuss rates or a personal training plan,
+                    please get in touch.
+                  </p>
+
+                  <p>
+                    You can book me over at{' '}
+                    <a
+                      href='https://gonsalvesfitness.mypthub.net/3/auth/'
+                      target='blank'
+                    >
+                      PT HUB
+                    </a>{' '}
+                    where you can check my availability and confirm bookings
+                    with me.
+                  </p>
+
+                  <a
                     href='https://gonsalvesfitness.mypthub.net/3/auth/'
                     target='blank'
                   >
-                    PT HUB
-                  </a>{' '}
-                  where you can check my availability and confirm bookings with
-                  me.
-                </p>
-
-                <a
-                  href='https://gonsalvesfitness.mypthub.net/3/auth/'
-                  target='blank'
-                >
-                  <button>Book a session</button>
-                </a>
+                    <button>Book a session</button>
+                  </a>
+                </div>
               </div>
             </div>
           </div>

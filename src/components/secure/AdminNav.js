@@ -166,17 +166,18 @@ export default class AdminNav extends React.Component {
             </li>
           </a>
 
+          <a onClick={this.settingsToggle}>
+            <li>
+              <i id='settings' className='fas fa-cogs fa-3x' style={style}></i>
+            </li>
+          </a>
+
           <Link to='/admin' onClick={this.logout}>
             <li>
               <i id='logout' className='fas fa-sign-out-alt fa-3x' style={style}></i>
             </li>
           </Link>
 
-          <a onClick={this.settingsToggle}>
-            <li>
-              <i id='settings' className='fas fa-cogs fa-3x' style={style}></i>
-            </li>
-          </a>
         </ul>
       </div>
     )
