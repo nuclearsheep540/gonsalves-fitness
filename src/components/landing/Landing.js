@@ -14,6 +14,7 @@ export default class Landing extends React.Component {
     super()
 
     this.state = {
+      mobile: '',
       form: {
         //data from the front end, collected from the form
         firstname: '',
@@ -35,6 +36,7 @@ export default class Landing extends React.Component {
   //functions
   componentDidMount(){
     document.querySelector('.hero').scrollIntoView()
+    this.setState({ mobile: window.innerWidth < 950 ? true : false })
   }
 
   handleCC(){

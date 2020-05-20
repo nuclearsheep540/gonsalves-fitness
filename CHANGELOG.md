@@ -5,16 +5,17 @@ Gonsalves Fitness PT Website
 
 ## 20.05.20
 
-landing page and about page now scroll to top on pageload
-fixed quote marks on feature cards
-fixed positioning issues for profile img on feature cards
-sticker height set to max on mobile devices
-simplified booking pricing lists
-admin page nav, last button no longer dissapears on mobile view
-admin page nav, icons have now been re-aligned to match largest icons
-admin page nav, swapped logout with settings tab
-  --admin cms now portrait for mobile view
-login username field is now case in-sensitive
+- pages now scroll to top on pageload
+- fixed quote marks on feature cards
+- fixed positioning issues for profile img on feature cards
+- sticker height set to max on mobile devices
+- simplified booking pricing lists
+- admin page nav, last button no longer dissapears on mobile view
+- admin page nav, icons have now been re-aligned to match largest icon size
+- admin page nav, swapped logout with settings tab
+- admin cms now portrait for mobile view
+- login username field is now case in-sensitive
+- logout now redirects correctly on mobile safari
 
 
 #

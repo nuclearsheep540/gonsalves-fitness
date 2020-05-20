@@ -20,13 +20,15 @@ export default class AdminNav extends React.Component {
     this.setPageDesktop = this.setPageDesktop.bind(this)
     this.setPageMobile = this.setPageMobile.bind(this)
     this.windowHasResized = this.windowHasResized.bind(this)
+    this.resize = this.resize.bind(this)
   }
   componentDidMount(){
     this.setState({ mobile: window.innerWidth < 950 ? true : false })
 
-    window.addEventListener('resize',()=>{
-      !this.state.pageLoading && this.windowHasResized()
-    })
+    window.addEventListener('resize',this.resize())
+  }
+  resize(){
+    !this.state.pageLoading && this.windowHasResized()
   }
 
   windowHasResized() {
@@ -61,7 +63,7 @@ export default class AdminNav extends React.Component {
   }
 
   componentWillUnmount(){
-    window.removeEventListener('resize')
+    window.removeEventListener('resize', this.resize())
   }
 
   //IF STORYEDIT IS OPEN
@@ -198,8 +200,11 @@ export default class AdminNav extends React.Component {
 
   //AUTH
   async logout(){
-    Auth.logout()
-      .then(console.log('logout complete'))
+    await Auth.logout()
+      .then(window.history.pushState('admin','/admin'))
+    setTimeout(()=>{
+      location.reload()
+    },100)
     //app.js switch will re-direct for us
   }
 
