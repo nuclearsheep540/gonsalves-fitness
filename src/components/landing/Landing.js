@@ -35,7 +35,7 @@ export default class Landing extends React.Component {
   }
   //functions
   componentDidMount(){
-    document.querySelector('.hero').scrollIntoView()
+    // document.querySelector('.hero').scrollIntoView()
     this.setState({ mobile: window.innerWidth < 950 ? true : false })
   }
 
@@ -84,7 +84,7 @@ export default class Landing extends React.Component {
     e.preventDefault()
     const obj = {
       privacy: this.state.privacy,
-      to: 'gonsalvesfitness@gmail.com', //client's email address
+      to: 'matt.davey540@me.com', //client's email address
       from: this.state.form.email, //reply-to customer address
       subject: `${this.state.form.firstname} has contacted you at gonsalvesfitness.co.uk`,
       textBody: this.state.form.message,
@@ -112,13 +112,14 @@ export default class Landing extends React.Component {
         .then(res => {
           console.log(res.status)
           this.setState({ formstatus: 'status' + res.status })
+          document.getElementsByClassName('formresult')[0].classList.add('fadeIn')
         })
         .catch(err => {
           console.log(err)
           this.setState({ formstatus: 'error' })
         })
     },1000)
-    this.handleCC()
+    // this.handleCC()
   }
 
   handleChange({ target: { name, value } }) {
@@ -155,7 +156,7 @@ export default class Landing extends React.Component {
               </div>
             </div>
             <div className='row contact'>
-              <div className='col' id='contact'>
+              <div id='contact'>
 
                 <ContactForm
                   handleSubmit={this.handleSubmit}
@@ -172,7 +173,7 @@ export default class Landing extends React.Component {
                 </div>
 
                 {this.state.formstatus === 'status201' &&
-                  <div className='formresult' id='formsent'>
+                  <div className='formresult animated' id='formsent'>
                     <h2>Message Sent</h2>
                     <br />
                     <p>A copy of your message has been sent to {this.state.form.email}</p>

@@ -62,7 +62,7 @@ export default class FeatureCardMap extends React.Component {
     return (
       <div className='gridbox'>
         {this.state.data.map((feature, i) => (
-          <div className='feature-wrap' key={i}>
+          <div className='gridcell' key={i}>
             <p className='left-q'>&ldquo;</p>
 
             <div className='feature-card animated fast'>
@@ -71,7 +71,7 @@ export default class FeatureCardMap extends React.Component {
 
               <p className='p12'> - {feature.client}</p>
             </div>
-            <p className='right-q'>&rdquo;</p>
+            {/* <p className='right-q'>&rdquo;</p> */}
           </div>
         ))}
       </div>

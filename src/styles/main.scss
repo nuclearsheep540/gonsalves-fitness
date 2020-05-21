@@ -18,7 +18,24 @@
 .width-80 {
   width: 80%;
 }
-
+div#center-line {
+  height: 100vw;
+  width: 1px;
+  position: fixed;
+  z-index: 99;
+  background-color: red;
+  left: 50vw;
+}
+div#quarter-line {
+  height: 100vw;
+  width: 50vw;
+  position: fixed;
+  z-index: 99;
+  background-color: rgba(255, 255, 0, 0.1);
+  left: 25vw;
+  border-left: 1px dashed red;
+  border-right: 1px dashed red;
+}
 img.logo{
   filter: invert(1);
   max-width: 50%;
