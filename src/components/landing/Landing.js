@@ -35,7 +35,7 @@ export default class Landing extends React.Component {
   }
   //functions
   componentDidMount(){
-    // document.querySelector('.hero').scrollIntoView()
+    document.querySelector('.hero').scrollIntoView()
     this.setState({ mobile: window.innerWidth < 950 ? true : false })
   }
 
@@ -84,7 +84,7 @@ export default class Landing extends React.Component {
     e.preventDefault()
     const obj = {
       privacy: this.state.privacy,
-      to: 'matt.davey540@me.com', //client's email address
+      to: 'gonsalvesfitness@gmail.com', //client's email address
       from: this.state.form.email, //reply-to customer address
       subject: `${this.state.form.firstname} has contacted you at gonsalvesfitness.co.uk`,
       textBody: this.state.form.message,
@@ -119,7 +119,7 @@ export default class Landing extends React.Component {
           this.setState({ formstatus: 'error' })
         })
     },1000)
-    // this.handleCC()
+    this.handleCC()
   }
 
   handleChange({ target: { name, value } }) {
