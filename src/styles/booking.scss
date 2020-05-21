@@ -18,6 +18,9 @@
   align-items: center;
   margin: auto;
   text-align: center;
+  @media only screen and (max-width: 950px) {
+  width: 400px;
+  }
 }
 
 .pricing {
@@ -69,11 +72,11 @@
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   @media only screen and (max-width: 950px) {
     width: 20vw;
-    min-width: 250px;
+    min-width: 400px;
     flex-wrap: wrap;
     div {
       width: 20%;
-      min-width: 50px;
+      min-width: 190px!important;
     }
   }
   div {
@@ -122,10 +125,10 @@
       min-width: 50px;
     }
   }
-  div:last-child{
-    min-width: 100%;
-    // border: 1px solid red;
-  }
+  // div:last-child{
+  //   min-width: 100%;
+  //   // border: 1px solid red;
+  // }
   div {
     display: flex;
     flex-direction: column;
@@ -164,7 +167,7 @@
   box-shadow: 1px 1px 3px rgba(0, 0, 0, 0.2);
   @media only screen and (max-width: 950px) {
     width: 20vw;
-    min-width: 250px;
+    min-width:400px;
     flex-wrap: wrap;
     div {
       width: 20%;

@@ -16,7 +16,9 @@ Gonsalves Fitness PT Website
 - admin cms now portrait for mobile view
 - login username field is now case in-sensitive
 - logout now redirects correctly on mobile safari
-
+- feature cards re-aligned (now 100% center)
+- form realigned (~8px)
+- contact form has a new 201 overlay
 
 #
 

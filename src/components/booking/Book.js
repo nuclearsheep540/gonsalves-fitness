@@ -126,13 +126,42 @@ export default class Book extends React.Component {
                         £42.50 per session
                       </p>
                     </li>
+
                     <li>
                       <p>
                         <b>20 Hourly Sessions</b>
                         <br />
-                        £40.50 per sesion
+                        £40 per sesion
                       </p>
                     </li>
+
+
+                    <li>
+                      <p>
+                        <b>30 Hourly Sessions</b>
+                        <br />
+                        £37.50 per sesion
+                      </p>
+                    </li>
+
+
+                    <li>
+                      <p>
+                        <b>40 Hourly Sessions</b>
+                        <br />
+                        £35 per sesion
+                      </p>
+                    </li>
+
+
+                    <li>
+                      <p>
+                        <b>50 Hourly Sessions</b>
+                        <br />
+                        £32.50 per sesion
+                      </p>
+                    </li>
+
                   </ul>
                 </div>
 
@@ -148,6 +177,7 @@ export default class Book extends React.Component {
                         £32.50pp per session
                       </p>
                     </li>
+
                     <li>
                       <p>
                         <b>20 Hourly Sessions</b>
@@ -155,6 +185,30 @@ export default class Book extends React.Component {
                         £30pp per sesion
                       </p>
                     </li>
+                    <li>
+                      <p>
+                        <b>30 Hourly Sessions</b>
+                        <br />
+                        £27.50pp per sesion
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        <b>40 Hourly Sessions</b>
+                        <br />
+                        £25pp per sesion
+                      </p>
+                    </li>
+
+
+                    <li>
+                      <p>
+                        <b>50 Hourly Sessions</b>
+                        <br />
+                        £22.50pp per sesion
+                      </p>
+                    </li>                    
                   </ul>
                 </div>
 
@@ -170,6 +224,7 @@ export default class Book extends React.Component {
                         £22.50pp per session
                       </p>
                     </li>
+
                     <li>
                       <p>
                         <b>20 Hourly Sessions</b>
@@ -177,14 +232,31 @@ export default class Book extends React.Component {
                         £20pp per sesion
                       </p>
                     </li>
-                  </ul>
-                </div>
 
-                <div>
-                  <h3>
-                    £2.50 discount per session for every additional 10x session
-                    block per booking.
-                  </h3>
+                    <li>
+                      <p>
+                        <b>30 Hourly Sessions</b>
+                        <br />
+                        £17.50pp per sesion
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        <b>40 Hourly Sessions</b>
+                        <br />
+                        £15pp per session
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        <b>50 Hourly Sessions</b>
+                        <br />
+                        £12.50pp per sesion
+                      </p>
+                    </li>                    
+                  </ul>
                 </div>
               </div>
 
@@ -210,6 +282,30 @@ export default class Book extends React.Component {
                         £32.50 per session
                       </p>
                     </li>
+
+                    <li>
+                      <p>
+                        <b>3 Hourly sessions per week</b>
+                        <br />
+                        £30 per session
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        <b>4 Hourly sessions per week</b>
+                        <br />
+                        £27.50 per session
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        <b>5 Hourly sessions per week</b>
+                        <br />
+                        £25 per session
+                      </p>
+                    </li>
                   </ul>
                 </div>
 
@@ -231,6 +327,29 @@ export default class Book extends React.Component {
                         <b>2 Hourly sessions per week</b>
                         <br />
                         £27.50pp per session
+                      </p>
+                    </li>
+                    <li>
+                      <p>
+                        <b>3 Hourly sessions per week</b>
+                        <br />
+                        £25pp per session
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        <b>4 Hourly sessions per week</b>
+                        <br />
+                        £22.50pp per session
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        <b>5 Hourly sessions per week</b>
+                        <br />
+                        £20pp per session
                       </p>
                     </li>
                   </ul>
@@ -256,14 +375,30 @@ export default class Book extends React.Component {
                         £22.50pp per session
                       </p>
                     </li>
-                  </ul>
-                </div>
+                    <li>
+                      <p>
+                        <b>3 Hourly sessions per week</b>
+                        <br />
+                        £20pp per session
+                      </p>
+                    </li>
 
-                <div>
-                  <h3>
-                    £2.50 discount per session for every additional session
-                    booked per week.
-                  </h3>
+                    <li>
+                      <p>
+                        <b>4 Hourly sessions per week</b>
+                        <br />
+                        £17.50pp per session
+                      </p>
+                    </li>
+
+                    <li>
+                      <p>
+                        <b>5 Hourly sessions per week</b>
+                        <br />
+                        £15pp per session
+                      </p>
+                    </li>
+                  </ul>
                 </div>
               </div>
 

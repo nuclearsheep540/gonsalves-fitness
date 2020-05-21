@@ -49,15 +49,16 @@
   color: white;
   font-size: 100px;
   align-self: flex-start;
+  transform: scaleY(-1);
   @media only screen and (max-width: 950px) {
     color: white;
     background-color: gold;
-    line-height: .9em;
-    position: absolute;
+    line-height: 1.1em;
+    position: relative;
     block-size: 40px;
     max-height: 40px;
-    top: 0px;
-    left: 10px;
+    left: 20px;
+    top: 40px;
     z-index: 9;
   }
 
