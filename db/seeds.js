@@ -16,13 +16,13 @@ mongoose.connect(
       .then(() => { 
         return User.create([ 
           {
-            name: 'ryhse',
-            email: 'rhyse@demo',
+            name: 'Rhyse',
+            email: 'gonsalvesfitness@gmail.com',
             password: 'admin',
             passwordConfirmation: 'admin'
           },
           {
-            name: 'demo',
+            name: 'Demo',
             email: 'demo@demo',
             password: 'admin',
             passwordConfirmation: 'admin'
@@ -37,24 +37,12 @@ mongoose.connect(
             image: 'https://i.ibb.co/746XyPn/girl-1.png',
             before: 'https://toonclips.com/600/unfit-cartoon-guy-holding-a-basketball-by-toonaday-1158.jpg',
             after: 'https://cdn.clipart.email/fdb89e0ed802f4bc60d00e8ee9f0feb9_the-track-athlete-who-beat-cancer-and-dreams-of-an-animation-_500-500.jpeg',
-            description: 'test description',
+            description: 'Description from PT about client breif',
             review: 'Rhyse was really helpful, I enjoy training with him',
             published: true,
             featured: false,
             created: time.toDateString(),
-            user: user[0]
-          },
-          {
-            client: 'Mary',
-            image: 'https://image.flaticon.com/icons/svg/201/201634.svg',
-            before: '',
-            after: '',
-            description: 'test description',
-            review: 'I feel a lot more body confident now',
-            published: true,
-            featured: true,
-            created: time.toDateString(),
-            user: user[0]
+            user: user[1]
           }
         ])
       })
@@ -63,15 +51,15 @@ mongoose.connect(
         return Msg.create([
           {
             privacy: true,
-            to: 'demo@demo-account.com',
-            from: 'rachel@dolittle.com',
-            textBody: 'Hi, I was wondering what your prices were? Thanks!',
-            htmlBody: '\n      <html>\n      <div>\n      <p>From: Rachel, Dolittle</p>\n      <p>Contact: 12345678910</p>\n      <p>Email: rachel@dolittle.com</p>\n      <p>Hi, I was wondering what your prices were? Thanks!</p>\n      </div>\n      </html>',
+            to: 'demo@demo',
+            from: 'demo@demo',
+            textBody: 'Demo message for testing purposes',
+            htmlBody: '\n      <html>\n      <div>\n      <p>From: Demo, </p>\n      <p>Contact: 12345678910</p>\n      <p>Email: demo@demo</p>\n      <p>Demo message for testing purposes</p>\n      </div>\n      </html>',
             messageType: 'basic'
           }
         ])
       })
-      .then(msg => logger.info(`${msg.length} message(s) created`)) 
+      .then(msg => logger.info(`${msg.length} stories created`)) 
       .catch(err => logger.error(err)) 
       .finally(() => mongoose.connection.close()) 
   }
