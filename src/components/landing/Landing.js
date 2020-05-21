@@ -8,6 +8,7 @@ import Services from './Services'
 import Feature from './Feature'
 import HeroCover from './HeroCover'
 import Footer from '../common/Footer'
+import TopNav from '../common/Topnav'
 
 export default class Landing extends React.Component {
   constructor() {
@@ -136,6 +137,7 @@ export default class Landing extends React.Component {
     console.log(this.state)
     return (
       <>
+          <TopNav />
           <div className='container-fluid'>
             <div className='row hero-video'>
               <div className='col'>

@@ -37,11 +37,10 @@ class TopNav extends React.Component {
     if (window.location.href.includes('admin')) return null
     return (
       <nav className='top-nav' id='navbar'>
-        <Link to='/'>Home</Link>
-        <Link to='/about'>Training</Link>
-        {/* <img src='../assets/logo_bw.png' className='central top-logo'></img> */}
-        <Link to='/booking'> Booking </Link>
-        <Link to='/success'>Clients</Link>
+        <Link to='/'><p>Home</p></Link>
+        <Link to='/booking'><p>Booking</p></Link>
+        <Link to='/privacy'><p>Privacy Policy</p></Link>
+        <Link to='/admin'> </Link>
       </nav>
     )
   }

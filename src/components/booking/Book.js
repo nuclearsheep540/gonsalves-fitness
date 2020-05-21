@@ -1,5 +1,6 @@
 import React from 'react'
 import Footer from '../common/Footer'
+import TopNav from '../common/Topnav'
 
 export default class Book extends React.Component {
   constructor() {
@@ -14,6 +15,8 @@ export default class Book extends React.Component {
 
   render() {
     return (
+      <>
+      <TopNav />
       <div id='booking'>
         <div className='container-fluid'>
           <div className='row hero-video'>
@@ -614,6 +617,7 @@ export default class Book extends React.Component {
         </div>
         <Footer />
       </div>
+    </>
     )
   }
 }
