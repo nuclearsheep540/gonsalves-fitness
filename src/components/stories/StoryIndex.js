@@ -1,5 +1,5 @@
 import React from 'react'
-import Axios from 'Axios'
+import axios from 'axios'
 
 export default class StoryIndex extends React.Component {
   constructor() {
@@ -12,7 +12,7 @@ export default class StoryIndex extends React.Component {
   }
   //function
   componentDidMount() {
-    Axios.get('/api/published')
+    axios.get('/api/published')
       .then(res => this.setState({ data: res.data }))
   }
 

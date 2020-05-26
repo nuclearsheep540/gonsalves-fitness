@@ -2,7 +2,7 @@ import React from 'react'
 import Footer from '../common/Footer'
 import TopNav from '../common/Topnav'
 import ContactForm from '../landing/ContactForm'
-import Axios from 'Axios'
+import axios from 'axios'
 
 export default class Book extends React.Component {
   constructor() {
@@ -53,7 +53,7 @@ export default class Book extends React.Component {
       </html>`,
       messageType: 'basic'
     }
-    Axios.post('api/contact', obj)
+    axios.post('api/contact', obj)
       .then((res) => {
         console.log(res.status)
       })
@@ -96,7 +96,7 @@ export default class Book extends React.Component {
       messageType: 'basic'
     }
     setTimeout(()=>{
-      Axios
+      axios
         .post('api/contact', obj)
         .then(res => {
           console.log(res.status)

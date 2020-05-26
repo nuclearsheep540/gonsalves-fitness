@@ -1,5 +1,5 @@
 import React from 'react'
-import Axios from 'Axios'
+import axios from 'axios'
 
 export default class FeatureCard extends React.Component {
   constructor() {
@@ -13,7 +13,7 @@ export default class FeatureCard extends React.Component {
 
 
   componentDidMount() {
-    Axios.get('/api/featured').then(res =>
+    axios.get('/api/featured').then(res =>
       this.setState({ data: res.data.filter(elem => elem.featured === true) })
     )
     setInterval(() => {

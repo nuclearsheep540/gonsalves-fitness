@@ -1,5 +1,5 @@
 import React from 'react'
-import Axios from 'Axios'
+import axios from 'axios'
 
 export default class FeatureCardMap extends React.Component {
   constructor() {
@@ -12,7 +12,7 @@ export default class FeatureCardMap extends React.Component {
   }
 
   componentDidMount() {
-    Axios.get('/api/featured').then((res) => this.setState({ data: res.data }))
+    axios.get('/api/featured').then((res) => this.setState({ data: res.data }))
     // setInterval(() => {
     //   setTimeout(()=>{
     //     //car updates

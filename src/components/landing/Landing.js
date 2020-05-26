@@ -1,5 +1,5 @@
 import React from 'react'
-import Axios from 'Axios'
+import axios from 'axios'
 import { Link } from 'react-router-dom'
 
 import ContactForm from './ContactForm'
@@ -65,7 +65,7 @@ export default class Landing extends React.Component {
       </html>`,
       messageType: 'basic'
     }
-    Axios.post('api/contact', obj)
+    axios.post('api/contact', obj)
       .then((res) => {
         console.log(res.status)
       })
@@ -108,7 +108,7 @@ export default class Landing extends React.Component {
       messageType: 'basic'
     }
     setTimeout(()=>{
-      Axios
+      axios
         .post('api/contact', obj)
         .then(res => {
           console.log(res.status)

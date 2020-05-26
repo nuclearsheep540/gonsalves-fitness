@@ -1,5 +1,5 @@
 import React from 'react'
-import Axios from 'Axios'
+import axios from 'axios'
 // import Auth from '../../lib/auth'
 
 export default class MsgIndex extends React.Component {
@@ -21,7 +21,7 @@ export default class MsgIndex extends React.Component {
 
   showMsg(id){
     console.log('msg event id =', id)
-    Axios.get(`/api/contact/${id}`)
+    axios.get(`/api/contact/${id}`)
       .then(res => this.setState({ showMsg: res.data }))
       .then(console.log(this.state.showMsg))
   }

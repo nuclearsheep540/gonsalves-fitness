@@ -1,5 +1,5 @@
 import React from 'react'
-import Axios from 'Axios'
+import axios from 'axios'
 import Auth from '../../lib/auth'
 import { Link } from 'react-router-dom'
 
@@ -24,7 +24,7 @@ class Login extends React.Component {
     this.setState({ data })
   }
   componentDidMount(){
-    Axios.get('https://www.cloudflare.com/cdn-cgi/trace')
+    axios.get('https://www.cloudflare.com/cdn-cgi/trace')
       .then(res => console.log(res.data))
   }
 
@@ -35,7 +35,7 @@ class Login extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
     this.setState({ error: '' })
-    Axios
+    axios
       .post('/api/login', this.state.data)
       .then(res => {
         Auth.setToken(res.data.token)
