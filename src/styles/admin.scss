@@ -1,46 +1,17 @@
-// ################
-// ---------- ADMIN
-// ################
+// ########################
+// ------------------ ADMIN
+// ########################
 
 
-//        GLOBAL
-// -------------
-
-th, tr, td, table {
-  text-align: center;
-  vertical-align: middle;
-
-}
-
-table {
-  @media only screen and (max-width: 950px){
-    max-height: 30vh!important;
-  }
-}
-
-tr {
-  height: 40px;
-}
-
+//                   GLOBAL
+// ------------------------
 $bright: #ffd912;
 .pad20 {
   padding: 20px;
 }
 
-div.table > a, td > a {
-  display: inline-block;
-  padding: 10px;
-  margin: 2px;
-  color: white;
-}
-
-div.half-width{
-  max-width: 50vw;
-  margin: 0px;
-}
-div.image-upload{
-  display: flex;
-}
+//                    LOGIN
+// ------------------------
 div.login-page {
   display: flex;
   flex-direction: column;
@@ -49,6 +20,7 @@ div.login-page {
   height: 100vh;
   width: 100vw;
 }
+
 div.login {
   margin-top: 50px;
   display: flex;
@@ -63,19 +35,106 @@ div.login {
   border: 2px solid gold;
   background: gold;
 }
+
 form.login-form {
   display: flex;
   flex-direction: column;
   justify-content: center;
   align-items: center;
 }
+
 button.loginBtn {
   width: 100px;
 }
 
-//        DASH
-// -----------
+//                   TABLES
+// ------------------------
+th, tr, td, table {
+  text-align: center;
+  vertical-align: middle;
+}
 
+tr {
+  height: 40px;
+}
+
+div.table > a, td > a {
+  display: inline-block;
+  padding: 10px;
+  margin: 2px;
+  color: white;
+}
+
+table {
+  ::-webkit-scrollbar{display: none;};
+  display: block;
+  width: 100%;
+  max-height: 396px;
+  overflow: scroll;
+  @media only screen and (max-width: 950px){
+    max-height: 30vh!important;
+  }
+}
+
+.table {
+  display: none;
+  padding-left: 128px;
+  width: 100%;
+  margin-bottom: 24px;
+  height: 50vh;
+  @media only screen and (max-width: 950px) {
+    padding-left: 14px;
+  }
+}
+
+thead {
+  background-color: rgba(0,0,0,0.5);
+}
+
+tbody{
+  background-color: rgba(0, 0, 0, 0.4);
+  a {
+    text-decoration: none;
+    background-color: rgba(0,0,0,0);
+    color: white;
+    border: none;
+  }
+}
+
+th {
+  width: 300px;
+  background-color: rgba(0, 0, 0, 0.5);
+}
+
+th#msg {
+  width: 60vw;
+  overflow: scroll;
+}
+td {
+  text-align: center;
+  a {
+    cursor: pointer;
+  }
+}
+
+td#msg {
+  align-items: center;
+  text-align: left;
+  max-block-size: 100%;
+  max-height: 44px;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+th:nth-child(1){
+  width: 44px;
+}
+
+tr:nth-child(even) {
+  background-color: rgba(0, 0, 0, 0.3);
+}
+
+//      CREATE & EDIT PAGES
+// ------------------------
 #clock {
   z-index: 10;
   font-family: 'Exo', sans-serif;
@@ -133,25 +192,6 @@ div.admin-fade {
   bottom: 0;
   z-index: 0;
 }
-@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:portrait) {
-  div.admin-fade {                           
-      height: 1024px;                         
-  }                       
-}   
-                                          
-/* iPad with landscape orientation. */                       
-@media all and (device-width: 768px) and (device-height: 1024px) and (orientation:landscape) {                         
-  div.admin-fade {                           
-      height: 768px;                         
-  }                       
-}
-                                             
-/* iPhone 5 
-You can also target devices with aspect ratio. */                       @media screen and (device-aspect-ratio: 40/71) {                              
-  div.admin-fade {                           
-      height: 500px;                         
-  }                       
-}
 
 div#admin-wrap {
   h1 {
@@ -171,7 +211,6 @@ div#admin-wrap {
   @media only screen and (max-width: 950px) {
     padding-top: 74px;
   }
-  
 }
 
 div.iframecontainer { //top lvl
@@ -196,6 +235,22 @@ div.iframewrap { //wrapper
   border: none;
   border-top-left-radius: 10px;
   border-top-right-radius: 10px;
+}
+
+//  CREATE & EDIT PAGES
+div.half-width{
+  max-width: 50vw;
+  margin: 0px;
+}
+
+div.image-upload{
+  display: flex;
+}
+
+img.profile-icon {
+  max-width: 40px;
+  max-height: 40px;
+  border-radius: 2px;
 }
 
 #editarea { //iframe elem
@@ -226,12 +281,12 @@ div.edittop { //header info
     text-shadow: none !important;
   }
 }
+
 #story-create-profileImg {
   border-radius: 150px;
 }
 
 div.editmain { //form info
-  // border: 1px solid orange;
   position: relative;
   max-height: 100%;
   overflow: scroll;
@@ -240,12 +295,12 @@ div.editmain { //form info
 
 div.two-up{
   margin-top: 125px;
-  // border: 1px solid green;
   display: flex;
   max-width: 95vw;
   justify-content: space-evenly;
   padding: 20px;
 }
+
 div.col-left{
   margin-left: 4%;
   display: flex;
@@ -254,6 +309,7 @@ div.col-left{
   flex-wrap: nowrap;
   margin-bottom: 50px;
 }
+
 div.col-right{
   align-items: center;
   width: 50%;
@@ -282,6 +338,8 @@ footer#admin-footer {
   background-color: rgba(0,0,0,0);
 }
 
+//                  NAV BAR
+// ------------------------
 div.admin-nav {
   position: fixed;
   padding-top: 16px;
@@ -351,26 +409,6 @@ div.admin-nav {
   }
 }
 
-
-table {
-  ::-webkit-scrollbar{display: none;};
-  display: block;
-  width: 100%;
-  max-height: 396px;
-  overflow: scroll;
-}
-
-.table {
-  display: none;
-  padding-left: 128px;
-  width: 100%;
-  margin-bottom: 24px;
-  height: 50vh;
-  @media only screen and (max-width: 950px) {
-    padding-left: 14px;
-  }
-}
-
 .module-wrapper {
   @media only screen and (max-width: 950px){
     padding-top: 20px;
@@ -389,57 +427,6 @@ table {
   width: 25px;
 }
 
-thead {
-  background-color: rgba(0,0,0,0.5);
-}
-tbody{
-  background-color: rgba(0, 0, 0, 0.4);
-  a {
-    text-decoration: none;
-    background-color: rgba(0,0,0,0);
-    color: white;
-    border: none;
-  }
-}
-
-
-th {
-  width: 300px;
-  background-color: rgba(0, 0, 0, 0.5);
-}
-
-th#msg {
-  width: 60vw;
-  overflow: scroll;
-}
-td {
-  text-align: center;
-  a {
-    cursor: pointer;
-  }
-}
-
-td#msg {
-  align-items: center;
-  text-align: left;
-  max-block-size: 100%;
-  max-height: 44px;
-  overflow: hidden;
-  text-overflow: ellipsis;
-}
-th:nth-child(1){
-  width: 44px;
-}
-
-tr:nth-child(even) {
-  background-color: rgba(0, 0, 0, 0.3);
-}
-
-img.profile-icon {
-  max-width: 40px;
-  max-height: 40px;
-  border-radius: 2px;
-}
 
 div.msg-body {
   background-color: rgba(255, 255, 255, 0.8);
@@ -452,8 +439,8 @@ div.msg-body {
 }
 
 
-//              TABS
-// -----------------
+//             CONTENT TABS
+// ------------------------
 
 .admintabs-index {
   display: flex;
@@ -530,10 +517,8 @@ div.msg-body {
   }
 }
 
-
 //         EDIT FORM
 // -----------------
-
 a#admin-new-client {
   margin-bottom: 20px;
 }
@@ -545,26 +530,31 @@ img.admin-story-edit {
   border-radius: 2px;
   margin: 2px;
 }
+
 button#upload {
   display:inline-block;
   min-width: 50px;
   width: 80px;
   padding:5px 10px;
 }
+
 input#upload {
   display: inline-block;
   max-width: 300px;
 }
+
 label {
   display: block;
   width: 90px;
 }
+
 textarea {
   resize: none;
   width: 300px;
   height: 180px;
   overflow: scroll;
 }
+
 .input-area {
   width: 380px;
   margin: 10px;

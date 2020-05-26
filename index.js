@@ -19,6 +19,7 @@ mongoose.connect(process.env.MONGOD_URI || dbURI,
   () => logger.info('Mongo is connected')
 )
 
+
 app.use(bodyParser.json())
 
 // app.use(logger)

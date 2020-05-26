@@ -1,6 +1,6 @@
 import React from 'react'
 import StoryForm from './StoryForm'
-import axios from 'axios'
+import Axios from 'Axios'
 import Auth from '../../lib/auth'
 
 const time = new Date
@@ -68,8 +68,8 @@ export default class StoryCreate extends React.Component {
 
   handleSubmit(e) {
     e.preventDefault()
-    console.log('axios:', this.state.data)
-    axios.post('/api/story', this.state.data, {
+    console.log('Axios:', this.state.data)
+    Axios.post('/api/story', this.state.data, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(res => res.status === 201 && (

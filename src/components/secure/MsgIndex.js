@@ -1,5 +1,5 @@
 import React from 'react'
-import Axios from 'axios'
+import Axios from 'Axios'
 // import Auth from '../../lib/auth'
 
 export default class MsgIndex extends React.Component {

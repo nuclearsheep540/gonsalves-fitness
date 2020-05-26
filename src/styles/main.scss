@@ -1,53 +1,46 @@
+//PARTIALS
 @import './admin.scss';
 @import './landing.scss';
 @import './contact_form.scss';
 @import './navbar.scss';
 @import './success.scss';
 @import './hero-video.scss';
-@import './landing-usp.scss';
+@import './gridbox.scss';
 @import './landing-featured.scss';
 @import './booking.scss';
+@import './policy.scss';
 
+//WEBFONTS
 @import url('https://fonts.googleapis.com/css?family=Exo:200,300,400&display=swap');
 @import url('https://fonts.googleapis.com/css2?family=Exo:wght@300;400;600;700&display=swap');
-  //font-family: 'Exo', sans-serif; size: 300,400,600,700
 
-.width-50 {
-  width: 50%;
-}
-.width-80 {
-  width: 80%;
-}
-div#center-line {
-  height: 100vw;
-  width: 1px;
-  position: fixed;
-  z-index: 99;
-  background-color: red;
-  left: 50vw;
-}
-div#quarter-line {
-  height: 100vw;
-  width: 50vw;
-  position: fixed;
-  z-index: 99;
-  background-color: rgba(255, 255, 0, 0.1);
-  left: 25vw;
-  border-left: 1px dashed red;
-  border-right: 1px dashed red;
-}
-img.logo{
-  filter: invert(1);
-  max-width: 50%;
-  position: absolute;
-  z-index: 999;
-}
-img.hero {
-  object-fit: cover;
-  height: 100%;
-  width: 100%;
+//GLOBAL STYLES
+h2 {
+  font-family: 'Exo', sans-serif;
+  font-weight: 600;
+  font-size: 32px;
 }
 
+h3 {
+  font-family: 'Exo', sans-serif;
+  font-weight: 600;
+  font-size: 20px;
+}
+
+p {
+  font-family: 'Exo', sans-serif;
+  font-weight: 400;
+  font-size: 16px;
+}
+
+p.p14 {
+  font-size: 14px; 
+  padding-right: 14px;
+ }
+
+p.p12 {
+  font-size: 12px
+}
 
 main {
   padding: 0;
@@ -78,6 +71,7 @@ button {
   border-radius: 4px;
   margin: 4px !important;
 }
+
 .on-top {
   position: relative;
   z-index: 99;  
@@ -86,47 +80,43 @@ button {
   visibility: hidden;
 }
 
-h2 {
-  font-family: 'Exo', sans-serif;
-  font-weight: 600;
-  font-size: 32px;
+.width-50 {
+  width: 50%;
 }
-h3 {
-  font-family: 'Exo', sans-serif;
-  font-weight: 600;
-  font-size: 20px;
-}
-p {
-  font-family: 'Exo', sans-serif;
-  font-weight: 400;
-  font-size: 16px;
-}
-p.p14 {
-  font-size: 14px; 
-  padding-right: 14px;
- }
-p.p12 {
-  font-size: 12px
+.width-80 {
+  width: 80%;
 }
 
-//privacy policy
-.policy-pdf {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-  min-height: 95vh;
+//TESTING UI
+div#center-line {
+  height: 100vw;
+  width: 1px;
+  position: fixed;
+  z-index: 99;
+  background-color: red;
+  left: 50vw;
 }
-.pdf-controls {
-  margin: 5px;
+
+div#quarter-line {
+  height: 100vw;
   width: 50vw;
-  display: flex;
-  justify-content: space-between;
-  top: 0px;
+  position: fixed;
+  z-index: 99;
+  background-color: rgba(255, 255, 0, 0.1);
+  left: 25vw;
+  border-left: 1px dashed red;
+  border-right: 1px dashed red;
 }
-canvas {
-  position: relative;
-  margin: 20px;
-  border-bottom-left-radius: 10px;
-  border-bottom-right-radius: 10px;
+
+// EVERY PUBLIC PAGE HAS A HERO 
+img.logo{
+  filter: invert(1);
+  max-width: 50%;
+  position: absolute;
+  z-index: 999;
+}
+img.hero {
+  object-fit: cover;
+  height: 100%;
+  width: 100%;
 }

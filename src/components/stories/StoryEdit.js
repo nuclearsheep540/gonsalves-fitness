@@ -1,6 +1,6 @@
 import React from 'react'
 import StoryForm from './StoryForm'
-import axios from 'axios'
+import Axios from 'Axios'
 import Auth from '../../lib/auth'
 
 export default class StoryEdit extends React.Component {
@@ -21,10 +21,10 @@ export default class StoryEdit extends React.Component {
   componentDidMount() {
     document.getElementById('profile-img').value && this.state.data.image ? this.setStateImage : null
     const storyId = this.props.source
-    axios.get(`/api/story/${storyId}`) //axios get is string
+    Axios.get(`/api/story/${storyId}`) //Axios get is string
       .then(res => {
         this.setState({ data: res.data })
-        console.log('axios mount',res.data)
+        console.log('Axios mount',res.data)
       })
       .catch(err => console.log(err))
   }
@@ -66,8 +66,8 @@ export default class StoryEdit extends React.Component {
   handleSubmit(e) {
     e.preventDefault()
     const storyId = this.state.data._id
-    // console.log(`axios: /api/story/${storyId}`, this.state.data)
-    axios.put(`/api/story/${storyId}`, this.state.data, {
+    // console.log(`Axios: /api/story/${storyId}`, this.state.data)
+    Axios.put(`/api/story/${storyId}`, this.state.data, {
       headers: { Authorization: `Bearer ${Auth.getToken()}` }
     })
       .then(res => res.status === 202 && (

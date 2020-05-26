@@ -1,6 +1,7 @@
 #contact {
   position: relative;
 }
+
 #formsent {
   position: absolute;
   text-align: center;
@@ -16,8 +17,8 @@
   border-bottom-right-radius: 10px;
   border-bottom-left-radius: 10px;
   background-color: rgba(255, 255, 255, 0.8);
-  // box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 3px;
 }
+
 .contact-form {
   margin: auto;
   display: flex;
@@ -26,12 +27,10 @@
   height: fit-content;
   width: 400px;
   padding: 10px;
-  
   img {
     max-width: 100%;
   }
   form {
-    // transform: translateX(8px);
     margin-bottom: 40px;
     transition: 0.5s linear;
     display: flex;
@@ -76,7 +75,6 @@
       margin: 0px!important;
     }
   }
-
   div.policy {
     :first-child {
       margin-bottom: 8px;
@@ -95,12 +93,9 @@
     justify-content: flex-start;
     align-items:center;
   }
-
   div.form-submit {
     margin: 0 auto;
   }
-  
-
   form.open {
     border-bottom: 4px solid rgba(0, 0, 0, 0.1);
     border-bottom-left-radius: 4px;
@@ -134,12 +129,14 @@
     border-bottom-right-radius: 4px;
   }
 }
+
 div.formresult {
   display: flex;
   flex-direction: row;
   justify-content: center;
   width: 100vw;
 }
+
 .disabled {
   pointer-events: none;
   color: grey;

@@ -1,5 +1,5 @@
 import React from 'react'
-import axios from 'axios'
+import Axios from 'Axios'
 import Auth from '../../lib/auth'
 
 export default class Settings extends React.Component {
@@ -21,7 +21,7 @@ export default class Settings extends React.Component {
   //funct
   componentDidMount(){
     console.log('unsplash query ',process.env.UNSPLASH_QUERY)
-    axios.get('/api/login',{ headers: { Authorization: `Bearer ${Auth.getToken()}` } 
+    Axios.get('/api/login',{ headers: { Authorization: `Bearer ${Auth.getToken()}` } 
     })
       .then(res => this.setState({ unsplash: res.data.unsplash }))
   }
@@ -31,8 +31,8 @@ export default class Settings extends React.Component {
     const sendData = {
       unsplash: data.data
     }
-    axios.put(`/api/login/${Auth.getToken()}`, sendData, { headers: { Authorization: `Bearer ${Auth.getToken()}` } 
-    }).then(res=> console.log('axios response ',res.data))
+    Axios.put(`/api/login/${Auth.getToken()}`, sendData, { headers: { Authorization: `Bearer ${Auth.getToken()}` } 
+    }).then(res=> console.log('Axios response ',res.data))
       .then(setTimeout(()=>{
         location.reload()
       },500))
@@ -41,7 +41,7 @@ export default class Settings extends React.Component {
   changeBackground(){
     event.preventDefault()
     console.log('changing background, calling splash API...')
-    axios
+    Axios
       .get(`https://api.unsplash.com/photos/random/?client_id=${process.env.UNSPLASH}&orientation=landscape${process.env.UNSPLASH_QUERY}`)
       .then(res => this.forceUpdate(res))
   }
@@ -61,7 +61,7 @@ export default class Settings extends React.Component {
       passwordConfirmation: this.state.form.curPassword,
       updatePassword: this.state.form.newPassword
     }
-    axios.patch('/api/login/', body, { headers: { Authorization: `Bearer ${Auth.getToken()}` } 
+    Axios.patch('/api/login/', body, { headers: { Authorization: `Bearer ${Auth.getToken()}` } 
     })
       .then(res => console.log(res))
   }

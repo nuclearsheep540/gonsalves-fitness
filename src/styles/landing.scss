@@ -2,7 +2,6 @@
 //      IMAGE DIVIDERS 
 //--------------------
 
-
 #about {
   // overflow hidden doesnt work without being set relative
   position: relative;
@@ -44,6 +43,7 @@
     transform: skewX(-15deg) translateX(-20%);
   }
 }
+
 .rhyse-img {
   display: block;
   z-index: 1;
@@ -56,7 +56,6 @@
   width: 70vw;
   max-width: 1080px;
   height: 70vh;
-
 }
 
 @media only screen and (max-width: 950px) {
@@ -77,13 +76,12 @@
     background-size: 100vw;
     min-height: 60vw;
   }
+
   .rhyse-info {
    box-shadow: rgba(0, 0, 0, 0.1) 1px 1px 3px;
     transform: none;
      margin: 4px;
     display: flex;
-   //  justify-content: center;
-   //  align-items: center;
     position: relative;
     min-width: fit-content;
     width: 70vw;
@@ -111,7 +109,6 @@
 }
 }
 
-
 //             STICKER
 //--------------------
 div.sticker {
@@ -136,13 +133,13 @@ div.sticker {
     min-height: 54px;
     max-height: 54px;
   }
-
   a {
     font-family: 'exo', sans-serif;
     font-size: 24px;
     text-decoration: none;
   }
 }
+
 div.sticker:hover{
   min-height: 54px;
   max-height: 54px;

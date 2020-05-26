@@ -1,6 +1,7 @@
 import React from 'react'
 import Auth from '../../lib/auth'
 import { Link } from 'react-router-dom'
+import { set } from 'mongoose'
 
 export default class AdminNav extends React.Component {
   constructor(){
@@ -10,7 +11,8 @@ export default class AdminNav extends React.Component {
       msg: false,
       settings: false,
       mobile: false,
-      pageLoading: false
+      pageLoading: false,
+      windowWidth: ''
     }
     this.storyToggle = this.storyToggle.bind(this)
     this.msgToggle = this.msgToggle.bind(this)
@@ -22,43 +24,72 @@ export default class AdminNav extends React.Component {
     this.windowHasResized = this.windowHasResized.bind(this)
     this.resize = this.resize.bind(this)
   }
+
   componentDidMount(){
-    this.setState({ mobile: window.innerWidth < 950 ? true : false })
-
-    window.addEventListener('resize',this.resize())
-  }
-  resize(){
-    !this.state.pageLoading && this.windowHasResized()
+    this.setState({ windowWidth: window.innerWidth, mobile: window.innerWidth < 950 ? true : false })
+    window.addEventListener('resize',this.resize)
   }
 
-  windowHasResized() {
-    window.innerWidth < 950 ?
+  async resize(){
+    // await Promise.resolve(this.windowHasResized())
+    // await new Promise(resolve => setTimeout(resolve, 1000))
+    window.removeEventListener('resize',this.resize)
+    await new Promise(resolve => this.windowHasResized(resolve))
+
+    console.log('promise resolved')
+    return window.addEventListener('resize',this.resize)
+  }
+
+  async windowHasResized(resolve) {
+    // new Promise(resolve => {
+
+    //   console.log('checking need to change UI')
+    //   console.log('waiting 5000ms ...')
+    //   setTimeout(()=>{
+    //     console.log('5000ms is up')
+    //     return resolve
+    //   },5000)
+      
+    // })
+    await new Promise(resolve1 => {
+      setTimeout(resolve1, 5000)
+      // this.state.windowWidth < 950 ?
+      // this.setPageMobile()
+      // : this.setPageDesktop()
+
+    })
+    
+    console.log('5000ms promise done')
+    
+    this.state.windowWidth < 950 ?
       this.setPageMobile()
       : this.setPageDesktop()
+    return resolve()
   }
 
-  async setPageMobile(){
-    if (this.state.mobile === true) return
-    await this.setState({ pageLoading: true })
+  setPageMobile() {
+    //replace embedded style media query, with new style class specifically for mobile
+    if (this.state.mobile) return null
+    console.log('page setting to mobile view...')
+    document.getElementById('settings').style.border = '4px solid rgba(0,0,0,0)'
+    document.getElementById('msg').style.border = '4px solid rgba(0,0,0,0)'
+    document.getElementById('story').style.border = '4px solid rgba(0,0,0,0)'
     setTimeout(()=>{
-      console.log('page setting to mobile view...')
-      document.getElementById('settings').style.border = '4px solid rgba(0,0,0,0)'
-      document.getElementById('msg').style.border = '4px solid rgba(0,0,0,0)'
-      document.getElementById('story').style.border = '4px solid rgba(0,0,0,0)'
-      this.setState({ mobile: true, pageLoading: false })
-    },1000)
+      this.setState({ mobile: true, pageLoading: !this.state.pageLoading })
+      // window.addEventListener('resize',()=>this.resize(this.windowHasResized()))
+    },5000)
   }
 
-  async setPageDesktop(){
-    if (this.state.mobile === false) return
-    await this.setState({ pageLoading: true })
+  setPageDesktop(){
+    if (!this.state.mobile) return null
+    console.log('page setting to desktop view...')
+    document.getElementById('settings').style.border = '4px solid rgba(0,0,0,0)'
+    document.getElementById('msg').style.border = '4px solid rgba(0,0,0,0)'
+    document.getElementById('story').style.border = '4px solid rgba(0,0,0,0)'
     setTimeout(()=>{
-      console.log('page setting to desktop view...')
-      document.getElementById('settings').style.border = '4px solid rgba(0,0,0,0)'
-      document.getElementById('msg').style.border = '4px solid rgba(0,0,0,0)'
-      document.getElementById('story').style.border = '4px solid rgba(0,0,0,0)'
-      this.setState({ mobile: false, pageLoading: false })
-    },1000)
+      this.setState({ mobile: false, pageLoading: !this.state.pageLoading })
+      // window.addEventListener('resize',()=>this.resize(this.windowHasResized()))
+    },5000)
 
   }
 

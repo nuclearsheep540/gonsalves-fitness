@@ -1,5 +1,5 @@
 import React from 'react'
-import Axios from 'axios'
+import Axios from 'Axios'
 
 export default class FeatureCard extends React.Component {
   constructor() {

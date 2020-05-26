@@ -2,7 +2,7 @@ const User = require('../models/User')
 const jwt = require('jsonwebtoken')
 const { secret } = require('../config/environment')
 const logger = require('../lib/logger')
-// const axios = require('axios')
+// const Axios = require('Axios')
 
 // REGISTER ROUTE - /register
 function register(req, res) {

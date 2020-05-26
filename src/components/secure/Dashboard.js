@@ -1,6 +1,6 @@
 import React from 'react'
 import Auth from '../../lib/auth'
-import axios from 'axios'
+import Axios from 'Axios'
 
 import AdminNav from './AdminNav'
 import ClientIndex from './ClientIndex'
@@ -26,7 +26,7 @@ export default class Dashboard extends React.Component {
 
   componentDidMount() {
     if (Auth.isAuthenticated()) {
-      axios
+      Axios
         .get('/api/story', {
           headers: { Authorization: `Bearer ${Auth.getToken()}` }
         })
@@ -34,8 +34,8 @@ export default class Dashboard extends React.Component {
         .catch((err) => console.log(err))
     } 
     this.timerID = setInterval(() => this.tick(), 3000)
-    axios.get('/api/contact').then((res) => this.setState({ msg: res.data.reverse() }))
-    axios.get('/api/login',{ headers: { Authorization: `Bearer ${Auth.getToken()}` } })
+    Axios.get('/api/contact').then((res) => this.setState({ msg: res.data.reverse() }))
+    Axios.get('/api/login',{ headers: { Authorization: `Bearer ${Auth.getToken()}` } })
       .then(res => {
         this.setState({ bg: res.data.unsplash }),
         this.setState({ color: res.data.unsplash.color })
@@ -58,11 +58,11 @@ export default class Dashboard extends React.Component {
   handleDelete(e, id) {
     e.preventDefault()
     window.confirm(`Are you sure you wish to delete ${e.target.name}?`)
-      ? axios
+      ? Axios
         .delete(`/api/story/${id}`, {
           headers: { Authorization: `Bearer ${Auth.getToken()}` }
         })
-        .then(axios.get('/api/story', {
+        .then(Axios.get('/api/story', {
           headers: { Authorization: `Bearer ${Auth.getToken()}` }
         })
           .then(res => this.setState({ stories: res.data.reverse() }))
@@ -72,7 +72,7 @@ export default class Dashboard extends React.Component {
 
   deleteMsg(id, from){
     window.confirm(`Are you sure you want to delete this message from ${from}?`)
-      ? axios.delete(`/api/contact/${id}`, {
+      ? Axios.delete(`/api/contact/${id}`, {
         headers: { Authorization: `Bearer ${Auth.getToken()}` }
       }).then(this.api) : null
   }
@@ -80,7 +80,7 @@ export default class Dashboard extends React.Component {
 
   api(){
     if (Auth.isAuthenticated()) {
-      axios
+      Axios
         .get('/api/story', {
           headers: { Authorization: `Bearer ${Auth.getToken()}` }
         })
@@ -88,8 +88,8 @@ export default class Dashboard extends React.Component {
         .catch((err) => console.log(err))
     }
     this.timerID = setInterval(() => this.tick(), 2000)
-    axios.get('/api/contact').then((res) => this.setState({ msg: res.data.reverse() }))
-    axios.get('/api/login',{ headers: { Authorization: `Bearer ${Auth.getToken()}` } })
+    Axios.get('/api/contact').then((res) => this.setState({ msg: res.data.reverse() }))
+    Axios.get('/api/login',{ headers: { Authorization: `Bearer ${Auth.getToken()}` } })
   }
 
   // invertHex(hex) {
