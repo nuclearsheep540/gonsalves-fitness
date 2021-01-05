@@ -47,7 +47,7 @@
     "@fortawesome/react-fontawesome": "^0.1.9",
     "@socketlabs/email": "^1.0.2",
     "animate.css": "^3.7.2",
-    "axios": "^0.19.0",
+    "axios": "^0.21.1",
     "bcrypt": "^3.0.6",
     "body-parser": "^1.19.0",
     "cookie-parser": "^1.4.4",
